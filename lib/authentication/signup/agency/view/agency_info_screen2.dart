@@ -1,12 +1,17 @@
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:my_football_career/common_widgets/bgwidget.dart';
-import 'package:my_football_career/common_widgets/custom_textfield.dart';
-import 'package:my_football_career/common_widgets/login_container.dart';
-import 'package:my_football_career/common_widgets/our_button.dart';
-import 'package:my_football_career/consts/consts.dart';
 
-class PlayerInfoScreen5 extends StatelessWidget {
-  const PlayerInfoScreen5({super.key});
+import '../../../../common_widgets/bgwidget.dart';
+import '../../../../common_widgets/custom_textfield.dart';
+import '../../../../common_widgets/dropdown_widget.dart';
+import '../../../../common_widgets/login_container.dart';
+import '../../../../common_widgets/our_button.dart';
+import '../../../../consts/consts.dart';
+import '../../../../consts/list.dart';
+
+class AgencyInfoScreen2 extends StatelessWidget {
+  const AgencyInfoScreen2({super.key});
+
+  get counteryList => null;
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +20,7 @@ class PlayerInfoScreen5 extends StatelessWidget {
       backgroundColor: backgroudColor,
       body: bgWidget(
         context: context,
-        title: "Contact",
+        title: personalInfo,
         subtitle: '',
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -24,11 +29,10 @@ class PlayerInfoScreen5 extends StatelessWidget {
               height: 26.h,
             ),
             Text(
-              "5/5",
+              "2/3",
               style: TextStyle(
                 fontSize: 15.sp,
                 fontFamily: bold,
-                color: greenColor,
               ),
             ),
             SizedBox(
@@ -36,7 +40,7 @@ class PlayerInfoScreen5 extends StatelessWidget {
             ),
             SizedBox(
               child: Image.asset(
-                icProgress5,
+                icProgress1,
                 fit: BoxFit.fill,
               ),
             ),
@@ -50,8 +54,16 @@ class PlayerInfoScreen5 extends StatelessWidget {
                   padding: const EdgeInsets.all(19),
                   child: Column(
                     children: [
+                      dropdownWidget(
+                        title: yourRoleAgency,
+                        itemList: yourroleinagencyList,
+                        hintvalue: 'Select',
+                      ),
+                      SizedBox(
+                        height: 21.h,
+                      ),
                       customTextfield(
-                        title: yourActualCityLocation,
+                        title: firstName,
                         hint: '',
                         isPass: false,
                         titleColor: titlegreyColor,
@@ -59,53 +71,38 @@ class PlayerInfoScreen5 extends StatelessWidget {
                         borderColor: greyColor,
                       ),
                       SizedBox(
-                        height: 19.h,
+                        height: 21.h,
                       ),
                       customTextfield(
-                        title: yourPhoneNumber,
-                        hint: '+33',
+                        title: lastName,
+                        hint: '',
                         isPass: false,
                         titleColor: titlegreyColor,
                         bgColor: greyColor,
-                        hintColor: titlegreyColor,
                         borderColor: greyColor,
+                        hintColor: greyColor,
                       ),
                       SizedBox(
-                        height: 40.h,
+                        height: 21.h,
                       ),
                       customTextfield(
-                        title: validYourIdendity,
-                        hint: validYourIdendityHint,
-                        isPass: false,
-                        titleColor: titlegreyColor,
-                        bgColor: greyColor,
-                        hintColor: titlegreyColor,
-                        borderColor: greyColor,
-                      ),
-                      SizedBox(
-                        height: 40.h,
-                      ),
-                      customTextfield(
-                        title: validYourIdendity,
-                        hint: validYourIdendityHint1,
-                        isPass: false,
-                        titleColor: titlegreyColor,
-                        bgColor: greyColor,
-                        hintColor: titlegreyColor,
-                        borderColor: greyColor,
-                      ),
-                      SizedBox(
-                        height: 19.h,
-                      ),
+                          title: dateofBirth,
+                          hint: '',
+                          isPass: false,
+                          titleColor: titlegreyColor,
+                          bgColor: greyColor,
+                          borderColor: greyColor,
+                          hintColor: greyColor,
+                          icon: Icons.date_range),
                       SizedBox(
                         height: 20.h,
                       ),
                       ourButton(
                         color: greenColor,
-                        title: createProfile,
+                        title: next,
                         textColor: whiteColor,
                         onPress: () {
-                          Navigator.pushNamed(context, '/playerhomescreen');
+                          Navigator.pushNamed(context, '/agencyinfoscreen3');
                         },
                       ),
                     ],

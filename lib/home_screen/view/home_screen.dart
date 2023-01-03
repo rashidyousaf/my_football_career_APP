@@ -1,6 +1,4 @@
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:my_football_career/authentication/login/view/login_screen.dart';
-import 'package:my_football_career/authentication/signup/view/signup_screen.dart';
 import 'package:my_football_career/common_widgets/applogo_widget.dart';
 import 'package:my_football_career/common_widgets/bglogin/bg_login.dart';
 import 'package:my_football_career/common_widgets/login_container.dart';

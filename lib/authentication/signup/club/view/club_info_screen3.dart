@@ -5,8 +5,8 @@ import 'package:my_football_career/common_widgets/login_container.dart';
 import 'package:my_football_career/common_widgets/our_button.dart';
 import 'package:my_football_career/consts/consts.dart';
 
-class PlayerInfoScreen5 extends StatelessWidget {
-  const PlayerInfoScreen5({super.key});
+class ClubInfoScreen3 extends StatelessWidget {
+  const ClubInfoScreen3({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +24,7 @@ class PlayerInfoScreen5 extends StatelessWidget {
               height: 26.h,
             ),
             Text(
-              "5/5",
+              "3/3",
               style: TextStyle(
                 fontSize: 15.sp,
                 fontFamily: bold,
@@ -105,7 +105,7 @@ class PlayerInfoScreen5 extends StatelessWidget {
                         title: createProfile,
                         textColor: whiteColor,
                         onPress: () {
-                          Navigator.pushNamed(context, '/playerhomescreen');
+                          Navigator.pushNamed(context, '/clubhomescreen');
                         },
                       ),
                     ],

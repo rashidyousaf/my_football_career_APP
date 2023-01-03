@@ -165,6 +165,7 @@ const nameYourClub = "Name Of your club";
 const adressYourClub = "Adress of your club";
 const clubRepresentative = "Club Representative";
 const yourRoleClub = "Your role in the Club";
+const yourRoleAgency = "Your role in the Agency";
 const realMadrid = "Real Madrid";
 const avDe = "Av. de Concha Espina 28038 Madrid";
 const clubData = "Club data";

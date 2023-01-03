@@ -105,7 +105,7 @@ class CoachInfoScreen5 extends StatelessWidget {
                         title: createProfile,
                         textColor: whiteColor,
                         onPress: () {
-                          // Navigator.pushNamed(context, '/playerprofilescreen');
+                          Navigator.pushNamed(context, '/coachhomescreen');
                         },
                       ),
                     ],

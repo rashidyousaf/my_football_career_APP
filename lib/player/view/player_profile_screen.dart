@@ -4,6 +4,7 @@ import 'package:my_football_career/common_widgets/login_container.dart';
 import 'package:my_football_career/common_widgets/profile_widget1.dart';
 import 'package:my_football_career/common_widgets/profile_widget2.dart';
 import 'package:my_football_career/consts/consts.dart';
+import 'package:my_football_career/player/view/player_data_widget.dart';
 
 class PlayerProfileScreen extends StatefulWidget {
   const PlayerProfileScreen({super.key});
@@ -24,22 +25,35 @@ class _PlayerProfileScreenState extends State<PlayerProfileScreen>
         subtitle: '',
         icon: Icons.notifications,
         child: Column(children: [
-          SizedBox(height: 27.h),
           loginContainer(
               backgroudColor: whiteColor,
               borderColor: whiteColor,
               child: Column(children: [
-                profileWidget(),
+                profileWidget(
+                  iconShare: Icons.share,
+                  imgProfile: icPPImg,
+                  imgFlag: icPPFlag,
+                  name: leoMessi,
+                ),
                 SizedBox(
                   height: 6.2.h,
                 ),
-                profileWidget2(),
+                profileWidget2(
+                  firstIcon: icPPShirt,
+                  secondIcond: icPPAge,
+                  thirdIcon: icPPLocation,
+                  fourthIcon: icPPParis,
+                  firstName: "30",
+                  secondName: "35",
+                  thirdName: "Paris",
+                  fourthName: 'PSG',
+                ),
                 SizedBox(
                   height: 12.h,
                 ),
               ])),
           SizedBox(
-            height: 18.h,
+            height: 15.h,
           ),
 
           // tabbar portion
@@ -83,141 +97,14 @@ class _PlayerProfileScreenState extends State<PlayerProfileScreen>
                 )),
           ),
           SizedBox(
-            height: 17.h,
+            height: 10.h,
           ),
-          Container(
+          SizedBox(
             width: double.maxFinite,
-            height: 227.h,
+            height: 235.h,
             child: TabBarView(controller: tabController, children: [
               // player data container
-              Row(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Column(
-                    children: [
-                      Image.asset(
-                        icPPGroundImg,
-                        width: 146.w,
-                        height: 179.h,
-                      ),
-                      SizedBox(
-                        height: 9.h,
-                      ),
-                      Text(
-                        availableTransfer,
-                        style: TextStyle(
-                          fontSize: 9.sp,
-                        ),
-                      ),
-                      Image.asset(
-                        icPPTick2,
-                        width: 18.w,
-                        height: 18.h,
-                      )
-                    ],
-                  ),
-                  SizedBox(
-                    width: 11.w,
-                  ),
-                  Column(
-                    children: [
-                      Text(position,
-                          style: TextStyle(
-                            color: const Color.fromARGB(255, 54, 53, 53),
-                            fontSize: 12.sp,
-                          )),
-                      Text(rightWinger,
-                          style: TextStyle(
-                            color: Colors.black,
-                            fontSize: 14.sp,
-                          )),
-                      Text(or,
-                          style: TextStyle(
-                            color: Colors.black,
-                            fontSize: 12.sp,
-                          )),
-                      Text(attackingMidfielder,
-                          style: TextStyle(
-                            color: Colors.black,
-                            fontSize: 14.sp,
-                          )),
-                      SizedBox(
-                        height: 36.h,
-                      ),
-                      Row(
-                        children: [
-                          Image.asset(
-                            icPPWeight,
-                            width: 25.w,
-                            height: 22.h,
-                          ),
-                          SizedBox(
-                            width: 29.w,
-                          ),
-                          Image.asset(
-                            icPPHeight,
-                            width: 21.w,
-                            height: 25.h,
-                          ),
-                          SizedBox(
-                            width: 36.w,
-                          ),
-                          Image.asset(
-                            icPPFeet,
-                            width: 17.w,
-                            height: 26.h,
-                          )
-                        ],
-                      ),
-                      SizedBox(
-                        height: 13.h,
-                      ),
-                      Row(
-                        children: [
-                          SizedBox(
-                            width: 20.w,
-                          ),
-                          Text(
-                            "70",
-                            style:
-                                TextStyle(fontSize: 14.sp, fontFamily: regular),
-                          ),
-                          SizedBox(
-                            width: 34.w,
-                          ),
-                          Text(
-                            "174",
-                            style:
-                                TextStyle(fontSize: 14.sp, fontFamily: regular),
-                          ),
-                          SizedBox(
-                            width: 25.w,
-                          ),
-                          Text(
-                            left,
-                            style:
-                                TextStyle(fontSize: 14.sp, fontFamily: regular),
-                          ),
-                        ],
-                      ),
-                      SizedBox(
-                        height: 15.h,
-                      ),
-                      Text(underContractUntil,
-                          style: TextStyle(
-                            color: Colors.black,
-                            fontSize: 12.sp,
-                          )),
-                      Text(underContractUntilBelow,
-                          style: TextStyle(
-                            color: Colors.black,
-                            fontSize: 14.sp,
-                          )),
-                    ],
-                  ),
-                ],
-              ),
+              playerdataWidget(),
               // statics container
               Column(
                 children: [

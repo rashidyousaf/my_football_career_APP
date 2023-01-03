@@ -199,8 +199,12 @@ class TypeScreen extends StatelessWidget {
               SizedBox(
                 height: 13.h,
               ),
+
+              // this portion for club
               InkWell(
-                onTap: () {},
+                onTap: () {
+                  Navigator.pushNamed(context, '/clubinfoscreen1');
+                },
                 child: loginContainer(
                   borderColor: whiteColor,
                   backgroudColor: whiteColor,
@@ -260,7 +264,9 @@ class TypeScreen extends StatelessWidget {
                 height: 15.h,
               ),
               InkWell(
-                onTap: () {},
+                onTap: () {
+                  Navigator.pushNamed(context, '/agencyinfoscreen1');
+                },
                 child: loginContainer(
                   borderColor: whiteColor,
                   backgroudColor: whiteColor,

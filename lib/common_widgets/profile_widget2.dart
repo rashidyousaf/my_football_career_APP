@@ -1,32 +1,45 @@
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:my_football_career/consts/consts.dart';
 
-Widget profileWidget2() {
+Widget profileWidget2(
+    {firstIcon,
+    secondIcond,
+    thirdIcon,
+    fourthIcon,
+    String? firstName,
+    String? secondName,
+    String? thirdName,
+    String? fourthName}) {
   return Column(children: [
     Row(
       children: [
         SizedBox(
-          width: 60.w,
+          width: 20.w,
         ),
-        Column(children: [
-          Image.asset(
-            icPPShirt,
-            width: 44.w,
-            height: 40.h,
-          ),
-          SizedBox(
-            height: 9.h,
-          ),
-          const Text(
-            "30",
-            style: TextStyle(
-              fontSize: 17,
-              fontFamily: semibold,
-            ),
-          ),
-        ]),
+        // this section for for location
         SizedBox(
-          width: 80.w,
+          width: 130.w,
+          height: 75.h,
+          child: Column(children: [
+            Image.asset(
+              firstIcon,
+              width: 44.w,
+              height: 45.h,
+            ),
+            SizedBox(
+              height: 1.h,
+            ),
+            Text(
+              firstName!,
+              style: TextStyle(
+                fontSize: 17.sp,
+                fontFamily: semibold,
+              ),
+            ),
+          ]),
+        ),
+        SizedBox(
+          width: 34.w,
         ),
         Container(
           color: greyColor,
@@ -34,29 +47,33 @@ Widget profileWidget2() {
           width: 1.w,
         ),
         SizedBox(
-          width: 59.w,
+          width: 10.w,
         ),
-        Column(children: [
-          Image.asset(
-            icPPAge,
-            width: 25.w,
-            height: 25.h,
-          ),
-          SizedBox(
-            height: 9.h,
-          ),
-          const Text(
-            "35",
-            style: TextStyle(
-              fontSize: 17,
-              fontFamily: semibold,
+
+        SizedBox(
+          width: 130.w,
+          child: Column(children: [
+            Image.asset(
+              secondIcond,
+              width: 25.w,
+              height: 25.h,
             ),
-          ),
-        ]),
+            SizedBox(
+              height: 9.h,
+            ),
+            Text(
+              secondName!,
+              style: TextStyle(
+                fontSize: 17.sp,
+                fontFamily: semibold,
+              ),
+            ),
+          ]),
+        ),
       ],
     ),
     SizedBox(
-      height: 15.h,
+      height: 5.h,
     ),
     Row(
       children: [
@@ -84,27 +101,31 @@ Widget profileWidget2() {
     Row(
       children: [
         SizedBox(
-          width: 67.w,
+          width: 20.w,
         ),
-        Column(children: [
-          Image.asset(
-            icPPLocation,
-            width: 20.w,
-            height: 22.h,
-          ),
-          SizedBox(
-            height: 9.h,
-          ),
-          const Text(
-            "Paris",
-            style: TextStyle(
-              fontSize: 17,
-              fontFamily: semibold,
-            ),
-          ),
-        ]),
+        // this section for for location
         SizedBox(
-          width: 80.w,
+          width: 130.w,
+          child: Column(children: [
+            Image.asset(
+              thirdIcon,
+              width: 20.w,
+              height: 22.h,
+            ),
+            SizedBox(
+              height: 9.h,
+            ),
+            Text(
+              thirdName!,
+              style: TextStyle(
+                fontSize: 17.sp,
+                fontFamily: semibold,
+              ),
+            ),
+          ]),
+        ),
+        SizedBox(
+          width: 34.w,
         ),
         Container(
           color: greyColor,
@@ -112,25 +133,29 @@ Widget profileWidget2() {
           width: 1.w,
         ),
         SizedBox(
-          width: 59.w,
+          width: 10.w,
         ),
-        Column(children: [
-          Image.asset(
-            icPPParis,
-            width: 25.w,
-            height: 25.h,
-          ),
-          SizedBox(
-            height: 9.h,
-          ),
-          const Text(
-            "PSG",
-            style: TextStyle(
-              fontSize: 17,
-              fontFamily: semibold,
+        // this section for last
+        SizedBox(
+          width: 130.w,
+          child: Column(children: [
+            Image.asset(
+              fourthIcon,
+              width: 25.w,
+              height: 25.h,
             ),
-          ),
-        ]),
+            SizedBox(
+              height: 9.h,
+            ),
+            Text(
+              fourthName!,
+              style: TextStyle(
+                fontSize: 17.sp,
+                fontFamily: semibold,
+              ),
+            ),
+          ]),
+        ),
       ],
     ),
   ]);
