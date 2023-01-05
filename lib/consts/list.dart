@@ -1,3 +1,5 @@
+import 'package:my_football_career/consts/consts.dart';
+
 const List dropdownList = [
   'first value',
   'second value',
@@ -545,4 +547,23 @@ const List counteryList = [
   "Zaire",
   "Zambia",
   "Zimbabwe"
+];
+
+const settingsButtonsList = [
+  about,
+  privacy,
+  languages,
+  notifications,
+  upgradePro,
+  editProfile,
+  logout
+];
+const settingsIconsList = [
+  icSAbout,
+  icSPrivacy,
+  icSLanguage,
+  icSNotifications,
+  icSUpgrade,
+  icSEdit,
+  icSLogout
 ];

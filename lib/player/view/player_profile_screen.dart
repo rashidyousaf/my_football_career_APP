@@ -66,6 +66,7 @@ class _PlayerProfileScreenState extends State<PlayerProfileScreen>
                   color: whiteColor,
                   borderRadius: BorderRadius.circular(10.r),
                 ),
+                // Tabbar portion
                 child: TabBar(
                   indicator: BoxDecoration(
                       color: greenColor,
@@ -73,7 +74,7 @@ class _PlayerProfileScreenState extends State<PlayerProfileScreen>
                   controller: tabController,
                   unselectedLabelColor: greyColor,
                   isScrollable: true,
-                  labelPadding: const EdgeInsets.symmetric(horizontal: 35),
+                  labelPadding: const EdgeInsets.symmetric(horizontal: 20),
                   tabs: [
                     Tab(
                       child: Text(
@@ -101,7 +102,7 @@ class _PlayerProfileScreenState extends State<PlayerProfileScreen>
           ),
           SizedBox(
             width: double.maxFinite,
-            height: 235.h,
+            height: 218.h,
             child: TabBarView(controller: tabController, children: [
               // player data container
               playerdataWidget(),
@@ -153,6 +154,8 @@ class _PlayerProfileScreenState extends State<PlayerProfileScreen>
                             crossAxisCount: 5,
                             mainAxisSpacing: 1,
                             crossAxisSpacing: 1,
+                            shrinkWrap: true,
+                            physics: const NeverScrollableScrollPhysics(),
 
                             // first row of gridview
                             children: [

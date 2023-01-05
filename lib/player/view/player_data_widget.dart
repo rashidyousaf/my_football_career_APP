@@ -14,7 +14,7 @@ Widget playerdataWidget() {
             height: 179.h,
           ),
           SizedBox(
-            height: 9.h,
+            height: 5.h,
           ),
           Text(
             availableTransfer,
@@ -55,7 +55,7 @@ Widget playerdataWidget() {
                 fontSize: 14.sp,
               )),
           SizedBox(
-            height: 36.h,
+            height: 26.h,
           ),
           Row(
             children: [
@@ -83,7 +83,7 @@ Widget playerdataWidget() {
             ],
           ),
           SizedBox(
-            height: 13.h,
+            height: 10.h,
           ),
           Row(
             children: [
@@ -111,7 +111,7 @@ Widget playerdataWidget() {
             ],
           ),
           SizedBox(
-            height: 15.h,
+            height: 10.h,
           ),
           Text(underContractUntil,
               style: TextStyle(

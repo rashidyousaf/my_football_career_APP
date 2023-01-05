@@ -1,7 +1,7 @@
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:my_football_career/consts/consts.dart';
 
-Widget profileWidget({iconShare, imgProfile, imgFlag, String? name}) {
+Widget profileWidget({iconShare, child, imgProfile, imgFlag, String? name}) {
   return Column(
     children: [
       SizedBox(
@@ -11,7 +11,7 @@ Widget profileWidget({iconShare, imgProfile, imgFlag, String? name}) {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           SizedBox(
-            width: 23.w,
+            width: 15.w,
           ),
           SizedBox(
             height: 30.h,
@@ -22,15 +22,15 @@ Widget profileWidget({iconShare, imgProfile, imgFlag, String? name}) {
             ),
           ),
           SizedBox(
-            width: 65.w,
+            width: 8.w,
           ),
           // profile widget
 
           Column(crossAxisAlignment: CrossAxisAlignment.center, children: [
             Container(
               clipBehavior: Clip.antiAlias,
-              height: 120.h,
-              width: 120.w,
+              height: 110.h,
+              width: 110.w,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(50),
               ),
@@ -42,29 +42,36 @@ Widget profileWidget({iconShare, imgProfile, imgFlag, String? name}) {
             SizedBox(
               height: 15.h,
             ),
-            Text(
-              name!,
-              style: TextStyle(
-                fontSize: 21.sp,
-                fontFamily: semibold,
+            SizedBox(
+              width: 200.w,
+              child: Center(
+                child: Flexible(
+                  child: Text(
+                    name!,
+                    style: TextStyle(
+                        fontSize: 21.sp,
+                        fontFamily: semibold,
+                        overflow: TextOverflow.ellipsis),
+                  ),
+                ),
               ),
             ),
           ]),
-          const Spacer(),
+
           SizedBox(
-            height: 35.h,
-            width: 60.w,
+            height: 31.h,
+            width: 52.w,
             child: Image.asset(
               imgFlag,
               width: 52.w,
               height: 32.h,
             ),
           ),
-          SizedBox(
-            width: 16.w,
-          )
         ],
       ),
+      Container(
+        child: child,
+      )
     ],
   );
 }

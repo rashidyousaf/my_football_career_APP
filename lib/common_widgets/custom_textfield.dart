@@ -18,7 +18,7 @@ Widget customTextfield(
           style:
               TextStyle(fontFamily: bold, fontSize: 12.sp, color: titleColor)),
       SizedBox(
-        height: 7.h,
+        height: 5.h,
       ),
       SizedBox(
         height: 45.h,
@@ -43,7 +43,8 @@ Widget customTextfield(
                 color: borderColor,
               ),
             ),
-            hintStyle: TextStyle(fontFamily: regular, color: hintColor),
+            hintStyle: TextStyle(
+                fontFamily: regular, fontSize: 15.sp, color: hintColor),
             hintText: hint,
             isDense: true,
             fillColor: bgColor,

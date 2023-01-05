@@ -42,7 +42,7 @@ class PlayerInfoScreen4 extends StatelessWidget {
               ),
             ),
             SizedBox(
-              height: 76.h,
+              height: 55.h,
             ),
             loginContainer(
                 borderColor: whiteColor,
@@ -85,7 +85,7 @@ class PlayerInfoScreen4 extends StatelessWidget {
                         hintColor: greyColor,
                       ),
                       SizedBox(
-                        height: 37.h,
+                        height: 27.h,
                       ),
                       customTextfield(
                         title: yourVideosURL,

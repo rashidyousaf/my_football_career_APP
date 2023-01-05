@@ -1,4 +1,5 @@
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get_navigation/get_navigation.dart';
 import 'package:my_football_career/agency/view/agency_home_screen.dart';
 import 'package:my_football_career/authentication/login/view/login_screen.dart';
 import 'package:my_football_career/authentication/signup/agency/view/agency_info_screen1.dart';
@@ -37,9 +38,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(
-        designSize: const Size(420, 844),
+        designSize: const Size(375, 812),
         builder: (context, child) {
-          return MaterialApp(
+          return GetMaterialApp(
             debugShowCheckedModeBanner: false,
             title: appname,
             theme: ThemeData(

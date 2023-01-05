@@ -14,9 +14,9 @@ Widget profileWidget2(
     Row(
       children: [
         SizedBox(
-          width: 20.w,
+          width: 10.w,
         ),
-        // this section for for location
+        // this section for shirt
         SizedBox(
           width: 130.w,
           height: 75.h,
@@ -39,7 +39,7 @@ Widget profileWidget2(
           ]),
         ),
         SizedBox(
-          width: 34.w,
+          width: 10.w,
         ),
         Container(
           color: greyColor,
@@ -49,7 +49,7 @@ Widget profileWidget2(
         SizedBox(
           width: 10.w,
         ),
-
+// this section for age
         SizedBox(
           width: 130.w,
           child: Column(children: [
@@ -72,13 +72,14 @@ Widget profileWidget2(
         ),
       ],
     ),
+    // this section for horizintal lines
     SizedBox(
       height: 5.h,
     ),
     Row(
       children: [
         SizedBox(
-          width: 40.w,
+          width: 15.w,
         ),
         Container(
           color: greyColor,
@@ -86,7 +87,7 @@ Widget profileWidget2(
           height: 1.h,
         ),
         SizedBox(
-          width: 50.w,
+          width: 30.w,
         ),
         Container(
           color: greyColor,
@@ -101,7 +102,7 @@ Widget profileWidget2(
     Row(
       children: [
         SizedBox(
-          width: 20.w,
+          width: 10.w,
         ),
         // this section for for location
         SizedBox(
@@ -125,7 +126,7 @@ Widget profileWidget2(
           ]),
         ),
         SizedBox(
-          width: 34.w,
+          width: 10.w,
         ),
         Container(
           color: greyColor,

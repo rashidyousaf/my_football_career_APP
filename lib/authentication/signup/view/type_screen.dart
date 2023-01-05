@@ -48,7 +48,7 @@ class TypeScreen extends StatelessWidget {
                 ),
               ),
               SizedBox(
-                height: 38.h,
+                height: 27.h,
               ),
               // these containers for candidate
 
@@ -184,7 +184,7 @@ class TypeScreen extends StatelessWidget {
                 ),
               ),
               SizedBox(
-                height: 22.h,
+                height: 15.h,
               ),
 
               // these containers for candidate
@@ -197,7 +197,7 @@ class TypeScreen extends StatelessWidget {
                 ),
               ),
               SizedBox(
-                height: 13.h,
+                height: 10.h,
               ),
 
               // this portion for club
