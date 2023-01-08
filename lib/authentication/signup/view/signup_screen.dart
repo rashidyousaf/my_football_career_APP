@@ -1,6 +1,4 @@
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:my_football_career/authentication/login/view/login_screen.dart';
-import 'package:my_football_career/authentication/signup/view/type_screen.dart';
 import 'package:my_football_career/common_widgets/applogo_widget.dart';
 import 'package:my_football_career/common_widgets/bglogin/bg_login.dart';
 import 'package:my_football_career/common_widgets/custom_textfield.dart';
@@ -17,9 +15,9 @@ class SignupScreen extends StatefulWidget {
 }
 
 class _SignupScreenState extends State<SignupScreen> {
+  bool? isCheck = false;
   @override
   Widget build(BuildContext context) {
-    bool? isCheck = false;
     return Scaffold(
       resizeToAvoidBottomInset: false,
       body: bgLogin(
@@ -53,6 +51,7 @@ class _SignupScreenState extends State<SignupScreen> {
                           titleColor: whiteColor,
                           bgColor: whiteColor,
                           borderColor: greenColor,
+                          hintColor: greenColor,
                         ),
                         SizedBox(
                           height: 12.h,
@@ -64,63 +63,42 @@ class _SignupScreenState extends State<SignupScreen> {
                           titleColor: whiteColor,
                           bgColor: whiteColor,
                           borderColor: greenColor,
+                          hintColor: greenColor,
                         ),
                         SizedBox(
                           height: 14.h,
                         ),
                         Row(
+                          crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             SizedBox(
-                              width: 15.w,
+                              width: 12.w,
+                              height: 12.h,
+                              child: Checkbox(
+                                  checkColor: greenColor,
+                                  activeColor: whiteColor,
+                                  value: isCheck,
+                                  side: BorderSide(
+                                      color: whiteColor, width: 1.2.w),
+                                  onChanged: (bool? newValue) {
+                                    setState(() {
+                                      isCheck = newValue;
+                                    });
+                                  }),
                             ),
-                            Checkbox(
-                                checkColor: redColor,
-                                activeColor: whiteColor,
-                                value: isCheck,
-                                onChanged: (newValue) {
-                                  setState(() {
-                                    isCheck = newValue;
-                                  });
-                                }),
                             SizedBox(
-                              width: 7.w,
+                              width: 8.w,
                             ),
-                            Expanded(
-                              child: RichText(
-                                text: TextSpan(
-                                  children: [
-                                    TextSpan(
-                                        text: "I agree the",
-                                        style: TextStyle(
-                                          fontFamily: regular,
-                                          color: whiteColor,
-                                          fontSize: 10.sp,
-                                        )),
-                                    TextSpan(
-                                        text: termAndCond,
-                                        style: TextStyle(
-                                          fontFamily: regular,
-                                          color: whiteColor,
-                                          fontSize: 10.sp,
-                                        )),
-                                    TextSpan(
-                                        text: "&",
-                                        style: TextStyle(
-                                          fontFamily: regular,
-                                          color: whiteColor,
-                                          fontSize: 10.sp,
-                                        )),
-                                    TextSpan(
-                                      text: privacyPolicy,
-                                      style: TextStyle(
-                                        fontFamily: regular,
-                                        color: whiteColor,
-                                        fontSize: 10.sp,
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
+                            SizedBox(
+                              width: 216.w,
+                              height: 43.h,
+                              child: Text(
+                                  "By signing up you to our Terms of services and Privacy Policy, and confirm that you are at least 18 years old.",
+                                  style: TextStyle(
+                                    fontFamily: regular,
+                                    color: whiteColor,
+                                    fontSize: 10.sp,
+                                  )),
                             ),
                             SizedBox(
                               width: 15.w,

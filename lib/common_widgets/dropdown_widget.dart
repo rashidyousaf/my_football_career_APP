@@ -1,19 +1,16 @@
 import 'package:dropdown_button2/dropdown_button2.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:my_football_career/consts/consts.dart';
-import 'package:my_football_career/consts/list.dart';
 
 Widget dropdownWidget({
   String? title,
   String? hintvalue,
   List? itemList,
 }) {
-  final List<String> genderItems = [
-    'Male',
-    'Female',
-  ];
-
-  String? selectedValue;
+  // final List<String> genderItems = [
+  //   'Male',
+  //   'Female',
+  // ];
 
   return Column(
     crossAxisAlignment: CrossAxisAlignment.start,
@@ -75,13 +72,12 @@ Widget dropdownWidget({
           if (value == null) {
             return 'Please select gender.';
           }
+          return null;
         },
         onChanged: (value) {
           //Do something when changing the item if you want.
         },
-        onSaved: (value) {
-          selectedValue = value.toString();
-        },
+        onSaved: (value) {},
       ),
     ],
   );

@@ -1,5 +1,4 @@
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:my_football_career/authentication/login/view/login_screen.dart';
 import 'package:my_football_career/common_widgets/applogo_widget.dart';
 import 'package:my_football_career/common_widgets/bgwidget.dart';
 import 'package:my_football_career/common_widgets/login_container.dart';
@@ -80,7 +79,7 @@ class TypeScreen extends StatelessWidget {
                         padding: const EdgeInsets.all(8),
                         height: 60.h,
                         width: 60.w,
-                        decoration: const BoxDecoration(
+                        decoration: BoxDecoration(
                           color: backgroudColor,
                           borderRadius: BorderRadius.all(Radius.circular(9)),
                         ),
@@ -142,7 +141,7 @@ class TypeScreen extends StatelessWidget {
                         padding: const EdgeInsets.all(8),
                         height: 60.h,
                         width: 60.w,
-                        decoration: const BoxDecoration(
+                        decoration: BoxDecoration(
                           color: backgroudColor,
                           borderRadius: BorderRadius.all(Radius.circular(9)),
                         ),
@@ -219,7 +218,7 @@ class TypeScreen extends StatelessWidget {
                         padding: const EdgeInsets.all(8),
                         height: 60.h,
                         width: 60.w,
-                        decoration: const BoxDecoration(
+                        decoration: BoxDecoration(
                           color: backgroudColor,
                           borderRadius: BorderRadius.all(Radius.circular(9)),
                         ),
@@ -281,7 +280,7 @@ class TypeScreen extends StatelessWidget {
                         padding: const EdgeInsets.all(8),
                         height: 60.h,
                         width: 60.w,
-                        decoration: const BoxDecoration(
+                        decoration: BoxDecoration(
                           color: backgroudColor,
                           borderRadius: BorderRadius.all(Radius.circular(9)),
                         ),

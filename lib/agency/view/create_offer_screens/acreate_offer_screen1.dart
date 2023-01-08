@@ -6,8 +6,8 @@ import 'package:my_football_career/common_widgets/our_button.dart';
 import 'package:my_football_career/consts/consts.dart';
 import 'package:my_football_career/consts/list.dart';
 
-class CcreateOfferScreen2 extends StatelessWidget {
-  const CcreateOfferScreen2({super.key});
+class AcreateOfferScreen1 extends StatelessWidget {
+  const AcreateOfferScreen1({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +25,7 @@ class CcreateOfferScreen2 extends StatelessWidget {
               height: 26.h,
             ),
             Text(
-              "2/6",
+              "1/6",
               style: TextStyle(
                 fontSize: 15.sp,
                 fontFamily: bold,
@@ -36,7 +36,7 @@ class CcreateOfferScreen2 extends StatelessWidget {
             ),
             SizedBox(
               child: Image.asset(
-                icProgress2,
+                icProgress1,
                 fit: BoxFit.fill,
               ),
             ),
@@ -52,7 +52,7 @@ class CcreateOfferScreen2 extends StatelessWidget {
                       height: 36.h,
                     ),
                     Text(
-                      whatKindofPlayerareYouLookingFor,
+                      forwhoareyoulookingfor,
                       style: TextStyle(
                           fontSize: 12.sp,
                           fontFamily: regular,
@@ -63,8 +63,8 @@ class CcreateOfferScreen2 extends StatelessWidget {
                             top: 39.h, bottom: 25.h, left: 20.w, right: 20.w),
                         child: Column(children: [
                           dropdownWidget(
-                            title: position,
-                            itemList: yourrolList,
+                            title: positionType,
+                            itemList: yourrolinclubList,
                             hintvalue: 'Select',
                           ),
                           SizedBox(
@@ -76,7 +76,7 @@ class CcreateOfferScreen2 extends StatelessWidget {
                             textColor: whiteColor,
                             onPress: () {
                               Navigator.pushNamed(
-                                  context, '/ccreateofferscreen3');
+                                  context, '/acreateofferscreen2');
                             },
                           ),
                         ]))

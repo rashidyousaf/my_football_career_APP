@@ -291,6 +291,7 @@ const List yourrolList = [
   'Assistant coach',
   'Video analyste',
   'Goalkeeper coach',
+  'Fitness trainer',
 ];
 const List yourlicence = ['Uefa Pro', 'Uefa A', 'Uefa B', 'Uefa C'];
 

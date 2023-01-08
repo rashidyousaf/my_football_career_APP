@@ -8,7 +8,7 @@ Widget bgWidget(
         width: double.infinity,
         height: double.infinity,
         padding: EdgeInsets.only(top: 32.h, left: 30.w, right: 30.w),
-        color: backgroudColor,
+        color: const Color(0xffecf7f0),
         child: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,

@@ -5,14 +5,15 @@ import 'package:my_football_career/consts/consts.dart';
 
 import '../../../common_widgets/our_button.dart';
 
-class CcreateOfferScreen7 extends StatelessWidget {
-  const CcreateOfferScreen7({super.key});
+class AcreateOfferScreen7 extends StatelessWidget {
+  const AcreateOfferScreen7({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomInset: false,
-      backgroundColor: backgroudColor,
+      //backgroundColor: backgroudColor,
+      backgroundColor: Colors.transparent,
       body: bgWidget(
         context: context,
         title: createOffer,

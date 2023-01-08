@@ -1,5 +1,4 @@
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:my_football_career/common_widgets/contact_widget.dart';
 
 import '../../common_widgets/bgwidget.dart';
 import '../../common_widgets/login_container.dart';

@@ -1,13 +1,12 @@
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:my_football_career/common_widgets/bgwidget.dart';
-import 'package:my_football_career/common_widgets/dropdown_widget.dart';
+import 'package:my_football_career/common_widgets/custom_textfield.dart';
 import 'package:my_football_career/common_widgets/login_container.dart';
 import 'package:my_football_career/common_widgets/our_button.dart';
 import 'package:my_football_career/consts/consts.dart';
-import 'package:my_football_career/consts/list.dart';
 
-class CcreateOfferScreen2 extends StatelessWidget {
-  const CcreateOfferScreen2({super.key});
+class AcreateOfferScreen3 extends StatelessWidget {
+  const AcreateOfferScreen3({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +24,7 @@ class CcreateOfferScreen2 extends StatelessWidget {
               height: 26.h,
             ),
             Text(
-              "2/6",
+              "3/6",
               style: TextStyle(
                 fontSize: 15.sp,
                 fontFamily: bold,
@@ -36,7 +35,7 @@ class CcreateOfferScreen2 extends StatelessWidget {
             ),
             SizedBox(
               child: Image.asset(
-                icProgress2,
+                icProgress3,
                 fit: BoxFit.fill,
               ),
             ),
@@ -52,7 +51,7 @@ class CcreateOfferScreen2 extends StatelessWidget {
                       height: 36.h,
                     ),
                     Text(
-                      whatKindofPlayerareYouLookingFor,
+                      whatBudgetRequest,
                       style: TextStyle(
                           fontSize: 12.sp,
                           fontFamily: regular,
@@ -62,10 +61,24 @@ class CcreateOfferScreen2 extends StatelessWidget {
                         padding: EdgeInsets.only(
                             top: 39.h, bottom: 25.h, left: 20.w, right: 20.w),
                         child: Column(children: [
-                          dropdownWidget(
-                            title: position,
-                            itemList: yourrolList,
-                            hintvalue: 'Select',
+                          customTextfield(
+                            title: salary,
+                            hint: '',
+                            isPass: false,
+                            titleColor: titlegreyColor,
+                            borderColor: greyColor,
+                            bgColor: greyColor,
+                          ),
+                          SizedBox(
+                            height: 16.h,
+                          ),
+                          customTextfield(
+                            title: monthlyYearly,
+                            hint: '',
+                            isPass: false,
+                            titleColor: titlegreyColor,
+                            borderColor: greyColor,
+                            bgColor: greyColor,
                           ),
                           SizedBox(
                             height: 16.h,
@@ -76,7 +89,7 @@ class CcreateOfferScreen2 extends StatelessWidget {
                             textColor: whiteColor,
                             onPress: () {
                               Navigator.pushNamed(
-                                  context, '/ccreateofferscreen3');
+                                  context, '/acreateofferscreen4');
                             },
                           ),
                         ]))

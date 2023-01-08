@@ -4,7 +4,6 @@ import 'package:my_football_career/common_widgets/login_container.dart';
 import 'package:my_football_career/common_widgets/profile_widget1.dart';
 import 'package:my_football_career/common_widgets/profile_widget2.dart';
 import 'package:my_football_career/consts/consts.dart';
-import 'package:my_football_career/player/view/player_data_widget.dart';
 
 class CoachProfileScreen extends StatefulWidget {
   const CoachProfileScreen({super.key});

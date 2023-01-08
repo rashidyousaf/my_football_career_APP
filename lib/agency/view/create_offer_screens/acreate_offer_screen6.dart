@@ -1,13 +1,11 @@
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:my_football_career/common_widgets/bgwidget.dart';
-import 'package:my_football_career/common_widgets/dropdown_widget.dart';
 import 'package:my_football_career/common_widgets/login_container.dart';
 import 'package:my_football_career/common_widgets/our_button.dart';
 import 'package:my_football_career/consts/consts.dart';
-import 'package:my_football_career/consts/list.dart';
 
-class CcreateOfferScreen2 extends StatelessWidget {
-  const CcreateOfferScreen2({super.key});
+class AcreateOfferScreen6 extends StatelessWidget {
+  const AcreateOfferScreen6({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -25,18 +23,16 @@ class CcreateOfferScreen2 extends StatelessWidget {
               height: 26.h,
             ),
             Text(
-              "2/6",
+              "6/6",
               style: TextStyle(
-                fontSize: 15.sp,
-                fontFamily: bold,
-              ),
+                  fontSize: 15.sp, fontFamily: bold, color: greenColor),
             ),
             SizedBox(
               height: 10.h,
             ),
             SizedBox(
               child: Image.asset(
-                icProgress2,
+                icProgress5,
                 fit: BoxFit.fill,
               ),
             ),
@@ -52,7 +48,7 @@ class CcreateOfferScreen2 extends StatelessWidget {
                       height: 36.h,
                     ),
                     Text(
-                      whatKindofPlayerareYouLookingFor,
+                      pleasedesriberequest,
                       style: TextStyle(
                           fontSize: 12.sp,
                           fontFamily: regular,
@@ -60,12 +56,32 @@ class CcreateOfferScreen2 extends StatelessWidget {
                     ),
                     Padding(
                         padding: EdgeInsets.only(
-                            top: 39.h, bottom: 25.h, left: 20.w, right: 20.w),
+                            top: 30.h, bottom: 25.h, left: 20.w, right: 20.w),
                         child: Column(children: [
-                          dropdownWidget(
-                            title: position,
-                            itemList: yourrolList,
-                            hintvalue: 'Select',
+                          SizedBox(
+                            height: 347.h,
+                            child: Card(
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(10.r),
+                                ),
+                                color: bgfieldColor,
+                                child: Padding(
+                                  padding: EdgeInsets.only(
+                                      top: 35.h,
+                                      left: 18.w,
+                                      right: 18.w,
+                                      bottom: 35.h),
+                                  child: TextField(
+                                    maxLines: 20, //or null
+                                    decoration: const InputDecoration.collapsed(
+                                        hintText: "Enter your text here"),
+
+                                    style: TextStyle(
+                                      fontSize: 12.sp,
+                                      fontFamily: regular,
+                                    ),
+                                  ),
+                                )),
                           ),
                           SizedBox(
                             height: 16.h,
@@ -76,7 +92,7 @@ class CcreateOfferScreen2 extends StatelessWidget {
                             textColor: whiteColor,
                             onPress: () {
                               Navigator.pushNamed(
-                                  context, '/ccreateofferscreen3');
+                                  context, '/acreateofferscreen7');
                             },
                           ),
                         ]))

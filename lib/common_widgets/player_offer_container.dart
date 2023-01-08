@@ -13,7 +13,7 @@ Widget playerOfferContainer(
     String? text3,
     String? text4}) {
   return Padding(
-    padding: const EdgeInsets.only(left: 13, top: 19),
+    padding: EdgeInsets.only(left: 13.w, top: 19.h),
     child: Row(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [

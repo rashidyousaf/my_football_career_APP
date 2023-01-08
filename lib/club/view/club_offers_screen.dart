@@ -22,21 +22,26 @@ class ClubOffersScreen extends StatelessWidget {
               height: 76.h,
             ),
             //first portion
-            loginContainer(
-                backgroudColor: whiteColor,
-                borderColor: whiteColor,
-                child: clubOfferContainer(
-                  icon1: icOShirt,
-                  icon2: icOCup,
-                  icon3: icOSheet,
-                  icon4: icOPromise,
-                  flag: icOFlag,
-                  flag1: icOLogo,
-                  text1: centreForward,
-                  text2: ligaPortugal,
-                  text3: professional,
-                  text4: month,
-                )),
+            InkWell(
+              onTap: () {
+                Navigator.pushNamed(context, "/offerdetailscreen");
+              },
+              child: loginContainer(
+                  backgroudColor: whiteColor,
+                  borderColor: whiteColor,
+                  child: clubOfferContainer(
+                    icon1: icOShirt,
+                    icon2: icOCup,
+                    icon3: icOSheet,
+                    icon4: icOPromise,
+                    flag: icOFlag,
+                    flag1: icOLogo,
+                    text1: centreForward,
+                    text2: ligaPortugal,
+                    text3: professional,
+                    text4: month,
+                  )),
+            ),
             //second portion
             SizedBox(
               height: 32.h,
@@ -61,7 +66,7 @@ class ClubOffersScreen extends StatelessWidget {
       ),
       floatingActionButton: FloatingActionButton.small(
         onPressed: () {
-          // Add your onPressed code here!
+          Navigator.pushNamed(context, '/ccreateofferscreen1');
         },
         backgroundColor: greenColor,
         child: const Icon(

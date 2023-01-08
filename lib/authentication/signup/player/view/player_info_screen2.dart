@@ -1,6 +1,5 @@
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:my_football_career/common_widgets/bgwidget.dart';
-import 'package:my_football_career/common_widgets/custom_textfield.dart';
 import 'package:my_football_career/common_widgets/dropdown_widget.dart';
 import 'package:my_football_career/common_widgets/login_container.dart';
 import 'package:my_football_career/common_widgets/our_button.dart';

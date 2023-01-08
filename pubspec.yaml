@@ -40,6 +40,9 @@ dependencies:
   js: ^0.6.5
   dropdown_button2: ^1.9.2
   get: ^4.6.5
+  country_picker: ^2.0.19
+  intl_phone_number_input: ^0.5.2+2
+  fl_country_code_picker: ^0.0.4
 
 dev_dependencies:
   flutter_test:

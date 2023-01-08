@@ -4,7 +4,6 @@ import 'package:my_football_career/agency/view/Agency_offers_screen.dart';
 import 'package:my_football_career/agency/view/agency_profile_screen.dart';
 import 'package:my_football_career/agency/view/agency_settings_screen.dart';
 import 'package:my_football_career/consts/consts.dart';
-import 'package:my_football_career/player/view/player_profile_screen.dart';
 
 import '../../player/controller/home_controller.dart';
 

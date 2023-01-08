@@ -6,8 +6,8 @@ import 'package:my_football_career/common_widgets/our_button.dart';
 import 'package:my_football_career/consts/consts.dart';
 import 'package:my_football_career/consts/list.dart';
 
-class CcreateOfferScreen2 extends StatelessWidget {
-  const CcreateOfferScreen2({super.key});
+class AcreateOfferScreen2 extends StatelessWidget {
+  const AcreateOfferScreen2({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -76,7 +76,7 @@ class CcreateOfferScreen2 extends StatelessWidget {
                             textColor: whiteColor,
                             onPress: () {
                               Navigator.pushNamed(
-                                  context, '/ccreateofferscreen3');
+                                  context, '/acreateofferscreen3');
                             },
                           ),
                         ]))

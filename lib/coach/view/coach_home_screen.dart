@@ -5,7 +5,6 @@ import 'package:my_football_career/coach/view/coach_offers_screen.dart';
 import 'package:my_football_career/coach/view/coach_profile_screen.dart';
 import 'package:my_football_career/coach/view/coach_settings_screen.dart';
 import 'package:my_football_career/consts/consts.dart';
-import 'package:my_football_career/player/view/player_profile_screen.dart';
 
 import '../../player/controller/home_controller.dart';
 
