@@ -64,7 +64,7 @@ class AcreateOfferScreen6 extends StatelessWidget {
                                 shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(10.r),
                                 ),
-                                color: bgfieldColor,
+                                color: greyColor,
                                 child: Padding(
                                   padding: EdgeInsets.only(
                                       top: 35.h,

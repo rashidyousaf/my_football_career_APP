@@ -133,13 +133,6 @@ class _PlayerInfoScreen1State extends State<PlayerInfoScreen1> {
                               SizedBox(
                                 width: 5.w,
                               ),
-                              Text(
-                                countryCode?.dialCode ?? "Select",
-                                style: TextStyle(
-                                    fontSize: 15.sp,
-                                    color: titlegreyColor,
-                                    fontFamily: regular),
-                              ),
                               SizedBox(
                                 width: 10.w,
                               ),
@@ -173,13 +166,16 @@ class _PlayerInfoScreen1State extends State<PlayerInfoScreen1> {
                       SizedBox(
                         height: 20.h,
                       ),
-                      ourButton(
-                        color: greenColor,
-                        title: next,
-                        textColor: whiteColor,
-                        onPress: () {
-                          Navigator.pushNamed(context, '/playerinfoscreen2');
-                        },
+                      Align(
+                        alignment: Alignment.center,
+                        child: ourButton(
+                          color: greenColor,
+                          title: next,
+                          textColor: whiteColor,
+                          onPress: () {
+                            Navigator.pushNamed(context, '/playerinfoscreen2');
+                          },
+                        ),
                       ),
                     ],
                   ),

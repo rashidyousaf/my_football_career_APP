@@ -130,14 +130,14 @@ Widget playerOfferContainer(
           children: [
             SizedBox(
               width: 68.w,
-              height: 35.h,
+              height: 50.h,
               child: Image.asset(
                 flag,
                 fit: BoxFit.fill,
               ),
             ),
             SizedBox(
-              height: 43.h,
+              height: 30.h,
             ),
             SizedBox(
               width: 60.w,

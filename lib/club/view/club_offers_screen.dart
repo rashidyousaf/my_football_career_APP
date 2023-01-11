@@ -27,40 +27,328 @@ class ClubOffersScreen extends StatelessWidget {
                 Navigator.pushNamed(context, "/offerdetailscreen");
               },
               child: loginContainer(
-                  backgroudColor: whiteColor,
-                  borderColor: whiteColor,
-                  child: clubOfferContainer(
-                    icon1: icOShirt,
-                    icon2: icOCup,
-                    icon3: icOSheet,
-                    icon4: icOPromise,
-                    flag: icOFlag,
-                    flag1: icOLogo,
-                    text1: centreForward,
-                    text2: ligaPortugal,
-                    text3: professional,
-                    text4: month,
-                  )),
+                backgroudColor: whiteColor,
+                borderColor: whiteColor,
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Padding(
+                      padding: EdgeInsets.only(left: 13.w, top: 19.h),
+                      child: Column(
+                        children: [
+                          Row(
+                            children: [
+                              SizedBox(
+                                width: 26.w,
+                                height: 24.h,
+                                child: Image.asset(
+                                  icOShirt,
+                                  fit: BoxFit.fill,
+                                ),
+                              ),
+                              SizedBox(
+                                width: 17.w,
+                              ),
+                              SizedBox(
+                                width: 160.w,
+                                child: Text(
+                                  attMidfielder,
+                                  style: TextStyle(fontSize: 12.sp),
+                                ),
+                              )
+                            ],
+                          ),
+                          // second row
+                          SizedBox(
+                            height: 14.h,
+                          ),
+                          Row(
+                            children: [
+                              SizedBox(
+                                width: 26.w,
+                                height: 24.h,
+                                child: Image.asset(
+                                  icOCup,
+                                  fit: BoxFit.fill,
+                                ),
+                              ),
+                              SizedBox(
+                                width: 17.w,
+                              ),
+                              SizedBox(
+                                width: 160.w,
+                                child: Text(
+                                  bundesliga,
+                                  style: TextStyle(fontSize: 12.sp),
+                                ),
+                              )
+                            ],
+                          ),
+                          // third row
+                          SizedBox(
+                            height: 14.h,
+                          ),
+                          Row(
+                            children: [
+                              SizedBox(
+                                width: 26.w,
+                                height: 24.h,
+                                child: Image.asset(
+                                  icOSheet,
+                                  fit: BoxFit.fill,
+                                ),
+                              ),
+                              SizedBox(
+                                width: 17.w,
+                              ),
+                              SizedBox(
+                                width: 160.w,
+                                child: Text(
+                                  professional,
+                                  style: TextStyle(fontSize: 12.sp),
+                                ),
+                              )
+                            ],
+                          ),
+                          // forth row
+                          SizedBox(
+                            height: 14.h,
+                          ),
+                          Row(
+                            children: [
+                              SizedBox(
+                                width: 26.w,
+                                height: 24.h,
+                                child: Image.asset(
+                                  icOPromise,
+                                  fit: BoxFit.fill,
+                                ),
+                              ),
+                              SizedBox(
+                                width: 17.w,
+                              ),
+                              SizedBox(
+                                width: 160.w,
+                                child: Text(
+                                  year,
+                                  style: TextStyle(fontSize: 12.sp),
+                                ),
+                              )
+                            ],
+                          ),
+                          SizedBox(
+                            height: 14.h,
+                          ),
+                        ],
+                      ),
+                    ),
+
+                    // this column for flags
+                    Column(
+                      children: [
+                        Container(
+                            alignment: Alignment.center,
+                            decoration: BoxDecoration(
+                              color: greenColor,
+                              borderRadius: BorderRadius.circular(10.r),
+                            ),
+                            width: 96.w,
+                            height: 43.h,
+                            child: Text(
+                              "7 Candidates",
+                              style: TextStyle(
+                                color: whiteColor,
+                                fontFamily: regular,
+                                fontSize: 12.sp,
+                              ),
+                            )),
+                        SizedBox(
+                          height: 15.h,
+                        ),
+                        SizedBox(
+                          width: 60.w,
+                          height: 60.h,
+                          child: Image.asset(
+                            icOFlag,
+                            fit: BoxFit.fill,
+                          ),
+                        ),
+                        SizedBox(
+                          height: 20.h,
+                        ),
+                        Text(
+                          deleteOffer,
+                          style: TextStyle(fontSize: 12.sp, color: redColor),
+                        )
+                      ],
+                    )
+                  ],
+                ),
+              ),
             ),
             //second portion
             SizedBox(
               height: 32.h,
             ),
             loginContainer(
-                backgroudColor: whiteColor,
-                borderColor: whiteColor,
-                child: clubOfferContainer(
-                  icon1: icCoach,
-                  icon2: icOCup,
-                  icon3: icOSheet,
-                  icon4: icOPromise,
-                  flag: icOFlag,
-                  flag1: icOLogo,
-                  text1: videoAnalyst,
-                  text2: ligaPortugal,
-                  text3: professional,
-                  text4: month,
-                )),
+              backgroudColor: whiteColor,
+              borderColor: whiteColor,
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Padding(
+                    padding: EdgeInsets.only(left: 13.w, top: 19.h),
+                    child: Column(
+                      children: [
+                        Row(
+                          children: [
+                            SizedBox(
+                              width: 26.w,
+                              height: 24.h,
+                              child: Image.asset(
+                                icOShirt,
+                                fit: BoxFit.fill,
+                              ),
+                            ),
+                            SizedBox(
+                              width: 17.w,
+                            ),
+                            SizedBox(
+                              width: 160.w,
+                              child: Text(
+                                attMidfielder,
+                                style: TextStyle(fontSize: 12.sp),
+                              ),
+                            )
+                          ],
+                        ),
+                        // second row
+                        SizedBox(
+                          height: 14.h,
+                        ),
+                        Row(
+                          children: [
+                            SizedBox(
+                              width: 26.w,
+                              height: 24.h,
+                              child: Image.asset(
+                                icOCup,
+                                fit: BoxFit.fill,
+                              ),
+                            ),
+                            SizedBox(
+                              width: 17.w,
+                            ),
+                            SizedBox(
+                              width: 160.w,
+                              child: Text(
+                                bundesliga,
+                                style: TextStyle(fontSize: 12.sp),
+                              ),
+                            )
+                          ],
+                        ),
+                        // third row
+                        SizedBox(
+                          height: 14.h,
+                        ),
+                        Row(
+                          children: [
+                            SizedBox(
+                              width: 26.w,
+                              height: 24.h,
+                              child: Image.asset(
+                                icOSheet,
+                                fit: BoxFit.fill,
+                              ),
+                            ),
+                            SizedBox(
+                              width: 17.w,
+                            ),
+                            SizedBox(
+                              width: 160.w,
+                              child: Text(
+                                professional,
+                                style: TextStyle(fontSize: 12.sp),
+                              ),
+                            )
+                          ],
+                        ),
+                        // forth row
+                        SizedBox(
+                          height: 14.h,
+                        ),
+                        Row(
+                          children: [
+                            SizedBox(
+                              width: 26.w,
+                              height: 24.h,
+                              child: Image.asset(
+                                icOPromise,
+                                fit: BoxFit.fill,
+                              ),
+                            ),
+                            SizedBox(
+                              width: 17.w,
+                            ),
+                            SizedBox(
+                              width: 160.w,
+                              child: Text(
+                                year,
+                                style: TextStyle(fontSize: 12.sp),
+                              ),
+                            )
+                          ],
+                        ),
+                        SizedBox(
+                          height: 14.h,
+                        ),
+                      ],
+                    ),
+                  ),
+
+                  // this column for flags
+                  Column(
+                    children: [
+                      Container(
+                          alignment: Alignment.center,
+                          decoration: BoxDecoration(
+                            color: greenColor,
+                            borderRadius: BorderRadius.circular(10.r),
+                          ),
+                          width: 96.w,
+                          height: 43.h,
+                          child: Text(
+                            "7 Candidates",
+                            style: TextStyle(
+                              color: whiteColor,
+                              fontFamily: regular,
+                              fontSize: 12.sp,
+                            ),
+                          )),
+                      SizedBox(
+                        height: 15.h,
+                      ),
+                      SizedBox(
+                        width: 60.w,
+                        height: 60.h,
+                        child: Image.asset(
+                          icOFlag,
+                          fit: BoxFit.fill,
+                        ),
+                      ),
+                      SizedBox(
+                        height: 20.h,
+                      ),
+                      Text(
+                        deleteOffer,
+                        style: TextStyle(fontSize: 12.sp, color: redColor),
+                      )
+                    ],
+                  )
+                ],
+              ),
+            ),
           ],
         ),
       ),

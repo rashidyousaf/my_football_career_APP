@@ -43,7 +43,7 @@ class _PlayerProfileScreenState extends State<PlayerProfileScreen>
                   secondIcond: icPPAge,
                   thirdIcon: icPPLocation,
                   fourthIcon: icPPParis,
-                  firstName: "30",
+                  firstName: "",
                   secondName: "35",
                   thirdName: "Paris",
                   fourthName: 'PSG',
@@ -53,7 +53,7 @@ class _PlayerProfileScreenState extends State<PlayerProfileScreen>
                 ),
               ])),
           SizedBox(
-            height: 15.h,
+            height: 10.h,
           ),
 
           // tabbar portion
@@ -102,7 +102,7 @@ class _PlayerProfileScreenState extends State<PlayerProfileScreen>
           ),
           SizedBox(
             width: double.maxFinite,
-            height: 218.h,
+            height: 230.h,
             child: TabBarView(controller: tabController, children: [
               // player data container
               playerdataWidget(),
@@ -124,7 +124,7 @@ class _PlayerProfileScreenState extends State<PlayerProfileScreen>
                         Row(
                           children: [
                             SizedBox(
-                              width: 130.w,
+                              width: 100.w,
                             ),
                             Text(
                               actualSeason,
@@ -142,14 +142,14 @@ class _PlayerProfileScreenState extends State<PlayerProfileScreen>
                             ),
                           ],
                         ),
-                        SizedBox(
-                          height: 10.h,
-                        ),
+                        // SizedBox(
+                        //   height: 10.h,
+                        // ),
                         // gridview container
                         Container(
                           color: greyColor,
                           width: double.maxFinite,
-                          height: 100.h,
+                          height: 90.h,
                           child: GridView.count(
                             crossAxisCount: 5,
                             mainAxisSpacing: 1,
@@ -177,7 +177,7 @@ class _PlayerProfileScreenState extends State<PlayerProfileScreen>
                                     Text(
                                       appearance,
                                       style: TextStyle(
-                                          fontSize: 10.sp, fontFamily: regular),
+                                          fontSize: 9.sp, fontFamily: regular),
                                     )
                                   ],
                                 ),
@@ -358,14 +358,13 @@ class _PlayerProfileScreenState extends State<PlayerProfileScreen>
                             ],
                           ),
                         ),
-                        SizedBox(height: 15.h)
+                        SizedBox(height: 10.h)
                       ],
                     ),
                   ),
-                  SizedBox(
-                    height: 15.h,
-                  ),
+
                   // Container(
+
                   //   color: whiteColor,
                   //   width: double.maxFinite,
                   //   height: 50.h,
@@ -418,6 +417,150 @@ class _PlayerProfileScreenState extends State<PlayerProfileScreen>
                   //     ],
                   //   ),
                   // )
+                  Container(
+                    color: whiteColor,
+                    width: double.maxFinite,
+                    height: 80.h,
+                    child: GridView.count(
+                      crossAxisCount: 4,
+                      mainAxisSpacing: 1,
+                      crossAxisSpacing: 1,
+                      childAspectRatio: 2,
+                      shrinkWrap: true,
+                      physics: const NeverScrollableScrollPhysics(),
+                      // first row of gridview
+                      children: [
+                        Container(
+                          color: backgroudColor,
+                          child: Column(
+                            children: [
+                              SizedBox(
+                                height: 15.h,
+                              ),
+                              Text(
+                                videos,
+                                style: TextStyle(
+                                    fontSize: 10.sp, fontFamily: bold),
+                              )
+                            ],
+                          ),
+                        ),
+                        Container(
+                          color: backgroudColor,
+                          child: Column(
+                            children: [
+                              SizedBox(
+                                height: 10.h,
+                              ),
+                              Image.asset(
+                                icPPYoutube1,
+                                width: 33.w,
+                                height: 23.h,
+                              )
+                            ],
+                          ),
+                        ),
+                        Container(
+                          color: backgroudColor,
+                          child: Column(
+                            children: [
+                              SizedBox(
+                                height: 10.h,
+                              ),
+                              Image.asset(
+                                icPPYoutube2,
+                                width: 33.w,
+                                height: 23.h,
+                              )
+                            ],
+                          ),
+                        ),
+
+                        Container(
+                          color: backgroudColor,
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              SizedBox(
+                                height: 10.h,
+                              ),
+                              Image.asset(
+                                icPPYoutube2,
+                                width: 33.w,
+                                height: 23.h,
+                              )
+                            ],
+                          ),
+                        ),
+
+                        // second row of gridview
+                        Container(
+                          color: backgroudColor,
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              SizedBox(
+                                height: 10.h,
+                              ),
+                              Text(
+                                tmFupaCv,
+                                style: TextStyle(
+                                    fontSize: 10.sp, fontFamily: bold),
+                              )
+                            ],
+                          ),
+                        ),
+                        Container(
+                          color: backgroudColor,
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              SizedBox(
+                                height: 10.h,
+                              ),
+                              Image.asset(
+                                icPPTransfer,
+                                width: 55.w,
+                                height: 24.h,
+                              )
+                            ],
+                          ),
+                        ),
+                        Container(
+                          color: backgroudColor,
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              SizedBox(
+                                height: 5.h,
+                              ),
+                              Image.asset(
+                                icPPFupa,
+                                width: 32.w,
+                                height: 30.h,
+                              )
+                            ],
+                          ),
+                        ),
+                        Container(
+                          color: backgroudColor,
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              SizedBox(
+                                height: 10.h,
+                              ),
+                              Image.asset(
+                                icPPPdf,
+                                width: 24.w,
+                                height: 30.h,
+                              )
+                            ],
+                          ),
+                        )
+                      ],
+                    ),
+                  ),
                 ],
               ),
               // contact container
@@ -453,7 +596,7 @@ class _PlayerProfileScreenState extends State<PlayerProfileScreen>
                         SizedBox(
                           height: 15.h,
                         ),
-                        const Divider(
+                        Divider(
                           thickness: 1,
                           indent: 30,
                           endIndent: 30,
@@ -489,7 +632,7 @@ class _PlayerProfileScreenState extends State<PlayerProfileScreen>
                     )),
               ])
             ]),
-          )
+          ),
         ]),
       ),
     );

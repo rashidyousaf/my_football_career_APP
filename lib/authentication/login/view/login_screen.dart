@@ -46,8 +46,8 @@ class _LoginScreenState extends State<LoginScreen> {
                           height: 42.h,
                         ),
                         customTextfield(
-                            title: email,
-                            hint: emailHint,
+                            title: '',
+                            hint: email,
                             isPass: false,
                             titleColor: whiteColor,
                             bgColor: whiteColor,
@@ -57,9 +57,9 @@ class _LoginScreenState extends State<LoginScreen> {
                           height: 12.h,
                         ),
                         customTextfield(
-                          title: password,
+                          title: '',
                           hintColor: greenColor,
-                          hint: passwordHint,
+                          hint: password,
                           isPass: true,
                           titleColor: whiteColor,
                           bgColor: whiteColor,

@@ -6,6 +6,7 @@ import 'package:my_football_career/agency/view/agency_settings_screen.dart';
 import 'package:my_football_career/consts/consts.dart';
 
 import '../../player/controller/home_controller.dart';
+import 'agency_messages_screen.dart';
 
 class AgencyHomeScreen extends StatelessWidget {
   const AgencyHomeScreen({super.key});
@@ -47,7 +48,7 @@ class AgencyHomeScreen extends StatelessWidget {
     var navBody = [
       const AgencyProfileScreen(),
       const AgencyOffersScreen(),
-      const AgencyOffersScreen(),
+      const AgencyMessagesScreen(),
       const AgencySettingsScreen(),
     ];
     return Scaffold(

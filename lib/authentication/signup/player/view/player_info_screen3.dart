@@ -77,10 +77,13 @@ class PlayerInfoScreen3 extends StatelessWidget {
                       SizedBox(
                         height: 15.h,
                       ),
-                      dropdownWidget(
-                          title: transferCoasts,
-                          itemList: dropdownList,
-                          hintvalue: '0'),
+                      customTextfield(
+                        title: transferCoasts,
+                        titleColor: titlegreyColor,
+                        isPass: false,
+                        borderColor: greyColor,
+                        bgColor: greyColor,
+                      ),
                       SizedBox(
                         height: 19.h,
                       ),

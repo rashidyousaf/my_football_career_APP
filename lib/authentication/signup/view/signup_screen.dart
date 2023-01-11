@@ -44,26 +44,54 @@ class _SignupScreenState extends State<SignupScreen> {
                         SizedBox(
                           height: 42.h,
                         ),
+
+                        // Container(
+                        //   decoration: BoxDecoration(
+                        //       color: whiteColor,
+                        //       border: Border.all(color: greenColor),
+                        //       borderRadius: BorderRadius.circular(9.r),
+                        //       boxShadow: [
+                        //         BoxShadow(
+                        //           color: Colors.grey.withOpacity(0.1),
+                        //           spreadRadius: 5,
+                        //           blurRadius: 7,
+                        //           offset: const Offset(
+                        //               0, 3), // changes position of shadow
+                        //         ),
+                        //       ]),
+                        //   alignment: Alignment.center,
+                        //   height: 60.h,
+                        //   child: TextField(
+                        //     decoration: InputDecoration(
+                        //       border: InputBorder.none,
+                        //       filled: true,
+                        //       fillColor: whiteColor,
+                        //       labelStyle:
+                        //           TextStyle(color: greenColor, fontSize: 12.sp),
+                        //       labelText: email,
+                        //     ),
+                        //   ),
+                        // ),
                         customTextfield(
-                          title: email,
-                          hint: emailHint,
-                          isPass: false,
-                          titleColor: whiteColor,
-                          bgColor: whiteColor,
-                          borderColor: greenColor,
-                          hintColor: greenColor,
-                        ),
+                            title: '',
+                            hint: email,
+                            isPass: false,
+                            titleColor: whiteColor,
+                            bgColor: whiteColor,
+                            hintColor: greenColor,
+                            borderColor: greenColor),
                         SizedBox(
                           height: 12.h,
                         ),
                         customTextfield(
-                          title: password,
-                          hint: passwordHint,
+                          title: '',
+                          hintColor: greenColor,
+                          hint: password,
                           isPass: true,
                           titleColor: whiteColor,
                           bgColor: whiteColor,
                           borderColor: greenColor,
-                          hintColor: greenColor,
+                          icon: Icons.visibility_outlined,
                         ),
                         SizedBox(
                           height: 14.h,
@@ -90,7 +118,7 @@ class _SignupScreenState extends State<SignupScreen> {
                               width: 8.w,
                             ),
                             SizedBox(
-                              width: 216.w,
+                              width: 212.w,
                               height: 43.h,
                               child: Text(
                                   "By signing up you to our Terms of services and Privacy Policy, and confirm that you are at least 18 years old.",

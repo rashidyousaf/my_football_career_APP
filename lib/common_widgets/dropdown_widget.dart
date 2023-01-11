@@ -24,22 +24,23 @@ Widget dropdownWidget({
       ),
       DropdownButtonFormField2(
         decoration: InputDecoration(
-            isDense: true,
-            contentPadding: EdgeInsets.zero,
-            enabledBorder: const OutlineInputBorder(
-                borderSide: BorderSide(color: whiteColor)),
-            border: OutlineInputBorder(
-              borderSide: const BorderSide(color: whiteColor),
-              borderRadius: BorderRadius.circular(9.r),
+          isDense: true,
+          contentPadding: EdgeInsets.zero,
+          enabledBorder: const OutlineInputBorder(
+              borderSide: BorderSide(color: whiteColor)),
+          border: OutlineInputBorder(
+            borderSide: const BorderSide(color: whiteColor),
+            borderRadius: BorderRadius.circular(9.r),
+          ),
+          focusedBorder: const OutlineInputBorder(
+            borderSide: BorderSide(
+              color: whiteColor,
             ),
-            focusedBorder: const OutlineInputBorder(
-              borderSide: BorderSide(
-                color: whiteColor,
-              ),
-            )
-            //Add more decoration as you want here
-            //Add label If you want but add hint outside the decoration to be aligned in the button perfectly.
-            ),
+          ),
+
+          //Add more decoration as you want here
+          //Add label If you want but add hint outside the decoration to be aligned in the button perfectly.
+        ),
         isExpanded: true,
         hint: Text(
           hintvalue!,

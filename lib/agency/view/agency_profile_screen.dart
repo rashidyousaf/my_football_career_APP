@@ -65,7 +65,7 @@ class AgencyProfileScreen extends StatelessWidget {
                       height: 13.h,
                     ),
                     Text(
-                      clubData,
+                      agencyData,
                       style: TextStyle(
                           fontSize: 15.sp,
                           color: whiteColor,

@@ -59,8 +59,8 @@ class CoachInfoScreen2 extends StatelessWidget {
                       ),
                       dropdownWidget(
                         title: yourLicence,
-                        itemList: yourrolList,
-                        hintvalue: gender,
+                        itemList: yourlicenceList,
+                        hintvalue: "Select",
                       ),
                       SizedBox(
                         height: 20.h,

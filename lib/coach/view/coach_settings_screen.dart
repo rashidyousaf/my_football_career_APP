@@ -35,11 +35,21 @@ class CoachSettingsScreen extends StatelessWidget {
             SizedBox(
               height: 21.h,
             ),
-            loginContainer(
-              backgroudColor: whiteColor,
-              borderColor: whiteColor,
+            Container(
+              decoration: BoxDecoration(
+                  color: whiteColor,
+                  borderRadius: BorderRadius.circular(21.r),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.grey.withOpacity(0.1),
+                      spreadRadius: 5,
+                      blurRadius: 7,
+                      offset: const Offset(0, 3), // changes position of shadow
+                    ),
+                  ]),
+              height: 435.h,
               child: Padding(
-                padding: EdgeInsets.all(8.h),
+                padding: const EdgeInsets.all(8.0),
                 child: ListView.separated(
                     shrinkWrap: true,
                     separatorBuilder: ((context, index) {

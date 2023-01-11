@@ -116,7 +116,7 @@ class _CoachProfileScreenState extends State<CoachProfileScreen>
                         Container(
                           color: whiteColor,
                           width: double.maxFinite,
-                          height: 120.h,
+                          height: 110.h,
                           child: GridView.count(
                             crossAxisCount: 3,
                             mainAxisSpacing: 1,
@@ -264,7 +264,7 @@ class _CoachProfileScreenState extends State<CoachProfileScreen>
                         SizedBox(
                           height: 15.h,
                         ),
-                        const Divider(
+                        Divider(
                           thickness: 1,
                           indent: 30,
                           endIndent: 30,

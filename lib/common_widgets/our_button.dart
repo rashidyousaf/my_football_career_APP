@@ -19,6 +19,8 @@ Widget ourButton({
           title!,
           style: TextStyle(
             color: textColor,
+            fontSize: 15.sp,
+            fontFamily: regular,
           ),
         )),
   );

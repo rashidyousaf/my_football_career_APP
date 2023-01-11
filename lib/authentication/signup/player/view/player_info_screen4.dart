@@ -56,19 +56,19 @@ class PlayerInfoScreen4 extends StatelessWidget {
                         titleColor: titlegreyColor,
                         bgColor: greyColor,
                         borderColor: greyColor,
-                        hintColor: greyColor,
+                        hintColor: hintgreyColor,
                       ),
                       SizedBox(
                         height: 16.h,
                       ),
                       customTextfield(
-                        title: yourSeccerwayURL,
-                        hint: yourSeccerwayURLHint,
+                        title: "Your Fupa Url",
+                        hint: "www.fupa.com/profile",
                         isPass: false,
                         titleColor: titlegreyColor,
                         bgColor: greyColor,
                         borderColor: greyColor,
-                        hintColor: greyColor,
+                        hintColor: hintgreyColor,
                       ),
                       SizedBox(
                         height: 16.h,
@@ -80,7 +80,7 @@ class PlayerInfoScreen4 extends StatelessWidget {
                         titleColor: titlegreyColor,
                         bgColor: greyColor,
                         borderColor: greyColor,
-                        hintColor: greyColor,
+                        hintColor: hintgreyColor,
                       ),
                       SizedBox(
                         height: 27.h,
@@ -92,7 +92,7 @@ class PlayerInfoScreen4 extends StatelessWidget {
                         titleColor: titlegreyColor,
                         bgColor: greyColor,
                         borderColor: greyColor,
-                        hintColor: greyColor,
+                        hintColor: hintgreyColor,
                       ),
                       customTextfield(
                         title: '',
@@ -101,7 +101,7 @@ class PlayerInfoScreen4 extends StatelessWidget {
                         titleColor: titlegreyColor,
                         bgColor: greyColor,
                         borderColor: greyColor,
-                        hintColor: greyColor,
+                        hintColor: hintgreyColor,
                       ),
                       customTextfield(
                         title: '',
@@ -110,7 +110,7 @@ class PlayerInfoScreen4 extends StatelessWidget {
                         titleColor: titlegreyColor,
                         bgColor: greyColor,
                         borderColor: greyColor,
-                        hintColor: greyColor,
+                        hintColor: hintgreyColor,
                       ),
                       SizedBox(
                         height: 20.h,

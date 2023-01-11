@@ -29,7 +29,7 @@ Widget contactWidget() {
       SizedBox(
         height: 15.h,
       ),
-      const Divider(
+      Divider(
         thickness: 1,
         indent: 30,
         endIndent: 30,

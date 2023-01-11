@@ -70,10 +70,14 @@ class CoachInfoScreen3 extends StatelessWidget {
                       SizedBox(
                         height: 19.h,
                       ),
-                      dropdownWidget(
+                      customTextfield(
                         title: transferCoasts,
-                        itemList: jerseynumberList,
-                        hintvalue: gender,
+                        hint: '',
+                        isPass: false,
+                        titleColor: titlegreyColor,
+                        bgColor: greyColor,
+                        borderColor: greyColor,
+                        hintColor: greyColor,
                       ),
                       SizedBox(
                         height: 20.h,

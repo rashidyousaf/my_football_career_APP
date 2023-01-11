@@ -40,19 +40,17 @@ Widget profileWidget({iconShare, child, imgProfile, imgFlag, String? name}) {
               ),
             ),
             SizedBox(
-              height: 15.h,
+              height: 10.h,
             ),
             SizedBox(
               width: 200.w,
               child: Center(
-                child: Flexible(
-                  child: Text(
-                    name!,
-                    style: TextStyle(
-                        fontSize: 21.sp,
-                        fontFamily: semibold,
-                        overflow: TextOverflow.ellipsis),
-                  ),
+                child: Text(
+                  name!,
+                  style: TextStyle(
+                      fontSize: 21.sp,
+                      fontFamily: semibold,
+                      overflow: TextOverflow.ellipsis),
                 ),
               ),
             ),

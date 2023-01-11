@@ -18,9 +18,11 @@ import 'package:my_football_career/club/view/create_offer_screens/ccreate_offer_
 import 'package:my_football_career/club/view/create_offer_screens/ccreate_offer_screen2.dart';
 import 'package:my_football_career/club/view/offer_detail_screen.dart';
 import 'package:my_football_career/coach/view/coach_home_screen.dart';
+import 'package:my_football_career/coach/view/coach_offer_detail_screen.dart';
 import 'package:my_football_career/consts/consts.dart';
 import 'package:my_football_career/home_screen/view/home_screen.dart';
 import 'package:my_football_career/player/view/player_home_screen.dart';
+import 'package:my_football_career/player/view/player_offer_detail_screen.dart';
 import 'package:my_football_career/player/view/player_profile_screen.dart';
 import 'agency/view/create_offer_screens/acreate_offer_screen1.dart';
 import 'agency/view/create_offer_screens/acreate_offer_screen2.dart';
@@ -53,6 +55,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return ScreenUtilInit(
         designSize: const Size(375, 812),
+        minTextAdapt: true,
+        splitScreenMode: true,
         builder: (context, child) {
           return GetMaterialApp(
             debugShowCheckedModeBanner: false,
@@ -106,6 +110,10 @@ class MyApp extends StatelessWidget {
               '/acreateofferscreen6': (context) => const AcreateOfferScreen6(),
               '/acreateofferscreen7': (context) => const AcreateOfferScreen7(),
               '/offerdetailscreen': (context) => const OfferDetailScreen(),
+              '/playerdetailofferscreen': (context) =>
+                  const PlayerDetailOfferScreen(),
+              '/coachdetailofferscreen': (context) =>
+                  const CoachDetailOfferScreen(),
             },
           );
         });
