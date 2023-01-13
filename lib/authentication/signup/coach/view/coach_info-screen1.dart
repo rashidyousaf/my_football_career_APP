@@ -1,3 +1,4 @@
+import 'package:country_picker/country_picker.dart';
 import 'package:fl_country_code_picker/fl_country_code_picker.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:my_football_career/common_widgets/bgwidget.dart';
@@ -16,7 +17,8 @@ class CoachInfoScreen1 extends StatefulWidget {
 }
 
 class _CoachInfoScreen1State extends State<CoachInfoScreen1> {
-  final countryPicker = const FlCountryCodePicker();
+  String countryFlag = "";
+  String? countryName;
   CountryCode? countryCode;
   @override
   Widget build(BuildContext context) {
@@ -106,52 +108,63 @@ class _CoachInfoScreen1State extends State<CoachInfoScreen1> {
                       SizedBox(
                         height: 6.h,
                       ),
-                      InkWell(
-                        onTap: () async {
-                          final code =
-                              await countryPicker.showPicker(context: context);
-                          setState(() {
-                            countryCode = code;
-                          });
-                        },
-                        child: Container(
-                          padding: EdgeInsets.symmetric(horizontal: 10.w),
-                          height: 45.h,
-                          width: double.maxFinite,
-                          decoration: BoxDecoration(
-                            color: greyColor,
-                            borderRadius: BorderRadius.circular(9.r),
-                          ),
-                          child: Row(
-                            children: [
-                              Container(
-                                child: countryCode != null
-                                    ? countryCode!.flagImage
-                                    : null,
-                              ),
-                              SizedBox(
-                                width: 5.w,
-                              ),
-                              SizedBox(
-                                width: 10.w,
-                              ),
-                              Text(
-                                countryCode?.name ?? "Select",
-                                style: TextStyle(
-                                    fontSize: 15.sp,
-                                    color: titlegreyColor,
-                                    fontFamily: regular),
-                              ),
-                              const Spacer(),
-                              Image.asset(
-                                icArrowN,
-                                width: 10.w,
-                                height: 5.h,
-                              )
-                            ],
-                          ),
-                        ),
-                      ),
+                      // countery picker
+                      GestureDetector(
+                          onTap: () {
+                            showCountryPicker(
+                                context: context,
+                                showPhoneCode: false,
+                                countryListTheme: CountryListThemeData(
+                                    textStyle: TextStyle(
+                                        fontSize: 16.sp,
+                                        color: const Color.fromARGB(
+                                            255, 132, 132, 132)),
+                                    bottomSheetHeight: 600.h,
+                                    borderRadius: BorderRadius.only(
+                                        topLeft: Radius.circular(10.r)),
+                                    inputDecoration: InputDecoration(
+                                      hintText: 'Start typing to search',
+                                      labelStyle: TextStyle(fontSize: 20.sp),
+                                      labelText: 'Search ',
+                                    )),
+                                favorite: ['US'],
+                                onSelect: (Country value) {
+                                  countryFlag = value.flagEmoji.toString();
+                                  countryName = value.name.toString();
+                                  setState(() {});
+                                });
+                          },
+                          child: Container(
+                            decoration: BoxDecoration(
+                              color: greyColor,
+                              borderRadius: BorderRadius.circular(10.r),
+                            ),
+                            padding: EdgeInsets.all(10.h),
+                            height: 45.h,
+                            child: Row(
+                              children: [
+                                Text(
+                                  countryFlag,
+                                  style: TextStyle(
+                                      color: titlegreyColor, fontSize: 20.sp),
+                                ),
+                                SizedBox(
+                                  width: 10.w,
+                                ),
+                                Text(
+                                  countryName ?? 'Select',
+                                  style: TextStyle(
+                                      fontSize: 15.sp, color: titlegreyColor),
+                                ),
+                                const Spacer(),
+                                Icon(
+                                  Icons.arrow_drop_down,
+                                  size: 25.sp,
+                                  color: greenColor,
+                                )
+                              ],
+                            ),
+                          )),
                       // this countries picker
                       SizedBox(
                         height: 19.h,

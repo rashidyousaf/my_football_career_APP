@@ -4,6 +4,7 @@ import 'package:my_football_career/consts/list.dart';
 
 import '../../common_widgets/bgwidget.dart';
 import '../../common_widgets/login_container.dart';
+import '../../common_widgets/setting_menu_widget.dart';
 import '../../consts/consts.dart';
 
 class ClubSettingsScreen extends StatelessWidget {
@@ -35,51 +36,35 @@ class ClubSettingsScreen extends StatelessWidget {
             SizedBox(
               height: 21.h,
             ),
-            Container(
-              decoration: BoxDecoration(
-                  color: whiteColor,
-                  borderRadius: BorderRadius.circular(21.r),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.grey.withOpacity(0.1),
-                      spreadRadius: 5,
-                      blurRadius: 7,
-                      offset: const Offset(0, 3), // changes position of shadow
-                    ),
-                  ]),
-              height: 435.h,
-              child: Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: ListView.separated(
-                    shrinkWrap: true,
-                    separatorBuilder: ((context, index) {
-                      return const Divider(
-                        indent: 15,
-                        endIndent: 15,
-                        color: titlegreyColor,
-                      );
-                    }),
-                    itemCount: settingsButtonsList.length,
-                    itemBuilder: (BuildContext context, int index) {
-                      return ListTile(
-                        leading: Image.asset(
-                          settingsIconsList[index],
-                          width: 21.w,
-                          height: 21.h,
-                        ),
-                        trailing: const Icon(
-                          Icons.arrow_forward_ios_outlined,
-                          color: greenColor,
-                        ),
-                        title: Text(
-                          settingsButtonsList[index],
-                          style:
-                              TextStyle(fontSize: 15.sp, fontFamily: regular),
-                        ),
-                      );
-                    }),
-              ),
-            ),
+            loginContainer(
+                backgroudColor: whiteColor,
+                borderColor: whiteColor,
+                child: Column(
+                  children: [
+                    settingmenuWidget(
+                        title: "About", imgPath: icSAbout, onTap: () {}),
+                    settingmenuWidget(
+                        title: "Privacy", imgPath: icSPrivacy, onTap: () {}),
+                    settingmenuWidget(
+                        title: "Languages", imgPath: icSLanguage, onTap: () {}),
+                    settingmenuWidget(
+                        title: "Notifications",
+                        imgPath: icSNotifications,
+                        onTap: () {}),
+                    settingmenuWidget(
+                        title: "Upgrade your profile",
+                        imgPath: icSUpgrade,
+                        onTap: () {}),
+                    settingmenuWidget(
+                        title: "Edit", imgPath: icSEdit, onTap: () {}),
+                    settingmenuWidget(
+                        title: "Logout",
+                        imgPath: icSLogout,
+                        onTap: () {},
+                        show: false,
+                        textColor: redColor),
+                  ],
+                ))
           ],
         ),
       ),

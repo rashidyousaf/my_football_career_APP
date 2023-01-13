@@ -17,6 +17,9 @@ class ClubProfileScreen extends StatelessWidget {
         icon: Icons.notifications,
         child: Column(
           children: [
+            SizedBox(
+              height: 10.h,
+            ),
             loginContainer(
               backgroudColor: whiteColor,
               borderColor: whiteColor,

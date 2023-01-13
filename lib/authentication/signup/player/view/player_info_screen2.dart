@@ -6,9 +6,16 @@ import 'package:my_football_career/common_widgets/our_button.dart';
 import 'package:my_football_career/consts/consts.dart';
 import 'package:my_football_career/consts/list.dart';
 
-class PlayerInfoScreen2 extends StatelessWidget {
+class PlayerInfoScreen2 extends StatefulWidget {
   const PlayerInfoScreen2({super.key});
 
+  @override
+  State<PlayerInfoScreen2> createState() => _PlayerInfoScreen2State();
+}
+
+class _PlayerInfoScreen2State extends State<PlayerInfoScreen2> {
+  List<String> _items1 = ['item1', 'item2', 'item3'];
+  List<String> _items2 = ['item4', 'item5', 'item6'];
   @override
   Widget build(BuildContext context) {
     return Scaffold(

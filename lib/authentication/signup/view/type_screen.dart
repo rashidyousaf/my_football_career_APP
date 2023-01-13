@@ -71,19 +71,23 @@ class TypeScreen extends StatelessWidget {
                   child: Row(
                     children: [
                       Container(
-                        margin: const EdgeInsets.only(
-                          top: 8,
-                          bottom: 8,
-                          left: 8,
+                        margin: EdgeInsets.only(
+                          top: 8.h,
+                          bottom: 8.h,
+                          left: 8.w,
                         ),
-                        padding: const EdgeInsets.all(8),
+                        padding: EdgeInsets.all(8.r),
                         height: 60.h,
                         width: 60.w,
                         decoration: BoxDecoration(
                           color: backgroudColor,
-                          borderRadius: BorderRadius.all(Radius.circular(9)),
+                          borderRadius: BorderRadius.all(Radius.circular(9.r)),
                         ),
-                        child: Image.asset(icPlayer),
+                        child: Image.asset(
+                          icPlayer,
+                          width: 42.w,
+                          height: 43.h,
+                        ),
                       ),
                       SizedBox(
                         width: 10.w,
@@ -133,19 +137,23 @@ class TypeScreen extends StatelessWidget {
                   child: Row(
                     children: [
                       Container(
-                        margin: const EdgeInsets.only(
-                          top: 8,
-                          bottom: 8,
-                          left: 8,
+                        margin: EdgeInsets.only(
+                          top: 8.h,
+                          bottom: 8.h,
+                          left: 8.w,
                         ),
-                        padding: const EdgeInsets.all(8),
+                        padding: EdgeInsets.all(8.r),
                         height: 60.h,
                         width: 60.w,
                         decoration: BoxDecoration(
                           color: backgroudColor,
-                          borderRadius: BorderRadius.all(Radius.circular(9)),
+                          borderRadius: BorderRadius.all(Radius.circular(9.r)),
                         ),
-                        child: Image.asset(icCoach),
+                        child: Image.asset(
+                          icCoach,
+                          width: 33.w,
+                          height: 35.h,
+                        ),
                       ),
                       SizedBox(
                         width: 10.w,
@@ -210,19 +218,23 @@ class TypeScreen extends StatelessWidget {
                   child: Row(
                     children: [
                       Container(
-                        margin: const EdgeInsets.only(
-                          top: 8,
-                          bottom: 8,
-                          left: 8,
+                        margin: EdgeInsets.only(
+                          top: 8.h,
+                          bottom: 8.h,
+                          left: 8.w,
                         ),
-                        padding: const EdgeInsets.all(8),
+                        padding: EdgeInsets.all(8.r),
                         height: 60.h,
                         width: 60.w,
                         decoration: BoxDecoration(
                           color: backgroudColor,
-                          borderRadius: BorderRadius.all(Radius.circular(9)),
+                          borderRadius: BorderRadius.all(Radius.circular(9.r)),
                         ),
-                        child: Image.asset(icClub),
+                        child: Image.asset(
+                          icClub,
+                          width: 35.w,
+                          height: 33.h,
+                        ),
                       ),
                       SizedBox(
                         width: 10.w,
@@ -272,17 +284,17 @@ class TypeScreen extends StatelessWidget {
                   child: Row(
                     children: [
                       Container(
-                        margin: const EdgeInsets.only(
-                          top: 8,
-                          bottom: 8,
-                          left: 8,
+                        margin: EdgeInsets.only(
+                          top: 8.h,
+                          bottom: 8.h,
+                          left: 8.w,
                         ),
-                        padding: const EdgeInsets.all(8),
+                        padding: EdgeInsets.all(8.r),
                         height: 60.h,
                         width: 60.w,
                         decoration: BoxDecoration(
                           color: backgroudColor,
-                          borderRadius: BorderRadius.all(Radius.circular(9)),
+                          borderRadius: BorderRadius.all(Radius.circular(9.r)),
                         ),
                         child: Image.asset(icAgen),
                       ),
@@ -322,7 +334,7 @@ class TypeScreen extends StatelessWidget {
                 ),
               ),
               SizedBox(
-                height: 23.h,
+                height: 15.h,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,

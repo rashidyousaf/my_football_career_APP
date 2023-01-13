@@ -86,7 +86,11 @@ const icSNotifications = "assets/icons/s_notifications.png";
 const icSPrivacy = "assets/icons/s_privacy.png";
 const icSUpgrade = "assets/icons/s_upgrade.png";
 const icShare = "assets/icons/s_share.png";
-
+const icPPRedpoint1 = "assets/icons/pp_redpoint1.png";
+const icPPRedpoint2 = "assets/icons/pp_redpoint2.png";
 //images
 const bgImg = "assets/images/bgimg.png";
 const testImg = "assets/images/testimgs.PNG";
+const sliderImg1 = "assets/images/sliderimg1.jpg";
+const sliderImg2 = "assets/images/sliderimg2.jpg";
+const sliderImg3 = "assets/images/sliderimg3.jpg";

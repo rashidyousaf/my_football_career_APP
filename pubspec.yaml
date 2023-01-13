@@ -43,6 +43,8 @@ dependencies:
   country_picker: ^2.0.19
   intl_phone_number_input: ^0.5.2+2
   fl_country_code_picker: ^0.0.4
+  carousel_slider: ^4.2.1
+  country_list_pick: ^1.0.1+6
 
 dev_dependencies:
   flutter_test:

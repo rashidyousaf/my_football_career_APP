@@ -7,7 +7,7 @@ Widget bgWidget(
     child: Container(
         width: double.infinity,
         height: double.infinity,
-        padding: EdgeInsets.only(top: 15.h, left: 30.w, right: 30.w),
+        padding: EdgeInsets.only(top: 30.h, left: 30.w, right: 30.w),
         color: const Color(0xffecf7f0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,

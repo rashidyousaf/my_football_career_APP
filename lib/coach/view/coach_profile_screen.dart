@@ -24,6 +24,9 @@ class _CoachProfileScreenState extends State<CoachProfileScreen>
         subtitle: '',
         icon: Icons.notifications,
         child: Column(children: [
+          SizedBox(
+            height: 10.h,
+          ),
           loginContainer(
               backgroudColor: whiteColor,
               borderColor: whiteColor,
@@ -38,16 +41,157 @@ class _CoachProfileScreenState extends State<CoachProfileScreen>
                         SizedBox(
                           height: 6.2.h,
                         ),
-                        profileWidget2(
-                          firstIcon: icCPBatch,
-                          secondIcond: icPPAge,
-                          thirdIcon: icPPLocation,
-                          fourthIcon: icCPBall,
-                          firstName: uefaPro,
-                          secondName: "49",
-                          thirdName: "Paris",
-                          fourthName: '-',
-                        ),
+                        // this section profile section below
+                        Column(children: [
+                          Row(
+                            children: [
+                              SizedBox(
+                                width: 10.w,
+                              ),
+                              // this section for shirt
+                              SizedBox(
+                                width: 130.w,
+                                height: 75.h,
+                                child: Column(children: [
+                                  Image.asset(
+                                    icCPBatch,
+                                    width: 30.w,
+                                    height: 30.h,
+                                  ),
+                                  SizedBox(
+                                    height: 1.h,
+                                  ),
+                                  Text(
+                                    uefaPro,
+                                    style: TextStyle(
+                                      fontSize: 15.sp,
+                                      fontFamily: semibold,
+                                    ),
+                                  ),
+                                ]),
+                              ),
+                              SizedBox(
+                                width: 10.w,
+                              ),
+                              Container(
+                                color: greyColor,
+                                height: 56.h,
+                                width: 1.w,
+                              ),
+                              SizedBox(
+                                width: 10.w,
+                              ),
+// this section for age
+                              SizedBox(
+                                width: 130.w,
+                                child: Column(children: [
+                                  Image.asset(
+                                    icPPAge,
+                                    width: 25.w,
+                                    height: 25.h,
+                                  ),
+                                  SizedBox(
+                                    height: 9.h,
+                                  ),
+                                  Text(
+                                    "49",
+                                    style: TextStyle(
+                                      fontSize: 17.sp,
+                                      fontFamily: semibold,
+                                    ),
+                                  ),
+                                ]),
+                              ),
+                            ],
+                          ),
+                          // this section for horizintal lines
+                          SizedBox(
+                            height: 5.h,
+                          ),
+                          Row(
+                            children: [
+                              SizedBox(
+                                width: 15.w,
+                              ),
+                              Container(
+                                color: greyColor,
+                                width: 118.w,
+                                height: 1.h,
+                              ),
+                              SizedBox(
+                                width: 30.w,
+                              ),
+                              Container(
+                                color: greyColor,
+                                width: 118.w,
+                                height: 1.h,
+                              ),
+                            ],
+                          ),
+                          SizedBox(
+                            height: 13.h,
+                          ),
+                          Row(
+                            children: [
+                              SizedBox(
+                                width: 10.w,
+                              ),
+                              // this section for for location
+                              SizedBox(
+                                width: 130.w,
+                                child: Column(children: [
+                                  Image.asset(
+                                    icPPLocation,
+                                    width: 20.w,
+                                    height: 22.h,
+                                  ),
+                                  SizedBox(
+                                    height: 9.h,
+                                  ),
+                                  Text(
+                                    paris,
+                                    style: TextStyle(
+                                      fontSize: 17.sp,
+                                      fontFamily: semibold,
+                                    ),
+                                  ),
+                                ]),
+                              ),
+                              SizedBox(
+                                width: 10.w,
+                              ),
+                              Container(
+                                color: greyColor,
+                                height: 56.h,
+                                width: 1.w,
+                              ),
+                              SizedBox(
+                                width: 10.w,
+                              ),
+                              // this section for last
+                              SizedBox(
+                                width: 130.w,
+                                child: Column(children: [
+                                  Image.asset(
+                                    icCPBall,
+                                    width: 25.w,
+                                    height: 25.h,
+                                  ),
+                                  SizedBox(
+                                    height: 9.h,
+                                  ),
+                                  Text(
+                                    "-",
+                                    style: TextStyle(
+                                      fontSize: 17.sp,
+                                      fontFamily: semibold,
+                                    ),
+                                  ),
+                                ]),
+                              ),
+                            ],
+                          ),
+                        ]),
                       ],
                     )),
                 SizedBox(
@@ -97,7 +241,7 @@ class _CoachProfileScreenState extends State<CoachProfileScreen>
           ),
           SizedBox(
             width: double.maxFinite,
-            height: 218.h,
+            height: 200.h,
             child: TabBarView(controller: tabController, children: [
               // player data container
 
@@ -184,7 +328,7 @@ class _CoachProfileScreenState extends State<CoachProfileScreen>
                                     ),
                                     Image.asset(
                                       icPPTransfer,
-                                      width: 70.w,
+                                      width: 60.w,
                                       height: 35.h,
                                     )
                                   ],
@@ -200,7 +344,7 @@ class _CoachProfileScreenState extends State<CoachProfileScreen>
                                     ),
                                     Image.asset(
                                       icPPPdf,
-                                      width: 31.w,
+                                      width: 45.w,
                                       height: 39.h,
                                     )
                                   ],
@@ -216,7 +360,7 @@ class _CoachProfileScreenState extends State<CoachProfileScreen>
                                     ),
                                     Image.asset(
                                       icCPGallery,
-                                      width: 45.w,
+                                      width: 35.w,
                                       height: 41.h,
                                     )
                                   ],

@@ -1,3 +1,4 @@
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:my_football_career/common_widgets/bgwidget.dart';
 import 'package:my_football_career/common_widgets/login_container.dart';
@@ -102,266 +103,104 @@ class _PlayerProfileScreenState extends State<PlayerProfileScreen>
           ),
           SizedBox(
             width: double.maxFinite,
-            height: 230.h,
+            height: 220.h,
             child: TabBarView(controller: tabController, children: [
               // player data container
               playerdataWidget(),
               // statics container
               Column(
                 children: [
-                  Container(
-                    width: double.maxFinite,
-                    decoration: BoxDecoration(
-                      color: whiteColor,
-                      border: Border.all(color: whiteColor),
-                      borderRadius: BorderRadius.circular(21.r),
-                    ),
-                    child: Column(
-                      children: [
-                        SizedBox(
-                          height: 11.h,
-                        ),
-                        Row(
-                          children: [
-                            SizedBox(
-                              width: 100.w,
+                  ListView(
+                    shrinkWrap: true,
+                    children: [
+                      CarouselSlider(
+                        items: [
+                          Container(
+                            width: double.maxFinite,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(40.r),
                             ),
-                            Text(
-                              actualSeason,
-                              style:
-                                  TextStyle(fontSize: 14.sp, fontFamily: bold),
+                            child: Image.asset(
+                              sliderImg1,
+                              fit: BoxFit.fill,
                             ),
-                            const Spacer(),
-                            const Icon(
-                              Icons.border_color,
-                              color: greenColor,
-                              size: 25,
-                            ),
-                            SizedBox(
-                              width: 15.w,
-                            ),
-                          ],
-                        ),
-                        // SizedBox(
-                        //   height: 10.h,
-                        // ),
-                        // gridview container
-                        Container(
-                          color: greyColor,
-                          width: double.maxFinite,
-                          height: 90.h,
-                          child: GridView.count(
-                            crossAxisCount: 5,
-                            mainAxisSpacing: 1,
-                            crossAxisSpacing: 1,
-                            shrinkWrap: true,
-                            physics: const NeverScrollableScrollPhysics(),
-
-                            // first row of gridview
-                            children: [
-                              Container(
-                                color: whiteColor,
-                                child: Column(
-                                  children: [
-                                    SizedBox(
-                                      height: 15.h,
-                                    ),
-                                    Image.asset(
-                                      icPPGround,
-                                      width: 31.w,
-                                      height: 20.h,
-                                    ),
-                                    SizedBox(
-                                      height: 2.h,
-                                    ),
-                                    Text(
-                                      appearance,
-                                      style: TextStyle(
-                                          fontSize: 9.sp, fontFamily: regular),
-                                    )
-                                  ],
-                                ),
-                              ),
-                              Container(
-                                color: whiteColor,
-                                child: Column(
-                                  children: [
-                                    SizedBox(
-                                      height: 15.h,
-                                    ),
-                                    Image.asset(
-                                      icPPBall,
-                                      width: 31.w,
-                                      height: 20.h,
-                                    ),
-                                    SizedBox(
-                                      height: 5.h,
-                                    ),
-                                    Text(
-                                      goals,
-                                      style: TextStyle(
-                                          fontSize: 10.sp, fontFamily: regular),
-                                    )
-                                  ],
-                                ),
-                              ),
-                              Container(
-                                color: whiteColor,
-                                child: Column(
-                                  children: [
-                                    SizedBox(
-                                      height: 15.h,
-                                    ),
-                                    Image.asset(
-                                      icPPShoes,
-                                      width: 31.w,
-                                      height: 20.h,
-                                    ),
-                                    SizedBox(
-                                      height: 5.h,
-                                    ),
-                                    Text(
-                                      assists,
-                                      style: TextStyle(
-                                          fontSize: 10.sp, fontFamily: regular),
-                                    )
-                                  ],
-                                ),
-                              ),
-                              Container(
-                                color: whiteColor,
-                                child: Column(
-                                  children: [
-                                    SizedBox(
-                                      height: 15.h,
-                                    ),
-                                    Image.asset(
-                                      icPPYCard,
-                                      width: 31.w,
-                                      height: 20.h,
-                                    ),
-                                    SizedBox(
-                                      height: 5.h,
-                                    ),
-                                    Text(
-                                      yCard,
-                                      style: TextStyle(
-                                          fontSize: 10.sp, fontFamily: regular),
-                                    )
-                                  ],
-                                ),
-                              ),
-                              Container(
-                                color: whiteColor,
-                                child: Column(
-                                  children: [
-                                    SizedBox(
-                                      height: 15.h,
-                                    ),
-                                    Image.asset(
-                                      icPPRCard,
-                                      width: 31.w,
-                                      height: 20.h,
-                                    ),
-                                    SizedBox(
-                                      height: 5.h,
-                                    ),
-                                    Text(
-                                      rCard,
-                                      style: TextStyle(
-                                          fontSize: 10.sp, fontFamily: regular),
-                                    )
-                                  ],
-                                ),
-                              ),
-                              // second row of gridview
-                              Container(
-                                color: whiteColor,
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.center,
-                                  children: [
-                                    SizedBox(
-                                      height: 10.h,
-                                    ),
-                                    Text(
-                                      "19",
-                                      style: TextStyle(
-                                          fontSize: 12.sp, fontFamily: regular),
-                                    )
-                                  ],
-                                ),
-                              ),
-                              Container(
-                                color: whiteColor,
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.center,
-                                  children: [
-                                    SizedBox(
-                                      height: 10.h,
-                                    ),
-                                    Text(
-                                      "10",
-                                      style: TextStyle(
-                                          fontSize: 12.sp, fontFamily: regular),
-                                    )
-                                  ],
-                                ),
-                              ),
-                              Container(
-                                color: whiteColor,
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.center,
-                                  children: [
-                                    SizedBox(
-                                      height: 10.h,
-                                    ),
-                                    Text(
-                                      "7",
-                                      style: TextStyle(
-                                          fontSize: 12.sp, fontFamily: regular),
-                                    )
-                                  ],
-                                ),
-                              ),
-                              Container(
-                                color: whiteColor,
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.center,
-                                  children: [
-                                    SizedBox(
-                                      height: 10.h,
-                                    ),
-                                    Text(
-                                      "1",
-                                      style: TextStyle(
-                                          fontSize: 12.sp, fontFamily: regular),
-                                    )
-                                  ],
-                                ),
-                              ),
-                              Container(
-                                color: whiteColor,
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.center,
-                                  children: [
-                                    SizedBox(
-                                      height: 10.h,
-                                    ),
-                                    Text(
-                                      "-",
-                                      style: TextStyle(
-                                          fontSize: 12.sp, fontFamily: regular),
-                                    )
-                                  ],
-                                ),
-                              )
-                            ],
                           ),
+                          Container(
+                            width: double.maxFinite,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(8.r),
+                            ),
+                            child: Image.asset(
+                              sliderImg3,
+                              fit: BoxFit.fill,
+                            ),
+                          ),
+                          Container(
+                            width: double.maxFinite,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(8.r),
+                            ),
+                            child: Image.asset(
+                              sliderImg2,
+                              fit: BoxFit.fill,
+                            ),
+                          ),
+                        ],
+                        options: CarouselOptions(
+                          height: 125.h,
+                          enlargeCenterPage: true,
+                          autoPlay: true,
+                          aspectRatio: 16 / 9,
+                          autoPlayCurve: Curves.fastOutSlowIn,
+                          enableInfiniteScroll: true,
+                          autoPlayAnimationDuration:
+                              const Duration(milliseconds: 800),
+                          viewportFraction: 0.8,
                         ),
-                        SizedBox(height: 10.h)
-                      ],
-                    ),
-                  ),
+                      )
+                    ],
+                  )
+
+                  //  Column(
+                  //   children: [
+                  //     SizedBox(
+                  //       height: 11.h,
+                  //     ),
+                  //     Row(
+                  //       children: [
+                  //         SizedBox(
+                  //           width: 100.w,
+                  //         ),
+                  //         Text(
+                  //           actualSeason,
+                  //           style:
+                  //               TextStyle(fontSize: 14.sp, fontFamily: bold),
+                  //         ),
+                  //         const Spacer(),
+                  //         const Icon(
+                  //           Icons.border_color,
+                  //           color: greenColor,
+                  //           size: 25,
+                  //         ),
+                  //         SizedBox(
+                  //           width: 15.w,
+                  //         ),
+                  //       ],
+                  //     ),
+                  //     // SizedBox(
+                  //     //   height: 10.h,
+                  //     // ),
+                  //     // gridview container
+                  //     Container(
+                  //       color: greyColor,
+                  //       width: double.maxFinite,
+                  //       height: 90.h,
+                  //       child: GridView.count(
+                  //         crossAxisCount: 5,
+                  //         mainAxisSpacing: 1,
+                  //         crossAxisSpacing: 1,
+                  //         shrinkWrap: true,
+                  //         physics: const NeverScrollableScrollPhysics(),
 
                   // Container(
 
@@ -417,6 +256,9 @@ class _PlayerProfileScreenState extends State<PlayerProfileScreen>
                   //     ],
                   //   ),
                   // )
+
+                  ,
+                  SizedBox(height: 10.h),
                   Container(
                     color: whiteColor,
                     width: double.maxFinite,
@@ -548,12 +390,12 @@ class _PlayerProfileScreenState extends State<PlayerProfileScreen>
                             crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
                               SizedBox(
-                                height: 10.h,
+                                height: 5.h,
                               ),
                               Image.asset(
                                 icPPPdf,
-                                width: 24.w,
-                                height: 30.h,
+                                width: 28.w,
+                                height: 32.h,
                               )
                             ],
                           ),

@@ -45,26 +45,58 @@ class _LoginScreenState extends State<LoginScreen> {
                         SizedBox(
                           height: 42.h,
                         ),
-                        customTextfield(
-                            title: '',
-                            hint: email,
-                            isPass: false,
-                            titleColor: whiteColor,
-                            bgColor: whiteColor,
-                            hintColor: greenColor,
-                            borderColor: greenColor),
-                        SizedBox(
-                          height: 12.h,
+                        Container(
+                          padding: EdgeInsets.only(left: 10.w, right: 10.w),
+                          height: 45.h,
+                          decoration: BoxDecoration(
+                            color: whiteColor,
+                            border: Border.all(color: greenColor, width: 1.5.w),
+                            borderRadius: BorderRadius.circular(10.r),
+                          ),
+                          child: TextField(
+                            style: TextStyle(
+                                fontSize: 14.sp, color: titlegreyColor),
+                            cursorColor: greenColor,
+                            decoration: InputDecoration(
+                                border: InputBorder.none,
+                                hintText: email,
+                                hintStyle: TextStyle(
+                                  fontFamily: regular,
+                                  fontSize: 14.sp,
+                                  color: greenColor,
+                                )),
+                          ),
                         ),
-                        customTextfield(
-                          title: '',
-                          hintColor: greenColor,
-                          hint: password,
-                          isPass: true,
-                          titleColor: whiteColor,
-                          bgColor: whiteColor,
-                          borderColor: greenColor,
-                          icon: Icons.visibility_outlined,
+                        SizedBox(
+                          height: 30.h,
+                        ),
+                        Container(
+                          padding: EdgeInsets.only(left: 10.w, right: 10.w),
+                          height: 45.h,
+                          decoration: BoxDecoration(
+                            color: whiteColor,
+                            border: Border.all(color: greenColor, width: 1.5.w),
+                            borderRadius: BorderRadius.circular(10.r),
+                          ),
+                          child: TextField(
+                            obscureText: true,
+                            style: TextStyle(
+                                fontSize: 14.sp, color: titlegreyColor),
+                            cursorColor: greenColor,
+                            decoration: InputDecoration(
+                                suffixIcon: Icon(
+                                  Icons.visibility_outlined,
+                                  color: greenColor,
+                                  size: 25.sp,
+                                ),
+                                border: InputBorder.none,
+                                hintText: password,
+                                hintStyle: TextStyle(
+                                  fontFamily: regular,
+                                  fontSize: 14.sp,
+                                  color: greenColor,
+                                )),
+                          ),
                         ),
                         SizedBox(
                           height: 14.h,
@@ -172,7 +204,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 title: connectWithGoogle,
                 onPress: () {}),
             SizedBox(
-              height: 11.h,
+              height: 25.h,
             ),
             Row(mainAxisAlignment: MainAxisAlignment.center, children: [
               SizedBox(

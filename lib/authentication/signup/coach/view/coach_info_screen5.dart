@@ -81,12 +81,15 @@ class _CoachInfoScreen5State extends State<CoachInfoScreen5> {
                       SizedBox(
                         height: 6.h,
                       ),
+
                       SizedBox(
                         height: 45.h,
                         child: TextFormField(
+                          textAlignVertical: TextAlignVertical.top,
                           keyboardType: TextInputType.number,
                           textInputAction: TextInputAction.none,
                           maxLines: 1,
+                          cursorColor: greenColor,
                           decoration: InputDecoration(
                               fillColor: greyColor,
                               filled: true,
@@ -120,21 +123,25 @@ class _CoachInfoScreen5State extends State<CoachInfoScreen5> {
                                             countryCode = code;
                                           });
                                         },
-                                        child: Row(
-                                          children: [
-                                            Image.asset(
-                                              icArrowN,
-                                              width: 10.w,
-                                              height: 5.h,
-                                            ),
-                                            SizedBox(
-                                              width: 4.w,
-                                            ),
-                                            Text(
-                                              countryCode?.dialCode ?? "+1",
-                                              style: TextStyle(fontSize: 12.sp),
-                                            ),
-                                          ],
+                                        child: Padding(
+                                          padding: EdgeInsets.only(top: 3.w),
+                                          child: Row(
+                                            children: [
+                                              Image.asset(
+                                                icArrowN,
+                                                width: 10.w,
+                                                height: 10.h,
+                                              ),
+                                              SizedBox(
+                                                width: 3.w,
+                                              ),
+                                              Text(
+                                                countryCode?.dialCode ?? "+352",
+                                                style:
+                                                    TextStyle(fontSize: 14.sp),
+                                              ),
+                                            ],
+                                          ),
                                         ),
                                       )
                                     ]),

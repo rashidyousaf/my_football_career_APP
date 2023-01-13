@@ -23,6 +23,7 @@ Widget customTextfield(
       SizedBox(
         height: 45.h,
         child: TextFormField(
+          cursorColor: greenColor,
           obscureText: isPass,
           controller: controller,
           decoration: InputDecoration(

@@ -57,12 +57,11 @@ Widget profileWidget({iconShare, child, imgProfile, imgFlag, String? name}) {
           ]),
 
           SizedBox(
-            height: 31.h,
+            height: 35.h,
             width: 52.w,
             child: Image.asset(
               imgFlag,
-              width: 52.w,
-              height: 32.h,
+              fit: BoxFit.fill,
             ),
           ),
         ],

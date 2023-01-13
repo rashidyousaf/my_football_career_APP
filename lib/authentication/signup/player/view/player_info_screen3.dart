@@ -1,5 +1,7 @@
+import 'package:dropdown_button2/dropdown_button2.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:my_football_career/common_widgets/bgwidget.dart';
+import 'package:my_football_career/common_widgets/country_code_widget.dart';
 import 'package:my_football_career/common_widgets/custom_textfield.dart';
 import 'package:my_football_career/common_widgets/dropdown_widget.dart';
 import 'package:my_football_career/common_widgets/login_container.dart';
@@ -48,13 +50,63 @@ class PlayerInfoScreen3 extends StatelessWidget {
                 borderColor: whiteColor,
                 backgroudColor: whiteColor,
                 child: Container(
-                  padding: const EdgeInsets.all(19),
+                  padding: EdgeInsets.all(19.h),
                   child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      dropdownWidget(
-                          title: actualClub,
-                          itemList: actualclubList,
-                          hintvalue: 'Select'),
+                      Text(
+                        actualClub,
+                        style: TextStyle(
+                            color: titlegreyColor,
+                            fontSize: 14.sp,
+                            fontFamily: regular),
+                      ),
+                      SizedBox(
+                        height: 6.h,
+                      ),
+                      Container(
+                          width: double.maxFinite,
+                          padding: EdgeInsets.all(10.h),
+                          height: 45.h,
+                          decoration: BoxDecoration(
+                              color: greyColor,
+                              borderRadius: BorderRadius.circular(9.r)),
+                          child: DropdownButtonFormField2<String>(
+                              decoration: InputDecoration(
+                                hintText: 'Select',
+                                hintStyle: TextStyle(
+                                    fontSize: 15.sp, fontFamily: regular),
+                                isDense: true,
+                                contentPadding: EdgeInsets.zero,
+                                enabledBorder: OutlineInputBorder(
+                                    borderSide: BorderSide(color: greyColor)),
+                              ),
+                              buttonHeight: 45.h,
+                              icon: Icon(
+                                Icons.arrow_drop_down,
+                                size: 25.sp,
+                                color: greenColor,
+                              ),
+                              items:
+                                  actualClubList.asMap().entries.map((entry) {
+                                int index = entry.key;
+                                String item = entry.value;
+                                return DropdownMenuItem<String>(
+                                  value: item,
+                                  child: Row(
+                                    children: <Widget>[
+                                      // Image.asset(
+                                      //   settingsIconsList[index],
+                                      //   width: 20.w,
+                                      //   height: 20.w,
+                                      // ),
+                                      SizedBox(width: 8.0.w),
+                                      Text(item),
+                                    ],
+                                  ),
+                                );
+                              }).toList(),
+                              onChanged: (newValue) {})),
                       SizedBox(
                         height: 15.h,
                       ),

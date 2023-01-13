@@ -22,25 +22,29 @@ class PlayerHomeScreen extends StatelessWidget {
       BottomNavigationBarItem(
           icon: Image.asset(
             icPPProfile,
-            width: 26.w,
+            width: 21.w,
+            height: 21.h,
           ),
           label: profile),
       BottomNavigationBarItem(
           icon: Image.asset(
             icPPOffer,
-            width: 26.w,
+            width: 20.w,
+            height: 20.h,
           ),
           label: offers),
       BottomNavigationBarItem(
           icon: Image.asset(
             icPPMessages,
-            width: 26.w,
+            width: 21.w,
+            height: 15.h,
           ),
           label: messages),
       BottomNavigationBarItem(
           icon: Image.asset(
             icPPSettings,
-            width: 26.w,
+            width: 20.w,
+            height: 21.h,
           ),
           label: settings),
     ];
