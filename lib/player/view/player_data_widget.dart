@@ -50,7 +50,7 @@ Widget playerdataWidget() {
           ],
         ),
         SizedBox(
-          width: 11.w,
+          width: 5.w,
         ),
         Column(
           children: [
@@ -108,7 +108,7 @@ Widget playerdataWidget() {
             Row(
               children: [
                 SizedBox(
-                  width: 20.w,
+                  width: 15.w,
                 ),
                 Text(
                   "70",
@@ -122,7 +122,7 @@ Widget playerdataWidget() {
                   style: TextStyle(fontSize: 14.sp, fontFamily: regular),
                 ),
                 SizedBox(
-                  width: 25.w,
+                  width: 30.w,
                 ),
                 Text(
                   left,

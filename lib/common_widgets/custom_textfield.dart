@@ -15,17 +15,20 @@ Widget customTextfield(
     crossAxisAlignment: CrossAxisAlignment.start,
     children: [
       Text(title!,
-          style:
-              TextStyle(fontFamily: bold, fontSize: 12.sp, color: titleColor)),
+          style: TextStyle(
+              fontFamily: regular, fontSize: 14.sp, color: titleColor)),
       SizedBox(
         height: 5.h,
       ),
       SizedBox(
         height: 45.h,
         child: TextFormField(
+          style: TextStyle(
+              color: blackTitle, fontSize: 15.sp, fontFamily: regular),
           cursorColor: greenColor,
           obscureText: isPass,
           controller: controller,
+          autocorrect: false,
           decoration: InputDecoration(
             suffixIcon: Icon(
               icon,
@@ -45,7 +48,7 @@ Widget customTextfield(
               ),
             ),
             hintStyle: TextStyle(
-                fontFamily: regular, fontSize: 15.sp, color: hintColor),
+                fontWeight: FontWeight.w400, fontSize: 15.sp, color: hintColor),
             hintText: hint,
             isDense: true,
             fillColor: bgColor,

@@ -24,7 +24,6 @@ class _PlayerInfoScreen1State extends State<PlayerInfoScreen1> {
   Widget build(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomInset: false,
-      backgroundColor: backgroudColor,
       body: bgWidget(
         context: context,
         title: personalInfo,
@@ -33,19 +32,33 @@ class _PlayerInfoScreen1State extends State<PlayerInfoScreen1> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             SizedBox(
-              height: 26.h,
+              height: 10.h,
             ),
-            Text(
-              "1/5",
-              style: TextStyle(
-                fontSize: 15.sp,
-                fontFamily: bold,
+            RichText(
+              text: TextSpan(
+                text: '1',
+                style: TextStyle(
+                    fontSize: 15.sp,
+                    color: greenColor,
+                    fontFamily: regular,
+                    fontWeight: FontWeight.w600),
+                children: <TextSpan>[
+                  TextSpan(
+                      text: '/5',
+                      style: TextStyle(
+                          fontSize: 15.sp,
+                          fontFamily: semibold,
+                          fontWeight: FontWeight.w700,
+                          color: blackTitle)),
+                ],
               ),
             ),
             SizedBox(
               height: 10.h,
             ),
             SizedBox(
+              width: 315.w,
+              height: 7.h,
               child: Image.asset(
                 icProgress1,
                 fit: BoxFit.fill,
@@ -58,7 +71,7 @@ class _PlayerInfoScreen1State extends State<PlayerInfoScreen1> {
                 borderColor: whiteColor,
                 backgroudColor: whiteColor,
                 child: Container(
-                  padding: const EdgeInsets.all(19),
+                  padding: EdgeInsets.all(19.r),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -128,7 +141,7 @@ class _PlayerInfoScreen1State extends State<PlayerInfoScreen1> {
                                       labelStyle: TextStyle(fontSize: 20.sp),
                                       labelText: 'Search ',
                                     )),
-                                favorite: ['US'],
+                                favorite: ['LU'],
                                 onSelect: (Country value) {
                                   countryFlag = value.flagEmoji.toString();
                                   countryName = value.name.toString();

@@ -8,12 +8,16 @@ Widget ourButton({
   onPress,
 }) {
   return SizedBox(
-    width: 255.w,
+    width: double.maxFinite,
     height: 45.h,
     child: ElevatedButton(
-        style: ElevatedButton.styleFrom(
-          backgroundColor: color,
-        ),
+        style: ButtonStyle(
+            shadowColor: MaterialStateProperty.all(greenshadowColor),
+            backgroundColor: MaterialStateProperty.all<Color>(color),
+            shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10.r),
+                    side: BorderSide(color: color)))),
         onPressed: onPress,
         child: Text(
           title!,

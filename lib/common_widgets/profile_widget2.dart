@@ -21,20 +21,13 @@ Widget profileWidget2(
           width: 130.w,
           height: 75.h,
           child: Column(children: [
+            SizedBox(
+              height: 10.h,
+            ),
             Image.asset(
               firstIcon,
               width: 44.w,
               height: 45.h,
-            ),
-            SizedBox(
-              height: 1.h,
-            ),
-            Text(
-              firstName!,
-              style: TextStyle(
-                fontSize: 17.sp,
-                fontFamily: semibold,
-              ),
             ),
           ]),
         ),

@@ -1,7 +1,6 @@
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:my_football_career/common_widgets/applogo_widget.dart';
 import 'package:my_football_career/common_widgets/bglogin/bg_login.dart';
-import 'package:my_football_career/common_widgets/custom_textfield.dart';
 import 'package:my_football_career/common_widgets/google_button.dart';
 import 'package:my_football_career/common_widgets/login_container.dart';
 import 'package:my_football_career/common_widgets/our_button.dart';
@@ -104,14 +103,20 @@ class _LoginScreenState extends State<LoginScreen> {
                         Row(
                           children: [
                             SizedBox(
+                              width: 6.w,
+                            ),
+                            SizedBox(
                               width: 12.w,
                               height: 12.h,
                               child: Checkbox(
+                                  shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(3.r)),
+                                  splashRadius: 10.r,
                                   checkColor: greenColor,
                                   activeColor: whiteColor,
                                   value: isCheck,
-                                  side: BorderSide(
-                                      color: whiteColor, width: 1.2.w),
+                                  side:
+                                      BorderSide(color: whiteColor, width: 2.w),
                                   onChanged: (bool? newValue) {
                                     setState(() {
                                       isCheck = newValue;
@@ -125,22 +130,19 @@ class _LoginScreenState extends State<LoginScreen> {
                               rememberMe,
                               style: TextStyle(
                                 fontSize: 10.sp,
-                                fontFamily: regular,
                                 color: whiteColor,
+                                fontFamily: bold,
                               ),
                             ),
                             const Spacer(),
                             Text(
                               forgetPass,
                               style: TextStyle(
-                                fontSize: 10.sp,
-                                fontFamily: regular,
-                                color: whiteColor,
-                              ),
+                                  fontSize: 10.sp,
+                                  fontFamily: bold,
+                                  color: whiteColor,
+                                  fontStyle: FontStyle.italic),
                             ),
-                            SizedBox(
-                              width: 15.w,
-                            )
                           ],
                         ),
                         SizedBox(
@@ -171,8 +173,8 @@ class _LoginScreenState extends State<LoginScreen> {
               children: [
                 SizedBox(
                   width: 139.w,
-                  child: const Divider(
-                    color: greenColor,
+                  child: Divider(
+                    color: whiteColor.withOpacity(0.6),
                     thickness: 2,
                   ),
                 ),
@@ -188,8 +190,8 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
                 SizedBox(
                   width: 139.w,
-                  child: const Divider(
-                    color: greenColor,
+                  child: Divider(
+                    color: whiteColor.withOpacity(0.6),
                     thickness: 2,
                   ),
                 ),

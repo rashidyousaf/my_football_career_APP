@@ -11,9 +11,12 @@ Widget googleButton({
     width: 315.w,
     height: 40.h,
     child: ElevatedButton(
-        style: ElevatedButton.styleFrom(
-          backgroundColor: color,
-        ),
+        style: ButtonStyle(
+            backgroundColor: MaterialStateProperty.all<Color>(color),
+            shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10.r),
+                    side: BorderSide(color: color)))),
         onPressed: onPress,
         child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [
           Image.asset(

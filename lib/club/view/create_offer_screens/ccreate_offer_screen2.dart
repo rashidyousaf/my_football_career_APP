@@ -22,13 +22,25 @@ class CcreateOfferScreen2 extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             SizedBox(
-              height: 26.h,
+              height: 10.h,
             ),
-            Text(
-              "2/6",
-              style: TextStyle(
-                fontSize: 15.sp,
-                fontFamily: bold,
+            RichText(
+              text: TextSpan(
+                text: '2',
+                style: TextStyle(
+                    fontSize: 15.sp,
+                    color: greenColor,
+                    fontFamily: regular,
+                    fontWeight: FontWeight.w600),
+                children: <TextSpan>[
+                  TextSpan(
+                      text: '/6',
+                      style: TextStyle(
+                          fontSize: 15.sp,
+                          fontFamily: semibold,
+                          fontWeight: FontWeight.w700,
+                          color: blackTitle)),
+                ],
               ),
             ),
             SizedBox(

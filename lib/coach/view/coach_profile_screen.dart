@@ -1,3 +1,4 @@
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:my_football_career/common_widgets/bgwidget.dart';
 import 'package:my_football_career/common_widgets/login_container.dart';
@@ -51,7 +52,7 @@ class _CoachProfileScreenState extends State<CoachProfileScreen>
                               // this section for shirt
                               SizedBox(
                                 width: 130.w,
-                                height: 75.h,
+                                height: 60.h,
                                 child: Column(children: [
                                   Image.asset(
                                     icCPBatch,
@@ -65,7 +66,8 @@ class _CoachProfileScreenState extends State<CoachProfileScreen>
                                     uefaPro,
                                     style: TextStyle(
                                       fontSize: 15.sp,
-                                      fontFamily: semibold,
+                                      fontFamily: regular,
+                                      color: blackTitle,
                                     ),
                                   ),
                                 ]),
@@ -97,7 +99,7 @@ class _CoachProfileScreenState extends State<CoachProfileScreen>
                                     "49",
                                     style: TextStyle(
                                       fontSize: 17.sp,
-                                      fontFamily: semibold,
+                                      color: blackTitle,
                                     ),
                                   ),
                                 ]),
@@ -152,7 +154,8 @@ class _CoachProfileScreenState extends State<CoachProfileScreen>
                                     paris,
                                     style: TextStyle(
                                       fontSize: 17.sp,
-                                      fontFamily: semibold,
+                                      fontFamily: regular,
+                                      color: blackTitle,
                                     ),
                                   ),
                                 ]),
@@ -185,6 +188,7 @@ class _CoachProfileScreenState extends State<CoachProfileScreen>
                                     style: TextStyle(
                                       fontSize: 17.sp,
                                       fontFamily: semibold,
+                                      color: blackTitle,
                                     ),
                                   ),
                                 ]),
@@ -241,13 +245,63 @@ class _CoachProfileScreenState extends State<CoachProfileScreen>
           ),
           SizedBox(
             width: double.maxFinite,
-            height: 200.h,
+            height: 250.h,
             child: TabBarView(controller: tabController, children: [
               // player data container
 
               // statics container
               Column(
                 children: [
+                  ListView(
+                    shrinkWrap: true,
+                    children: [
+                      CarouselSlider(
+                        items: [
+                          Container(
+                            width: double.maxFinite,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(40.r),
+                            ),
+                            child: Image.asset(
+                              sliderImg1,
+                              fit: BoxFit.fill,
+                            ),
+                          ),
+                          Container(
+                            width: double.maxFinite,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(8.r),
+                            ),
+                            child: Image.asset(
+                              sliderImg3,
+                              fit: BoxFit.fill,
+                            ),
+                          ),
+                          Container(
+                            width: double.maxFinite,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(8.r),
+                            ),
+                            child: Image.asset(
+                              sliderImg2,
+                              fit: BoxFit.fill,
+                            ),
+                          ),
+                        ],
+                        options: CarouselOptions(
+                          height: 125.h,
+                          enlargeCenterPage: true,
+                          autoPlay: true,
+                          aspectRatio: 16 / 9,
+                          autoPlayCurve: Curves.fastOutSlowIn,
+                          enableInfiniteScroll: true,
+                          autoPlayAnimationDuration:
+                              const Duration(milliseconds: 800),
+                          viewportFraction: 0.8,
+                        ),
+                      )
+                    ],
+                  ),
                   SizedBox(
                     width: double.maxFinite,
                     child: Column(
@@ -260,7 +314,7 @@ class _CoachProfileScreenState extends State<CoachProfileScreen>
                         Container(
                           color: whiteColor,
                           width: double.maxFinite,
-                          height: 110.h,
+                          height: 98.h,
                           child: GridView.count(
                             crossAxisCount: 3,
                             mainAxisSpacing: 1,
@@ -340,7 +394,7 @@ class _CoachProfileScreenState extends State<CoachProfileScreen>
                                   crossAxisAlignment: CrossAxisAlignment.center,
                                   children: [
                                     SizedBox(
-                                      height: 10.h,
+                                      height: 5.h,
                                     ),
                                     Image.asset(
                                       icPPPdf,
@@ -383,7 +437,7 @@ class _CoachProfileScreenState extends State<CoachProfileScreen>
                     child: Column(
                       children: [
                         SizedBox(
-                          height: 15.h,
+                          height: 5.h,
                         ),
                         Row(
                           children: [

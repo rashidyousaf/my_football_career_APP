@@ -217,13 +217,17 @@ class CcreateOfferScreen7 extends StatelessWidget {
                     SizedBox(
                       height: 16.h,
                     ),
-                    ourButton(
-                      color: greenColor,
-                      title: publishOffer,
-                      textColor: whiteColor,
-                      onPress: () {
-                        Navigator.pushNamed(context, '/ccreateofferscreen6');
-                      },
+                    SizedBox(
+                      width: 277.w,
+                      height: 48.h,
+                      child: ourButton(
+                        color: greenColor,
+                        title: publishOffer,
+                        textColor: whiteColor,
+                        onPress: () {
+                          Navigator.pushNamed(context, '/ccreateofferscreen6');
+                        },
+                      ),
                     ),
                     SizedBox(
                       height: 26.h,

@@ -90,6 +90,11 @@ class _ClubInfoScreen3State extends State<ClubInfoScreen3> {
                           textInputAction: TextInputAction.none,
                           maxLines: 1,
                           cursorColor: greenColor,
+                          style: TextStyle(
+                            fontSize: 15.sp,
+                            color: blackTitle,
+                            fontFamily: regular,
+                          ),
                           decoration: InputDecoration(
                               fillColor: greyColor,
                               filled: true,
@@ -137,8 +142,10 @@ class _ClubInfoScreen3State extends State<ClubInfoScreen3> {
                                               ),
                                               Text(
                                                 countryCode?.dialCode ?? "+352",
-                                                style:
-                                                    TextStyle(fontSize: 14.sp),
+                                                style: TextStyle(
+                                                    fontSize: 15.sp,
+                                                    fontFamily: regular,
+                                                    color: hintgreyColor),
                                               ),
                                             ],
                                           ),

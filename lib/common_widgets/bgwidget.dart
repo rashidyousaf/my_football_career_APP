@@ -7,8 +7,8 @@ Widget bgWidget(
     child: Container(
         width: double.infinity,
         height: double.infinity,
+        color: bColor,
         padding: EdgeInsets.only(top: 30.h, left: 30.w, right: 30.w),
-        color: const Color(0xffecf7f0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -24,18 +24,24 @@ Widget bgWidget(
                   ),
                 ),
                 SizedBox(
-                  width: 16.sp,
+                  width: 16.w,
                 ),
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
                       title!,
-                      style: TextStyle(fontSize: 16.sp, fontFamily: regular),
+                      style: TextStyle(
+                          fontSize: 16.sp,
+                          color: blackTitle,
+                          fontFamily: regular),
                     ),
                     Text(
                       subtitle!,
-                      style: TextStyle(fontSize: 12.sp),
+                      style: TextStyle(
+                          fontSize: 12.sp,
+                          fontFamily: regular,
+                          color: blacksubTitle),
                     ),
                   ],
                 ),

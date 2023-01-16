@@ -1,7 +1,6 @@
 import 'package:dropdown_button2/dropdown_button2.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:my_football_career/common_widgets/bgwidget.dart';
-import 'package:my_football_career/common_widgets/country_code_widget.dart';
 import 'package:my_football_career/common_widgets/custom_textfield.dart';
 import 'package:my_football_career/common_widgets/dropdown_widget.dart';
 import 'package:my_football_career/common_widgets/login_container.dart';
@@ -9,14 +8,19 @@ import 'package:my_football_career/common_widgets/our_button.dart';
 import 'package:my_football_career/consts/consts.dart';
 import 'package:my_football_career/consts/list.dart';
 
-class PlayerInfoScreen3 extends StatelessWidget {
+class PlayerInfoScreen3 extends StatefulWidget {
   const PlayerInfoScreen3({super.key});
 
+  @override
+  State<PlayerInfoScreen3> createState() => _PlayerInfoScreen3State();
+}
+
+class _PlayerInfoScreen3State extends State<PlayerInfoScreen3> {
+  String? SelectedValue;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomInset: false,
-      backgroundColor: backgroudColor,
       body: bgWidget(
         context: context,
         title: actualSituation,
@@ -25,13 +29,25 @@ class PlayerInfoScreen3 extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             SizedBox(
-              height: 26.h,
+              height: 10.h,
             ),
-            Text(
-              "3/5",
-              style: TextStyle(
-                fontSize: 15.sp,
-                fontFamily: bold,
+            RichText(
+              text: TextSpan(
+                text: '3',
+                style: TextStyle(
+                    fontSize: 15.sp,
+                    color: greenColor,
+                    fontFamily: regular,
+                    fontWeight: FontWeight.w600),
+                children: <TextSpan>[
+                  TextSpan(
+                      text: '/5',
+                      style: TextStyle(
+                          fontSize: 15.sp,
+                          fontFamily: semibold,
+                          fontWeight: FontWeight.w700,
+                          color: blackTitle)),
+                ],
               ),
             ),
             SizedBox(
@@ -66,7 +82,8 @@ class PlayerInfoScreen3 extends StatelessWidget {
                       ),
                       Container(
                           width: double.maxFinite,
-                          padding: EdgeInsets.all(10.h),
+                          padding: EdgeInsets.symmetric(
+                              horizontal: 10.w, vertical: 10.h),
                           height: 45.h,
                           decoration: BoxDecoration(
                               color: greyColor,
@@ -87,26 +104,27 @@ class PlayerInfoScreen3 extends StatelessWidget {
                                 size: 25.sp,
                                 color: greenColor,
                               ),
-                              items:
-                                  actualClubList.asMap().entries.map((entry) {
+                              items: drop.asMap().entries.map((entry) {
                                 int index = entry.key;
                                 String item = entry.value;
                                 return DropdownMenuItem<String>(
                                   value: item,
                                   child: Row(
                                     children: <Widget>[
-                                      // Image.asset(
-                                      //   settingsIconsList[index],
-                                      //   width: 20.w,
-                                      //   height: 20.w,
-                                      // ),
-                                      SizedBox(width: 8.0.w),
+                                      Image.network(
+                                        dropicon[index],
+                                        width: 20.w,
+                                        height: 20.h,
+                                      ),
+                                      SizedBox(width: 8.w),
                                       Text(item),
                                     ],
                                   ),
                                 );
                               }).toList(),
-                              onChanged: (newValue) {})),
+                              onChanged: (newValue) {
+                                SelectedValue = newValue;
+                              })),
                       SizedBox(
                         height: 15.h,
                       ),

@@ -316,6 +316,12 @@ const settingsButtonsList = [
   editProfile,
   logout
 ];
+const drop = [
+  'about',
+];
+const dropicon = [
+  'https://images.pexels.com/photos/670720/pexels-photo-670720.jpeg?auto=compress&cs=tinysrgb&w=600'
+];
 const settingsIconsList = [
   icSAbout,
   icSPrivacy,

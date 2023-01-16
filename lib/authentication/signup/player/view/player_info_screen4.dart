@@ -21,18 +21,30 @@ class PlayerInfoScreen4 extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             SizedBox(
-              height: 26.h,
-            ),
-            Text(
-              "4/5",
-              style: TextStyle(
-                fontSize: 15.sp,
-                fontFamily: bold,
-              ),
-            ),
-            SizedBox(
               height: 10.h,
             ),
+            RichText(
+              text: TextSpan(
+                text: '4',
+                style: TextStyle(
+                    fontSize: 15.sp,
+                    color: greenColor,
+                    fontFamily: regular,
+                    fontWeight: FontWeight.w600),
+                children: <TextSpan>[
+                  TextSpan(
+                      text: '/5',
+                      style: TextStyle(
+                          fontSize: 15.sp,
+                          fontFamily: semibold,
+                          fontWeight: FontWeight.w700,
+                          color: blackTitle)),
+                ],
+              ),
+            ),
+            // SizedBox(
+            //   height: 10.h,
+            // ),
             SizedBox(
               child: Image.asset(
                 icProgress4,

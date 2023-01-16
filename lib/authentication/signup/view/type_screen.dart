@@ -31,7 +31,7 @@ class TypeScreen extends StatelessWidget {
                 child: Text(
                   welcomeMyFootbalCareer,
                   style: TextStyle(
-                    fontSize: 15.sp,
+                    fontSize: 18.sp,
                     fontFamily: regular,
                     fontWeight: FontWeight.w500,
                   ),
@@ -41,8 +41,9 @@ class TypeScreen extends StatelessWidget {
                 child: Text(
                   pleaseTellus,
                   style: TextStyle(
-                    fontSize: 12.sp,
+                    fontSize: 16.sp,
                     fontFamily: regular,
+                    color: blackTitle,
                   ),
                 ),
               ),
@@ -56,6 +57,7 @@ class TypeScreen extends StatelessWidget {
                 style: TextStyle(
                   fontSize: 15.sp,
                   fontFamily: regular,
+                  color: blackTitle,
                 ),
               ),
               SizedBox(
@@ -100,6 +102,7 @@ class TypeScreen extends StatelessWidget {
                             style: TextStyle(
                               fontSize: 15.sp,
                               fontFamily: regular,
+                              color: blackTitle,
                             ),
                           ),
                           Text(
@@ -107,6 +110,7 @@ class TypeScreen extends StatelessWidget {
                             style: TextStyle(
                               fontSize: 12.sp,
                               fontFamily: regular,
+                              color: blacksubTitle,
                             ),
                           ),
                         ],
@@ -118,7 +122,7 @@ class TypeScreen extends StatelessWidget {
                         height: 29.h,
                       ),
                       SizedBox(
-                        width: 24.w,
+                        width: 13.w,
                       )
                     ],
                   ),
@@ -166,14 +170,15 @@ class TypeScreen extends StatelessWidget {
                             style: TextStyle(
                               fontSize: 15.sp,
                               fontFamily: regular,
+                              color: blackTitle,
                             ),
                           ),
                           Text(
                             lookingProject,
                             style: TextStyle(
-                              fontSize: 12.sp,
-                              fontFamily: regular,
-                            ),
+                                fontSize: 12.sp,
+                                fontFamily: regular,
+                                color: blacksubTitle),
                           ),
                         ],
                       ),
@@ -184,7 +189,7 @@ class TypeScreen extends StatelessWidget {
                         height: 29.h,
                       ),
                       SizedBox(
-                        width: 24.w,
+                        width: 13.w,
                       )
                     ],
                   ),
@@ -201,6 +206,7 @@ class TypeScreen extends StatelessWidget {
                 style: TextStyle(
                   fontSize: 15.sp,
                   fontFamily: regular,
+                  color: blackTitle,
                 ),
               ),
               SizedBox(
@@ -247,6 +253,7 @@ class TypeScreen extends StatelessWidget {
                             style: TextStyle(
                               fontSize: 15.sp,
                               fontFamily: regular,
+                              color: blackTitle,
                             ),
                           ),
                           Text(
@@ -254,6 +261,7 @@ class TypeScreen extends StatelessWidget {
                             style: TextStyle(
                               fontSize: 12.sp,
                               fontFamily: regular,
+                              color: blacksubTitle,
                             ),
                           ),
                         ],
@@ -265,7 +273,7 @@ class TypeScreen extends StatelessWidget {
                         height: 29.h,
                       ),
                       SizedBox(
-                        width: 24.w,
+                        width: 13.w,
                       )
                     ],
                   ),
@@ -309,6 +317,7 @@ class TypeScreen extends StatelessWidget {
                             style: TextStyle(
                               fontSize: 15.sp,
                               fontFamily: regular,
+                              color: blackTitle,
                             ),
                           ),
                           Text(
@@ -316,6 +325,7 @@ class TypeScreen extends StatelessWidget {
                             style: TextStyle(
                               fontSize: 12.sp,
                               fontFamily: regular,
+                              color: blacksubTitle,
                             ),
                           ),
                         ],
@@ -327,14 +337,14 @@ class TypeScreen extends StatelessWidget {
                         height: 29.h,
                       ),
                       SizedBox(
-                        width: 24.w,
+                        width: 13.w,
                       )
                     ],
                   ),
                 ),
               ),
               SizedBox(
-                height: 15.h,
+                height: 10.h,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -344,6 +354,7 @@ class TypeScreen extends StatelessWidget {
                     style: TextStyle(
                       fontFamily: regular,
                       fontSize: 14.sp,
+                      color: blackTitle,
                     ),
                   ),
                   SizedBox(

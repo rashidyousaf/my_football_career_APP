@@ -132,14 +132,20 @@ class _SignupScreenState extends State<SignupScreen> {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             SizedBox(
+                              width: 4.w,
+                            ),
+                            SizedBox(
                               width: 12.w,
                               height: 12.h,
                               child: Checkbox(
+                                  shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(3.r)),
+                                  splashRadius: 10.r,
                                   checkColor: greenColor,
                                   activeColor: whiteColor,
                                   value: isCheck,
-                                  side: BorderSide(
-                                      color: whiteColor, width: 1.2.w),
+                                  side:
+                                      BorderSide(color: whiteColor, width: 2.w),
                                   onChanged: (bool? newValue) {
                                     setState(() {
                                       isCheck = newValue;
@@ -150,12 +156,15 @@ class _SignupScreenState extends State<SignupScreen> {
                               width: 8.w,
                             ),
                             SizedBox(
-                              width: 212.w,
+                              width: 200.w,
                               height: 43.h,
                               child: Text(
                                   "By signing up you to our Terms of services and Privacy Policy, and confirm that you are at least 18 years old.",
+                                  textAlign: TextAlign.justify,
                                   style: TextStyle(
-                                    fontFamily: regular,
+                                    letterSpacing: 0.5.sp,
+                                    fontFamily: bold,
+                                    height: 1,
                                     color: whiteColor,
                                     fontSize: 10.sp,
                                   )),
@@ -193,8 +202,8 @@ class _SignupScreenState extends State<SignupScreen> {
               children: [
                 SizedBox(
                   width: 139.w,
-                  child: const Divider(
-                    color: greenColor,
+                  child: Divider(
+                    color: whiteColor.withOpacity(0.6),
                     thickness: 2,
                   ),
                 ),
@@ -210,8 +219,8 @@ class _SignupScreenState extends State<SignupScreen> {
                 ),
                 SizedBox(
                   width: 139.w,
-                  child: const Divider(
-                    color: greenColor,
+                  child: Divider(
+                    color: whiteColor.withOpacity(0.6),
                     thickness: 2,
                   ),
                 ),

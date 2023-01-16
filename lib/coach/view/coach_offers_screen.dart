@@ -99,21 +99,21 @@ class CoachOffersScreen extends StatelessWidget {
                 SizedBox(
                   height: 17.h,
                 ),
-                loginContainer(
-                    backgroudColor: whiteColor,
-                    borderColor: whiteColor,
-                    child: playerOfferContainer(
-                      icon1: icOShirt,
-                      icon2: icOCup,
-                      icon3: icOSheet,
-                      icon4: icOPromise,
-                      flag: icOFlag,
-                      flag1: icOLogo,
-                      text1: centreForward,
-                      text2: ligaPortugal,
-                      text3: professional,
-                      text4: month,
-                    ))
+                // loginContainer(
+                //     backgroudColor: whiteColor,
+                //     borderColor: whiteColor,
+                //     child: playerOfferContainer(
+                //       icon1: icOShirt,
+                //       icon2: icOCup,
+                //       icon3: icOSheet,
+                //       icon4: icOPromise,
+                //       flag: icOFlag,
+                //       flag1: icOLogo,
+                //       text1: centreForward,
+                //       text2: ligaPortugal,
+                //       text3: professional,
+                //       text4: month,
+                //     ))
               ]),
             )));
   }

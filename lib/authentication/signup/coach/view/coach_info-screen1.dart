@@ -33,13 +33,25 @@ class _CoachInfoScreen1State extends State<CoachInfoScreen1> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             SizedBox(
-              height: 26.h,
+              height: 10.h,
             ),
-            Text(
-              "1/5",
-              style: TextStyle(
-                fontSize: 15.sp,
-                fontFamily: bold,
+            RichText(
+              text: TextSpan(
+                text: '1',
+                style: TextStyle(
+                    fontSize: 15.sp,
+                    color: greenColor,
+                    fontFamily: regular,
+                    fontWeight: FontWeight.w600),
+                children: <TextSpan>[
+                  TextSpan(
+                      text: '/5',
+                      style: TextStyle(
+                          fontSize: 15.sp,
+                          fontFamily: semibold,
+                          fontWeight: FontWeight.w700,
+                          color: blackTitle)),
+                ],
               ),
             ),
             SizedBox(
@@ -127,7 +139,7 @@ class _CoachInfoScreen1State extends State<CoachInfoScreen1> {
                                       labelStyle: TextStyle(fontSize: 20.sp),
                                       labelText: 'Search ',
                                     )),
-                                favorite: ['US'],
+                                favorite: ['LU'],
                                 onSelect: (Country value) {
                                   countryFlag = value.flagEmoji.toString();
                                   countryName = value.name.toString();

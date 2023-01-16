@@ -16,7 +16,8 @@ class PlayerDetailOfferScreen extends StatelessWidget {
       backgroundColor: Colors.transparent,
       body: bgWidget(
         context: context,
-        title: createOffer,
+        title: '',
+        icon: Icons.notifications,
         subtitle: '',
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -238,13 +239,17 @@ class PlayerDetailOfferScreen extends StatelessWidget {
                     SizedBox(
                       height: 16.h,
                     ),
-                    ourButton(
-                      color: greenColor,
-                      title: apply,
-                      textColor: whiteColor,
-                      onPress: () {
-                        // Navigator.pushNamed(context, '/ccreateofferscreen6');
-                      },
+                    SizedBox(
+                      width: 255.w,
+                      height: 45.h,
+                      child: ourButton(
+                        color: greenColor,
+                        title: apply,
+                        textColor: whiteColor,
+                        onPress: () {
+                          // Navigator.pushNamed(context, '/ccreateofferscreen6');
+                        },
+                      ),
                     ),
                     SizedBox(
                       height: 26.h,

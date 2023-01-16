@@ -21,7 +21,6 @@ class _PlayerInfoScreen5State extends State<PlayerInfoScreen5> {
   Widget build(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomInset: false,
-      backgroundColor: backgroudColor,
       body: bgWidget(
         context: context,
         title: "Contact",
@@ -30,7 +29,7 @@ class _PlayerInfoScreen5State extends State<PlayerInfoScreen5> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             SizedBox(
-              height: 26.h,
+              height: 10.h,
             ),
             Text(
               "5/5",
@@ -90,6 +89,11 @@ class _PlayerInfoScreen5State extends State<PlayerInfoScreen5> {
                           textInputAction: TextInputAction.none,
                           maxLines: 1,
                           cursorColor: greenColor,
+                          style: TextStyle(
+                            fontSize: 15.sp,
+                            color: blackTitle,
+                            fontFamily: regular,
+                          ),
                           decoration: InputDecoration(
                               fillColor: greyColor,
                               filled: true,
@@ -137,8 +141,10 @@ class _PlayerInfoScreen5State extends State<PlayerInfoScreen5> {
                                               ),
                                               Text(
                                                 countryCode?.dialCode ?? "+352",
-                                                style:
-                                                    TextStyle(fontSize: 14.sp),
+                                                style: TextStyle(
+                                                    fontSize: 15.sp,
+                                                    fontFamily: regular,
+                                                    color: hintgreyColor),
                                               ),
                                             ],
                                           ),
