@@ -6,7 +6,6 @@ Widget bgWidget(
   return SafeArea(
     child: Container(
         width: double.infinity,
-        height: double.infinity,
         color: bColor,
         padding: EdgeInsets.only(top: 30.h, left: 30.w, right: 30.w),
         child: Column(

@@ -44,6 +44,7 @@ import 'club/view/create_offer_screens/ccreate_offer_screen4.dart';
 import 'club/view/create_offer_screens/ccreate_offer_screen5.dart';
 import 'club/view/create_offer_screens/ccreate_offer_screen6.dart';
 import 'club/view/create_offer_screens/ccreate_offer_screen7.dart';
+import 'common_widgets/testScafold.dart';
 
 void main() {
   runApp(const MyApp());
@@ -62,10 +63,7 @@ class MyApp extends StatelessWidget {
             debugShowCheckedModeBanner: false,
             title: appname,
             theme: ThemeData(
-              scaffoldBackgroundColor: bColor,
-              appBarTheme: const AppBarTheme(
-                backgroundColor: Colors.transparent,
-              ),
+              scaffoldBackgroundColor: const Color(0xffecf7f0),
               fontFamily: regular,
             ),
             initialRoute: '/',
@@ -114,7 +112,7 @@ class MyApp extends StatelessWidget {
                   const PlayerDetailOfferScreen(),
               '/coachdetailofferscreen': (context) =>
                   const CoachDetailOfferScreen(),
-              '/customappbar': (context) => const CustomAppbar(),
+              '/customappbar': (context) => const TextScaffold(),
             },
           );
         });

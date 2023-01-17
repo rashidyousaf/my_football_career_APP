@@ -10,11 +10,14 @@ class TypeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: backgroudColor,
-      body: bgWidget(
-          context: context,
-          title: type,
-          subtitle: "Select your type",
+      body: Column(children: [
+        bgWidget(
+            context: context,
+            title: type,
+            subtitle: "Select your type",
+            child: Container()),
+        Padding(
+          padding: EdgeInsets.only(left: 30.w, right: 30.w),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -373,7 +376,9 @@ class TypeScreen extends StatelessWidget {
                 ],
               ),
             ],
-          )),
+          ),
+        )
+      ]),
     );
   }
 }
