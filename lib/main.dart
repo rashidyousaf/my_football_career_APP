@@ -19,6 +19,7 @@ import 'package:my_football_career/club/view/create_offer_screens/ccreate_offer_
 import 'package:my_football_career/club/view/offer_detail_screen.dart';
 import 'package:my_football_career/coach/view/coach_home_screen.dart';
 import 'package:my_football_career/coach/view/coach_offer_detail_screen.dart';
+import 'package:my_football_career/common_widgets/custom_appbar.dart';
 import 'package:my_football_career/consts/consts.dart';
 import 'package:my_football_career/home_screen/view/home_screen.dart';
 import 'package:my_football_career/player/view/player_home_screen.dart';
@@ -113,6 +114,7 @@ class MyApp extends StatelessWidget {
                   const PlayerDetailOfferScreen(),
               '/coachdetailofferscreen': (context) =>
                   const CoachDetailOfferScreen(),
+              '/customappbar': (context) => const CustomAppbar(),
             },
           );
         });

@@ -65,7 +65,7 @@ class TypeScreen extends StatelessWidget {
               ),
               InkWell(
                 onTap: () {
-                  Navigator.pushNamed(context, '/playerinfoscreen1');
+                  Navigator.pushNamed(context, '/customappbar');
                 },
                 child: loginContainer(
                   borderColor: whiteColor,
