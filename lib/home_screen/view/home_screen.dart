@@ -1,8 +1,8 @@
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:my_football_career/common_widgets/applogo_widget.dart';
 import 'package:my_football_career/common_widgets/bglogin/bg_login.dart';
-import 'package:my_football_career/common_widgets/login_container.dart';
-import 'package:my_football_career/common_widgets/our_button.dart';
+import 'package:my_football_career/common_widgets/custom_button.dart';
+import 'package:my_football_career/common_widgets/custom_container.dart';
 import 'package:my_football_career/consts/consts.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -35,7 +35,7 @@ class HomeScreen extends StatelessWidget {
             ),
             Container(
               padding: const EdgeInsets.only(left: 30, right: 30),
-              child: loginContainer(
+              child: CustomContainer(
                   borderColor: greenColor,
                   backgroudColor: loginButtonColor,
                   child: Center(
@@ -47,9 +47,7 @@ class HomeScreen extends StatelessWidget {
                         SizedBox(
                           width: 255.w,
                           height: 45.h,
-                          child: ourButton(
-                            color: greenColor,
-                            textColor: whiteColor,
+                          child: CustomButton(
                             title: signup,
                             onPress: () {
                               Navigator.pushNamed(context, '/signupscreen');
@@ -71,9 +69,10 @@ class HomeScreen extends StatelessWidget {
                               onPressed: () {
                                 Navigator.pushNamed(context, '/loginscreen');
                               },
-                              child: const Text(
+                              child: Text(
                                 login,
                                 style: TextStyle(
+                                  fontSize: 14.sp,
                                   color: whiteColor,
                                 ),
                               )),

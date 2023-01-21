@@ -1,9 +1,9 @@
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:my_football_career/common_widgets/bgwidget.dart';
 import 'package:my_football_career/common_widgets/custom_textfield.dart';
-import 'package:my_football_career/common_widgets/login_container.dart';
-import 'package:my_football_career/common_widgets/our_button.dart';
 import 'package:my_football_career/consts/consts.dart';
+import '../../../common_widgets/custom_appbar.dart';
+import '../../../common_widgets/custom_button.dart';
+import '../../../common_widgets/custom_container.dart';
 
 class AcreateOfferScreen3 extends StatelessWidget {
   const AcreateOfferScreen3({super.key});
@@ -12,16 +12,16 @@ class AcreateOfferScreen3 extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomInset: false,
-      backgroundColor: backgroudColor,
-      body: bgWidget(
-        context: context,
+      appBar: const CustomAppbar(
         title: createOffer,
-        subtitle: '',
+      ),
+      body: Padding(
+        padding: EdgeInsets.symmetric(horizontal: 30.w),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             SizedBox(
-              height: 10.h,
+              height: 26.h,
             ),
             RichText(
               text: TextSpan(
@@ -54,59 +54,43 @@ class AcreateOfferScreen3 extends StatelessWidget {
             SizedBox(
               height: 76.h,
             ),
-            loginContainer(
-                borderColor: whiteColor,
-                backgroudColor: whiteColor,
+            CustomContainer(
                 child: Column(
-                  children: [
-                    SizedBox(
-                      height: 36.h,
-                    ),
-                    Text(
-                      whatBudgetRequest,
-                      style: TextStyle(
-                          fontSize: 12.sp,
-                          fontFamily: regular,
-                          color: titlegreyColor),
-                    ),
-                    Padding(
-                        padding: EdgeInsets.only(
-                            top: 39.h, bottom: 25.h, left: 20.w, right: 20.w),
-                        child: Column(children: [
-                          customTextfield(
-                            title: salary,
-                            hint: '',
-                            isPass: false,
-                            titleColor: titlegreyColor,
-                            borderColor: greyColor,
-                            bgColor: greyColor,
-                          ),
-                          SizedBox(
-                            height: 16.h,
-                          ),
-                          customTextfield(
-                            title: monthlyYearly,
-                            hint: '',
-                            isPass: false,
-                            titleColor: titlegreyColor,
-                            borderColor: greyColor,
-                            bgColor: greyColor,
-                          ),
-                          SizedBox(
-                            height: 16.h,
-                          ),
-                          ourButton(
-                            color: greenColor,
-                            title: next,
-                            textColor: whiteColor,
-                            onPress: () {
-                              Navigator.pushNamed(
-                                  context, '/acreateofferscreen4');
-                            },
-                          ),
-                        ]))
-                  ],
-                ))
+              children: [
+                SizedBox(
+                  height: 36.h,
+                ),
+                Text(
+                  whatBudgetRequest,
+                  style: TextStyle(
+                      fontSize: 12.sp,
+                      fontFamily: regular,
+                      color: titlegreyColor),
+                ),
+                Padding(
+                    padding: EdgeInsets.only(
+                        top: 39.h, bottom: 25.h, left: 20.w, right: 20.w),
+                    child: Column(children: [
+                      const CustomTextfield(
+                        title: salary,
+                      ),
+                      SizedBox(
+                        height: 16.h,
+                      ),
+                      const CustomTextfield(
+                        title: monthlyYearly,
+                      ),
+                      SizedBox(
+                        height: 16.h,
+                      ),
+                      CustomButton(
+                        onPress: () {
+                          Navigator.pushNamed(context, '/acreateofferscreen4');
+                        },
+                      ),
+                    ]))
+              ],
+            ))
           ],
         ),
       ),

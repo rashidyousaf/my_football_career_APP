@@ -1,12 +1,10 @@
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
-import '../../../../common_widgets/bgwidget.dart';
+import 'package:my_football_career/common_widgets/custom_appbar.dart';
+import 'package:my_football_career/common_widgets/custom_button.dart';
+import 'package:my_football_career/common_widgets/custom_container.dart';
 import '../../../../common_widgets/custom_textfield.dart';
 import '../../../../common_widgets/dropdown_widget.dart';
-import '../../../../common_widgets/login_container.dart';
-import '../../../../common_widgets/our_button.dart';
 import '../../../../consts/consts.dart';
-import '../../../../consts/list.dart';
 
 class ClubInfoScreen2 extends StatelessWidget {
   const ClubInfoScreen2({super.key});
@@ -17,16 +15,16 @@ class ClubInfoScreen2 extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomInset: false,
-      backgroundColor: backgroudColor,
-      body: bgWidget(
-        context: context,
+      appBar: const CustomAppbar(
         title: personalInfo,
-        subtitle: '',
+      ),
+      body: Padding(
+        padding: EdgeInsets.symmetric(horizontal: 30.w),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             SizedBox(
-              height: 10.h,
+              height: 26.h,
             ),
             RichText(
               text: TextSpan(
@@ -59,67 +57,44 @@ class ClubInfoScreen2 extends StatelessWidget {
             SizedBox(
               height: 76.h,
             ),
-            loginContainer(
-                borderColor: whiteColor,
-                backgroudColor: whiteColor,
-                child: Container(
-                  padding: const EdgeInsets.all(19),
-                  child: Column(
-                    children: [
-                      dropdownWidget(
-                        title: yourRoleClub,
-                        itemList: yourrolinclubList,
-                        hintvalue: 'Select',
-                      ),
-                      SizedBox(
-                        height: 21.h,
-                      ),
-                      customTextfield(
-                        title: firstName,
-                        hint: '',
-                        isPass: false,
-                        titleColor: titlegreyColor,
-                        bgColor: greyColor,
-                        borderColor: greyColor,
-                      ),
-                      SizedBox(
-                        height: 21.h,
-                      ),
-                      customTextfield(
-                        title: lastName,
-                        hint: '',
-                        isPass: false,
-                        titleColor: titlegreyColor,
-                        bgColor: greyColor,
-                        borderColor: greyColor,
-                        hintColor: greyColor,
-                      ),
-                      SizedBox(
-                        height: 21.h,
-                      ),
-                      customTextfield(
-                          title: dateofBirth,
-                          hint: '',
-                          isPass: false,
-                          titleColor: titlegreyColor,
-                          bgColor: greyColor,
-                          borderColor: greyColor,
-                          hintColor: greyColor,
-                          icon: Icons.date_range),
-                      SizedBox(
-                        height: 20.h,
-                      ),
-                      ourButton(
-                        color: greenColor,
-                        title: next,
-                        textColor: whiteColor,
-                        onPress: () {
-                          Navigator.pushNamed(context, '/clubinfoscreen3');
-                        },
-                      ),
-                    ],
+            CustomContainer(
+                child: Padding(
+              padding: EdgeInsets.all(19.h),
+              child: Column(
+                children: [
+                  dropdownWidget(
+                    title: yourRoleClub,
+                    itemList: yourrolinclubList,
+                    hintvalue: 'Select',
                   ),
-                ))
+                  SizedBox(
+                    height: 21.h,
+                  ),
+                  const CustomTextfield(
+                    title: firstName,
+                  ),
+                  SizedBox(
+                    height: 21.h,
+                  ),
+                  const CustomTextfield(
+                    title: lastName,
+                  ),
+                  SizedBox(
+                    height: 21.h,
+                  ),
+                  const CustomTextfield(
+                      title: dateofBirth, hint: '', icon: Icons.date_range),
+                  SizedBox(
+                    height: 20.h,
+                  ),
+                  CustomButton(
+                    onPress: () {
+                      Navigator.pushNamed(context, '/clubinfoscreen3');
+                    },
+                  ),
+                ],
+              ),
+            ))
           ],
         ),
       ),

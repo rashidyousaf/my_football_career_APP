@@ -1,10 +1,9 @@
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:my_football_career/common_widgets/bgwidget.dart';
+import 'package:my_football_career/common_widgets/custom_appbar.dart';
+import 'package:my_football_career/common_widgets/custom_button.dart';
+import 'package:my_football_career/common_widgets/custom_container.dart';
 import 'package:my_football_career/common_widgets/dropdown_widget.dart';
-import 'package:my_football_career/common_widgets/login_container.dart';
-import 'package:my_football_career/common_widgets/our_button.dart';
 import 'package:my_football_career/consts/consts.dart';
-import 'package:my_football_career/consts/list.dart';
 
 class PlayerInfoScreen2 extends StatefulWidget {
   const PlayerInfoScreen2({super.key});
@@ -14,22 +13,20 @@ class PlayerInfoScreen2 extends StatefulWidget {
 }
 
 class _PlayerInfoScreen2State extends State<PlayerInfoScreen2> {
-  List<String> _items1 = ['item1', 'item2', 'item3'];
-  List<String> _items2 = ['item4', 'item5', 'item6'];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      resizeToAvoidBottomInset: false,
-      backgroundColor: backgroudColor,
-      body: bgWidget(
-        context: context,
+      appBar: const CustomAppbar(
         title: playerCharacteristics,
-        subtitle: '',
+      ),
+      resizeToAvoidBottomInset: false,
+      body: Padding(
+        padding: EdgeInsets.symmetric(horizontal: 30.w),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             SizedBox(
-              height: 10.h,
+              height: 26.h,
             ),
             RichText(
               text: TextSpan(
@@ -62,63 +59,58 @@ class _PlayerInfoScreen2State extends State<PlayerInfoScreen2> {
             SizedBox(
               height: 76.h,
             ),
-            loginContainer(
-                borderColor: whiteColor,
-                backgroudColor: whiteColor,
+            CustomContainer(
                 child: Container(
-                  padding: const EdgeInsets.all(19),
-                  child: Column(
-                    children: [
-                      dropdownWidget(
-                          title: youMainPosition,
-                          itemList: postionList,
-                          hintvalue: 'Select'),
-                      SizedBox(
-                        height: 15.h,
-                      ),
-                      dropdownWidget(
-                        title: yourSecondPosition,
-                        itemList: postionList,
-                        hintvalue: "Select",
-                      ),
-                      SizedBox(
-                        height: 15.h,
-                      ),
-                      dropdownWidget(
-                        title: height,
-                        itemList: heightList,
-                        hintvalue: "Select",
-                      ),
-                      SizedBox(
-                        height: 15.h,
-                      ),
-                      dropdownWidget(
-                        title: weight,
-                        itemList: weightList,
-                        hintvalue: "Select",
-                      ),
-                      SizedBox(
-                        height: 15.h,
-                      ),
-                      dropdownWidget(
-                        title: yourStrongFoot,
-                        itemList: strongfootList,
-                        hintvalue: "Select",
-                      ),
-                      SizedBox(
-                        height: 20.h,
-                      ),
-                      ourButton(
-                        color: greenColor,
-                        title: next,
-                        textColor: whiteColor,
-                        onPress: () {
-                          Navigator.pushNamed(context, '/playerinfoscreen3');
-                        },
-                      ),
-                    ],
+              padding: EdgeInsets.all(19.h),
+              child: Column(
+                children: [
+                  dropdownWidget(
+                      title: youMainPosition,
+                      itemList: postionList,
+                      hintvalue: 'Select'),
+                  SizedBox(
+                    height: 15.h,
                   ),
-                ))
+                  dropdownWidget(
+                    title: yourSecondPosition,
+                    itemList: postionList,
+                    hintvalue: "Select",
+                  ),
+                  SizedBox(
+                    height: 15.h,
+                  ),
+                  dropdownWidget(
+                    title: height,
+                    itemList: heightList,
+                    hintvalue: "Select",
+                  ),
+                  SizedBox(
+                    height: 15.h,
+                  ),
+                  dropdownWidget(
+                    title: weight,
+                    itemList: weightList,
+                    hintvalue: "Select",
+                  ),
+                  SizedBox(
+                    height: 15.h,
+                  ),
+                  dropdownWidget(
+                    title: yourStrongFoot,
+                    itemList: strongfootList,
+                    hintvalue: "Select",
+                  ),
+                  SizedBox(
+                    height: 20.h,
+                  ),
+                  CustomButton(
+                    onPress: () {
+                      Navigator.pushNamed(context, '/playerinfoscreen3');
+                    },
+                  ),
+                ],
+              ),
+            ))
           ],
         ),
       ),

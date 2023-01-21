@@ -1,9 +1,9 @@
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:my_football_career/common_widgets/bgwidget.dart';
+import 'package:my_football_career/common_widgets/custom_button.dart';
+import 'package:my_football_career/common_widgets/custom_container.dart';
 import 'package:my_football_career/common_widgets/custom_textfield.dart';
-import 'package:my_football_career/common_widgets/login_container.dart';
-import 'package:my_football_career/common_widgets/our_button.dart';
 import 'package:my_football_career/consts/consts.dart';
+import '../../../common_widgets/custom_appbar.dart';
 
 class CcreateOfferScreen4 extends StatelessWidget {
   const CcreateOfferScreen4({super.key});
@@ -12,11 +12,11 @@ class CcreateOfferScreen4 extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomInset: false,
-      backgroundColor: backgroudColor,
-      body: bgWidget(
-        context: context,
+      appBar: const CustomAppbar(
         title: createOffer,
-        subtitle: '',
+      ),
+      body: Padding(
+        padding: EdgeInsets.symmetric(horizontal: 30.w),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -54,48 +54,37 @@ class CcreateOfferScreen4 extends StatelessWidget {
             SizedBox(
               height: 76.h,
             ),
-            loginContainer(
-                borderColor: whiteColor,
-                backgroudColor: whiteColor,
+            CustomContainer(
                 child: Column(
-                  children: [
-                    SizedBox(
-                      height: 36.h,
-                    ),
-                    Text(
-                      forwhichdivisionrequest,
-                      style: TextStyle(
-                          fontSize: 12.sp,
-                          fontFamily: regular,
-                          color: titlegreyColor),
-                    ),
-                    Padding(
-                        padding: EdgeInsets.only(
-                            top: 30.h, bottom: 25.h, left: 20.w, right: 20.w),
-                        child: Column(children: [
-                          customTextfield(
-                            title: division,
-                            hint: '',
-                            isPass: false,
-                            titleColor: titlegreyColor,
-                            borderColor: greyColor,
-                            bgColor: greyColor,
-                          ),
-                          SizedBox(
-                            height: 16.h,
-                          ),
-                          ourButton(
-                            color: greenColor,
-                            title: next,
-                            textColor: whiteColor,
-                            onPress: () {
-                              Navigator.pushNamed(
-                                  context, '/ccreateofferscreen5');
-                            },
-                          ),
-                        ]))
-                  ],
-                ))
+              children: [
+                SizedBox(
+                  height: 36.h,
+                ),
+                Text(
+                  forwhichdivisionrequest,
+                  style: TextStyle(
+                      fontSize: 12.sp,
+                      fontFamily: regular,
+                      color: titlegreyColor),
+                ),
+                Padding(
+                    padding: EdgeInsets.only(
+                        top: 30.h, bottom: 25.h, left: 20.w, right: 20.w),
+                    child: Column(children: [
+                      const CustomTextfield(
+                        title: division,
+                      ),
+                      SizedBox(
+                        height: 16.h,
+                      ),
+                      CustomButton(
+                        onPress: () {
+                          Navigator.pushNamed(context, '/ccreateofferscreen5');
+                        },
+                      ),
+                    ]))
+              ],
+            ))
           ],
         ),
       ),

@@ -1,9 +1,8 @@
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:my_football_career/common_widgets/custom_textfield.dart';
-import 'package:my_football_career/common_widgets/login_container.dart';
+import 'package:my_football_career/common_widgets/custom_appbar.dart';
+import 'package:my_football_career/common_widgets/custom_container.dart';
 import 'package:my_football_career/common_widgets/player_offer_container.dart';
 
-import '../../common_widgets/bgwidget.dart';
 import '../../consts/consts.dart';
 
 class PlayerOffersScreen extends StatelessWidget {
@@ -12,21 +11,59 @@ class PlayerOffersScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: bgWidget(
-            title: 'Offers',
-            context: context,
-            subtitle: '',
-            icon: Icons.notifications,
+        resizeToAvoidBottomInset: false,
+        appBar: const CustomAppbar(
+          title: offers,
+          icon: icBell,
+        ),
+        body: Padding(
+            padding: EdgeInsets.symmetric(horizontal: 30.w),
             child: Column(children: [
-              customTextfield(
-                title: '',
-                hint: 'Search',
-                hintColor: greyColor,
-                borderColor: whiteColor,
-                isPass: false,
-                bgColor: whiteColor,
-                icon: Icons.search,
+              // this section for search
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  SizedBox(
+                    height: 45.h,
+                    child: TextFormField(
+                      style: TextStyle(
+                          color: blackTitle,
+                          fontSize: 15.sp,
+                          fontFamily: regular),
+                      cursorColor: greenColor,
+                      autocorrect: false,
+                      decoration: InputDecoration(
+                        suffixIcon: const Icon(
+                          Icons.search,
+                          color: greenColor,
+                          size: 30,
+                        ),
+                        focusedBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(9.r),
+                          borderSide: const BorderSide(
+                            color: whiteColor,
+                          ),
+                        ),
+                        enabledBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(9.r),
+                          borderSide: const BorderSide(
+                            color: whiteColor,
+                          ),
+                        ),
+                        hintStyle: TextStyle(
+                            fontWeight: FontWeight.w400,
+                            fontSize: 15.sp,
+                            color: titlegreyColor),
+                        hintText: 'Search',
+                        isDense: true,
+                        fillColor: whiteColor,
+                        filled: true,
+                      ),
+                    ),
+                  ),
+                ],
               ),
+              // this section for end of search bar
               SizedBox(
                 height: 21.h,
               ),
@@ -34,21 +71,19 @@ class PlayerOffersScreen extends StatelessWidget {
                 onTap: () {
                   Navigator.pushNamed(context, '/playerdetailofferscreen');
                 },
-                child: loginContainer(
-                    backgroudColor: whiteColor,
-                    borderColor: whiteColor,
+                child: CustomContainer(
                     child: playerOfferContainer(
-                      icon1: icOShirt,
-                      icon2: icOCup,
-                      icon3: icOSheet,
-                      icon4: icOPromise,
-                      flag: icOFlag,
-                      flag1: icOLogo,
-                      text1: centreForward,
-                      text2: ligaPortugal,
-                      text3: professional,
-                      text4: month,
-                    )),
+                  icon1: icOShirt,
+                  icon2: icOCup,
+                  icon3: icOSheet,
+                  icon4: icOPromise,
+                  flag: icOFlag,
+                  flag1: icOLogo,
+                  text1: centreForward,
+                  text2: ligaPortugal,
+                  text3: professional,
+                  text4: month,
+                )),
               ),
 
               // second portion
@@ -59,7 +94,7 @@ class PlayerOffersScreen extends StatelessWidget {
                 onTap: () {
                   Navigator.pushNamed(context, '/playerdetailofferscreen');
                 },
-                child: loginContainer(
+                child: CustomContainer(
                     backgroudColor: whiteColor,
                     borderColor: whiteColor,
                     child: playerOfferContainer(
@@ -79,7 +114,7 @@ class PlayerOffersScreen extends StatelessWidget {
               SizedBox(
                 height: 17.h,
               ),
-              loginContainer(
+              CustomContainer(
                   backgroudColor: whiteColor,
                   borderColor: whiteColor,
                   child: playerOfferContainer(

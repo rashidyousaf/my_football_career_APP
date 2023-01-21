@@ -1,7 +1,6 @@
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
-import '../../common_widgets/bgwidget.dart';
-import '../../common_widgets/login_container.dart';
+import '../../common_widgets/custom_appbar.dart';
+import '../../common_widgets/custom_container.dart';
 import '../../consts/consts.dart';
 
 class AgencyMessagesScreen extends StatelessWidget {
@@ -10,17 +9,17 @@ class AgencyMessagesScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: bgWidget(
-        title: 'Messages',
-        context: context,
-        subtitle: '',
-        icon: Icons.notifications,
+      appBar: const CustomAppbar(
+        title: messages,
+      ),
+      body: Padding(
+        padding: EdgeInsets.symmetric(horizontal: 30.w),
         child: Column(
           children: [
             SizedBox(
               height: 41.h,
             ),
-            loginContainer(
+            CustomContainer(
                 backgroudColor: whiteColor,
                 borderColor: whiteColor,
                 child: Padding(
@@ -86,7 +85,7 @@ class AgencyMessagesScreen extends StatelessWidget {
               height: 11.h,
             ),
             //second chat portion
-            loginContainer(
+            CustomContainer(
                 backgroudColor: whiteColor,
                 borderColor: whiteColor,
                 child: Padding(
@@ -153,14 +152,14 @@ class AgencyMessagesScreen extends StatelessWidget {
             SizedBox(
               height: 11.h,
             ),
-            loginContainer(
+            CustomContainer(
                 backgroudColor: whiteColor,
                 borderColor: whiteColor,
                 child: Padding(
-                  padding: const EdgeInsets.only(
-                    left: 15,
-                    top: 19,
-                    bottom: 19,
+                  padding: EdgeInsets.only(
+                    left: 15.w,
+                    top: 19.h,
+                    bottom: 19.h,
                   ),
                   child: Row(
                     children: [

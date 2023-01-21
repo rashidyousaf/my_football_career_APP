@@ -1,11 +1,10 @@
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:my_football_career/common_widgets/bgwidget.dart';
+import 'package:my_football_career/common_widgets/custom_appbar.dart';
+import 'package:my_football_career/common_widgets/custom_button.dart';
+import 'package:my_football_career/common_widgets/custom_container.dart';
 import 'package:my_football_career/common_widgets/custom_textfield.dart';
 import 'package:my_football_career/common_widgets/dropdown_widget.dart';
-import 'package:my_football_career/common_widgets/login_container.dart';
-import 'package:my_football_career/common_widgets/our_button.dart';
 import 'package:my_football_career/consts/consts.dart';
-import 'package:my_football_career/consts/list.dart';
 
 class CoachInfoScreen3 extends StatelessWidget {
   const CoachInfoScreen3({super.key});
@@ -14,11 +13,11 @@ class CoachInfoScreen3 extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomInset: false,
-      backgroundColor: backgroudColor,
-      body: bgWidget(
-        context: context,
+      appBar: const CustomAppbar(
         title: actualSituation,
-        subtitle: '',
+      ),
+      body: Padding(
+        padding: EdgeInsets.symmetric(horizontal: 30.w),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -56,55 +55,38 @@ class CoachInfoScreen3 extends StatelessWidget {
             SizedBox(
               height: 76.h,
             ),
-            loginContainer(
-                borderColor: whiteColor,
-                backgroudColor: whiteColor,
-                child: Container(
-                  padding: const EdgeInsets.all(19),
-                  child: Column(
-                    children: [
-                      customTextfield(
-                        title: actualClub,
-                        hint: '',
-                        isPass: false,
-                        titleColor: titlegreyColor,
-                        bgColor: greyColor,
-                        borderColor: greyColor,
-                        hintColor: greyColor,
-                      ),
-                      SizedBox(
-                        height: 19.h,
-                      ),
-                      dropdownWidget(
-                          title: availableTransfer,
-                          itemList: availabletransferList,
-                          hintvalue: 'Select'),
-                      SizedBox(
-                        height: 19.h,
-                      ),
-                      customTextfield(
-                        title: transferCoasts,
-                        hint: '',
-                        isPass: false,
-                        titleColor: titlegreyColor,
-                        bgColor: greyColor,
-                        borderColor: greyColor,
-                        hintColor: greyColor,
-                      ),
-                      SizedBox(
-                        height: 20.h,
-                      ),
-                      ourButton(
-                        color: greenColor,
-                        title: next,
-                        textColor: whiteColor,
-                        onPress: () {
-                          Navigator.pushNamed(context, '/coachinfoscreen4');
-                        },
-                      ),
-                    ],
+            CustomContainer(
+                child: Padding(
+              padding: EdgeInsets.all(19.h),
+              child: Column(
+                children: [
+                  const CustomTextfield(
+                    title: actualClub,
                   ),
-                ))
+                  SizedBox(
+                    height: 19.h,
+                  ),
+                  dropdownWidget(
+                      title: availableTransfer,
+                      itemList: availabletransferList,
+                      hintvalue: 'Select'),
+                  SizedBox(
+                    height: 19.h,
+                  ),
+                  const CustomTextfield(
+                    title: transferCoasts,
+                  ),
+                  SizedBox(
+                    height: 20.h,
+                  ),
+                  CustomButton(
+                    onPress: () {
+                      Navigator.pushNamed(context, '/coachinfoscreen4');
+                    },
+                  ),
+                ],
+              ),
+            ))
           ],
         ),
       ),

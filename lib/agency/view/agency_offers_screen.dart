@@ -1,8 +1,6 @@
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:my_football_career/common_widgets/bgwidget.dart';
-
-import '../../common_widgets/club_offer_container.dart';
-import '../../common_widgets/login_container.dart';
+import '../../common_widgets/custom_appbar.dart';
+import '../../common_widgets/custom_container.dart';
 import '../../consts/consts.dart';
 
 class AgencyOffersScreen extends StatelessWidget {
@@ -11,20 +9,19 @@ class AgencyOffersScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: bgWidget(
+      appBar: const CustomAppbar(
         title: manageYourOffers,
-        context: context,
-        subtitle: '',
-        icon: Icons.notifications,
+        icon: icBell,
+      ),
+      body: Padding(
+        padding: EdgeInsets.symmetric(horizontal: 30.w),
         child: Column(
           children: [
             SizedBox(
               height: 76.h,
             ),
             //first portion
-            loginContainer(
-              backgroudColor: whiteColor,
-              borderColor: whiteColor,
+            CustomContainer(
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -185,9 +182,7 @@ class AgencyOffersScreen extends StatelessWidget {
             SizedBox(
               height: 32.h,
             ),
-            loginContainer(
-              backgroudColor: whiteColor,
-              borderColor: whiteColor,
+            CustomContainer(
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [

@@ -1,8 +1,6 @@
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:my_football_career/common_widgets/bgwidget.dart';
-
-import '../../common_widgets/club_offer_container.dart';
-import '../../common_widgets/login_container.dart';
+import 'package:my_football_career/common_widgets/custom_appbar.dart';
+import 'package:my_football_career/common_widgets/custom_container.dart';
 import '../../consts/consts.dart';
 
 class ClubOffersScreen extends StatelessWidget {
@@ -11,11 +9,12 @@ class ClubOffersScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: bgWidget(
+      appBar: const CustomAppbar(
         title: manageYourOffers,
-        context: context,
-        subtitle: '',
-        icon: Icons.notifications,
+        icon: icBell,
+      ),
+      body: Padding(
+        padding: EdgeInsets.symmetric(horizontal: 30.w),
         child: Column(
           children: [
             SizedBox(
@@ -26,9 +25,7 @@ class ClubOffersScreen extends StatelessWidget {
               onTap: () {
                 Navigator.pushNamed(context, "/offerdetailscreen");
               },
-              child: loginContainer(
-                backgroudColor: whiteColor,
-                borderColor: whiteColor,
+              child: CustomContainer(
                 child: Row(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -190,9 +187,7 @@ class ClubOffersScreen extends StatelessWidget {
             SizedBox(
               height: 32.h,
             ),
-            loginContainer(
-              backgroudColor: whiteColor,
-              borderColor: whiteColor,
+            CustomContainer(
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [

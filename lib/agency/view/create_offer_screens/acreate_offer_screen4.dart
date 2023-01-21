@@ -1,9 +1,9 @@
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:my_football_career/common_widgets/bgwidget.dart';
 import 'package:my_football_career/common_widgets/custom_textfield.dart';
-import 'package:my_football_career/common_widgets/login_container.dart';
-import 'package:my_football_career/common_widgets/our_button.dart';
 import 'package:my_football_career/consts/consts.dart';
+import '../../../common_widgets/custom_appbar.dart';
+import '../../../common_widgets/custom_button.dart';
+import '../../../common_widgets/custom_container.dart';
 
 class AcreateOfferScreen4 extends StatelessWidget {
   const AcreateOfferScreen4({super.key});
@@ -12,16 +12,16 @@ class AcreateOfferScreen4 extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomInset: false,
-      backgroundColor: backgroudColor,
-      body: bgWidget(
-        context: context,
+      appBar: const CustomAppbar(
         title: createOffer,
-        subtitle: '',
+      ),
+      body: Padding(
+        padding: EdgeInsets.symmetric(horizontal: 30.w),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             SizedBox(
-              height: 10.h,
+              height: 26.h,
             ),
             RichText(
               text: TextSpan(
@@ -54,7 +54,7 @@ class AcreateOfferScreen4 extends StatelessWidget {
             SizedBox(
               height: 76.h,
             ),
-            loginContainer(
+            CustomContainer(
                 borderColor: whiteColor,
                 backgroudColor: whiteColor,
                 child: Column(
@@ -73,21 +73,13 @@ class AcreateOfferScreen4 extends StatelessWidget {
                         padding: EdgeInsets.only(
                             top: 30.h, bottom: 25.h, left: 20.w, right: 20.w),
                         child: Column(children: [
-                          customTextfield(
+                          const CustomTextfield(
                             title: division,
-                            hint: '',
-                            isPass: false,
-                            titleColor: titlegreyColor,
-                            borderColor: greyColor,
-                            bgColor: greyColor,
                           ),
                           SizedBox(
                             height: 16.h,
                           ),
-                          ourButton(
-                            color: greenColor,
-                            title: next,
-                            textColor: whiteColor,
+                          CustomButton(
                             onPress: () {
                               Navigator.pushNamed(
                                   context, '/acreateofferscreen5');

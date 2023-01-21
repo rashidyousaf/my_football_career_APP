@@ -1,9 +1,8 @@
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
-import '../../../../common_widgets/bgwidget.dart';
+import 'package:my_football_career/common_widgets/custom_appbar.dart';
+import 'package:my_football_career/common_widgets/custom_button.dart';
+import 'package:my_football_career/common_widgets/custom_container.dart';
 import '../../../../common_widgets/custom_textfield.dart';
-import '../../../../common_widgets/login_container.dart';
-import '../../../../common_widgets/our_button.dart';
 import '../../../../consts/consts.dart';
 
 class AgencyInfoScreen1 extends StatelessWidget {
@@ -13,16 +12,16 @@ class AgencyInfoScreen1 extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomInset: false,
-      backgroundColor: backgroudColor,
-      body: bgWidget(
-        context: context,
-        title: clubRepresentative,
-        subtitle: '',
+      appBar: const CustomAppbar(
+        title: agencyInfo,
+      ),
+      body: Padding(
+        padding: EdgeInsets.symmetric(horizontal: 30.w),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             SizedBox(
-              height: 10.h,
+              height: 26.h,
             ),
             RichText(
               text: TextSpan(
@@ -55,50 +54,31 @@ class AgencyInfoScreen1 extends StatelessWidget {
             SizedBox(
               height: 76.h,
             ),
-            loginContainer(
-                borderColor: whiteColor,
-                backgroudColor: whiteColor,
-                child: Container(
-                  padding: const EdgeInsets.all(19),
-                  child: Column(
-                    children: [
-                      customTextfield(
-                        title: nameYourAgency,
-                        hint: '',
-                        isPass: false,
-                        titleColor: titlegreyColor,
-                        bgColor: greyColor,
-                        borderColor: greyColor,
-                      ),
-                      SizedBox(
-                        height: 21.h,
-                      ),
-                      customTextfield(
-                        title: adressYourAgency,
-                        hint: '',
-                        isPass: false,
-                        titleColor: titlegreyColor,
-                        bgColor: greyColor,
-                        borderColor: greyColor,
-                        hintColor: greyColor,
-                      ),
-                      SizedBox(
-                        height: 21.h,
-                      ),
-                      SizedBox(
-                        height: 20.h,
-                      ),
-                      ourButton(
-                        color: greenColor,
-                        title: next,
-                        textColor: whiteColor,
-                        onPress: () {
-                          Navigator.pushNamed(context, '/agencyinfoscreen2');
-                        },
-                      ),
-                    ],
+            CustomContainer(
+                child: Padding(
+              padding: EdgeInsets.all(19.h),
+              child: Column(
+                children: [
+                  const CustomTextfield(
+                    title: nameYourAgency,
                   ),
-                ))
+                  SizedBox(
+                    height: 21.h,
+                  ),
+                  const CustomTextfield(
+                    title: adressYourAgency,
+                  ),
+                  SizedBox(
+                    height: 24.h,
+                  ),
+                  CustomButton(
+                    onPress: () {
+                      Navigator.pushNamed(context, '/agencyinfoscreen2');
+                    },
+                  ),
+                ],
+              ),
+            ))
           ],
         ),
       ),

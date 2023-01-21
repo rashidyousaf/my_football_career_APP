@@ -1,57 +1,48 @@
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:my_football_career/common_widgets/bgwidget.dart';
-import 'package:my_football_career/common_widgets/login_container.dart';
+import 'package:my_football_career/common_widgets/custom_appbar.dart';
+import 'package:my_football_career/common_widgets/custom_container.dart';
 import 'package:my_football_career/common_widgets/profile_widget1.dart';
 import 'package:my_football_career/common_widgets/profile_widget2.dart';
 import 'package:my_football_career/consts/consts.dart';
 import 'package:my_football_career/player/view/player_data_widget.dart';
 
-class OfferDetailScreen extends StatefulWidget {
+class OfferDetailScreen extends StatelessWidget {
   const OfferDetailScreen({super.key});
 
   @override
-  State<OfferDetailScreen> createState() => _OfferDetailScreenState();
-}
-
-class _OfferDetailScreenState extends State<OfferDetailScreen>
-    with TickerProviderStateMixin {
-  @override
   Widget build(BuildContext context) {
-    TabController tabController = TabController(length: 3, vsync: this);
     return Scaffold(
-        body: bgWidget(
-            title: '',
-            context: context,
-            subtitle: '',
-            icon: Icons.notifications,
+        appBar: const CustomAppbar(
+          icon: icBell,
+        ),
+        body: Padding(
+            padding: EdgeInsets.symmetric(horizontal: 30.w),
             child: Column(children: [
-              loginContainer(
-                  backgroudColor: whiteColor,
-                  borderColor: whiteColor,
+              CustomContainer(
                   child: Column(children: [
-                    profileWidget(
-                      iconShare: Icons.share,
-                      imgProfile: icPPImg,
-                      imgFlag: icPPFlag,
-                      name: leoMessi,
-                    ),
-                    SizedBox(
-                      height: 6.2.h,
-                    ),
-                    profileWidget2(
-                      firstIcon: icPPShirt,
-                      secondIcond: icPPAge,
-                      thirdIcon: icPPLocation,
-                      fourthIcon: icPPParis,
-                      firstName: "30",
-                      secondName: "35",
-                      thirdName: "Paris",
-                      fourthName: 'PSG',
-                    ),
-                    SizedBox(
-                      height: 12.h,
-                    ),
-                  ])),
+                profileWidget(
+                  iconShare: Icons.share,
+                  imgProfile: icPPImg,
+                  imgFlag: icPPFlag,
+                  name: leoMessi,
+                ),
+                SizedBox(
+                  height: 6.2.h,
+                ),
+                profileWidget2(
+                  firstIcon: icPPShirt,
+                  secondIcond: icPPAge,
+                  thirdIcon: icPPLocation,
+                  fourthIcon: icPPParis,
+                  firstName: "30",
+                  secondName: "35",
+                  thirdName: "Paris",
+                  fourthName: 'PSG',
+                ),
+                SizedBox(
+                  height: 12.h,
+                ),
+              ])),
 
               // tabbar portion
 

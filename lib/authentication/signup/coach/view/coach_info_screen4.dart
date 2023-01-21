@@ -1,9 +1,10 @@
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:my_football_career/common_widgets/bgwidget.dart';
-import 'package:my_football_career/common_widgets/custom_textfield.dart';
-import 'package:my_football_career/common_widgets/login_container.dart';
-import 'package:my_football_career/common_widgets/our_button.dart';
+import 'package:my_football_career/common_widgets/custom_appbar.dart';
+import 'package:my_football_career/common_widgets/custom_button.dart';
+import 'package:my_football_career/common_widgets/custom_container.dart';
 import 'package:my_football_career/consts/consts.dart';
+
+import '../../../../common_widgets/custom_textfield.dart';
 
 class CoachInfoScreen4 extends StatelessWidget {
   const CoachInfoScreen4({super.key});
@@ -12,16 +13,16 @@ class CoachInfoScreen4 extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomInset: false,
-      backgroundColor: backgroudColor,
-      body: bgWidget(
-        context: context,
-        title: "Refrences",
-        subtitle: '',
+      appBar: const CustomAppbar(
+        title: 'Refrences',
+      ),
+      body: Padding(
+        padding: EdgeInsets.symmetric(horizontal: 30.w),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             SizedBox(
-              height: 10.h,
+              height: 26.h,
             ),
             RichText(
               text: TextSpan(
@@ -54,72 +55,47 @@ class CoachInfoScreen4 extends StatelessWidget {
             SizedBox(
               height: 76.h,
             ),
-            loginContainer(
-                borderColor: whiteColor,
-                backgroudColor: whiteColor,
-                child: Container(
-                  padding: const EdgeInsets.all(19),
-                  child: Column(
-                    children: [
-                      customTextfield(
-                        title: yourTransfermarktURL,
-                        hint: yourTransfermarktURLHint,
-                        isPass: false,
-                        titleColor: titlegreyColor,
-                        bgColor: greyColor,
-                        borderColor: greyColor,
-                        hintColor: greyColor,
-                      ),
-                      SizedBox(
-                        height: 16.h,
-                      ),
-                      customTextfield(
-                        title: chargeYourCV,
-                        hint: 'JPEG,PDF..',
-                        isPass: false,
-                        titleColor: titlegreyColor,
-                        bgColor: greyColor,
-                        borderColor: greyColor,
-                        hintColor: greyColor,
-                      ),
-                      SizedBox(
-                        height: 16.h,
-                      ),
-                      customTextfield(
-                        title: chargeSomePhotos,
-                        hint: 'upload',
-                        isPass: false,
-                        titleColor: titlegreyColor,
-                        bgColor: greyColor,
-                        borderColor: greyColor,
-                        hintColor: greyColor,
-                      ),
-                      SizedBox(
-                        height: 16.h,
-                      ),
-                      customTextfield(
-                        title: chargeSomePhotos,
-                        hint: 'upload',
-                        isPass: false,
-                        titleColor: titlegreyColor,
-                        bgColor: greyColor,
-                        borderColor: greyColor,
-                        hintColor: greyColor,
-                      ),
-                      SizedBox(
-                        height: 20.h,
-                      ),
-                      ourButton(
-                        color: greenColor,
-                        title: next,
-                        textColor: whiteColor,
-                        onPress: () {
-                          Navigator.pushNamed(context, '/coachinfoscreen5');
-                        },
-                      ),
-                    ],
+            CustomContainer(
+                child: Padding(
+              padding: EdgeInsets.all(19.h),
+              child: Column(
+                children: [
+                  const CustomTextfield(
+                    title: yourTransfermarktURL,
+                    hint: yourTransfermarktURLHint,
                   ),
-                ))
+                  SizedBox(
+                    height: 16.h,
+                  ),
+                  const CustomTextfield(
+                    title: chargeYourCV,
+                    hint: 'JPEG,PDF..',
+                  ),
+                  SizedBox(
+                    height: 16.h,
+                  ),
+                  const CustomTextfield(
+                    title: chargeSomePhotos,
+                    hint: 'upload',
+                  ),
+                  SizedBox(
+                    height: 16.h,
+                  ),
+                  const CustomTextfield(
+                    title: chargeSomePhotos,
+                    hint: 'upload',
+                  ),
+                  SizedBox(
+                    height: 20.h,
+                  ),
+                  CustomButton(
+                    onPress: () {
+                      Navigator.pushNamed(context, '/coachinfoscreen5');
+                    },
+                  ),
+                ],
+              ),
+            ))
           ],
         ),
       ),

@@ -1,11 +1,11 @@
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:my_football_career/common_widgets/applogo_widget.dart';
 import 'package:my_football_career/common_widgets/bglogin/bg_login.dart';
-import 'package:my_football_career/common_widgets/custom_textfield.dart';
+import 'package:my_football_career/common_widgets/custom_button.dart';
 import 'package:my_football_career/common_widgets/google_button.dart';
-import 'package:my_football_career/common_widgets/login_container.dart';
-import 'package:my_football_career/common_widgets/our_button.dart';
 import 'package:my_football_career/consts/consts.dart';
+
+import '../../../common_widgets/custom_container.dart';
 
 class SignupScreen extends StatefulWidget {
   const SignupScreen({super.key});
@@ -33,7 +33,7 @@ class _SignupScreenState extends State<SignupScreen> {
             ),
             Container(
               padding: const EdgeInsets.only(left: 30, right: 30),
-              child: loginContainer(
+              child: CustomContainer(
                 borderColor: greenColor,
                 backgroudColor: loginButtonColor,
                 child: Container(
@@ -177,10 +177,8 @@ class _SignupScreenState extends State<SignupScreen> {
                         SizedBox(
                           height: 10.h,
                         ),
-                        ourButton(
-                          color: greenColor,
+                        CustomButton(
                           title: signup,
-                          textColor: whiteColor,
                           onPress: () {
                             Navigator.pushNamed(context, '/typescreen');
                           },

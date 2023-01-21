@@ -12,14 +12,13 @@ import 'package:my_football_career/authentication/signup/coach/view/coach_info-s
 import 'package:my_football_career/authentication/signup/player/view/player_info_screen1.dart';
 import 'package:my_football_career/authentication/signup/player/view/player_info_screen2.dart';
 import 'package:my_football_career/authentication/signup/view/signup_screen.dart';
-import 'package:my_football_career/authentication/signup/view/type_screen.dart';
+import 'package:my_football_career/authentication/signup/view/type_screen/type_screen.dart';
 import 'package:my_football_career/club/view/club_home_screen.dart';
 import 'package:my_football_career/club/view/create_offer_screens/ccreate_offer_screen1.dart';
 import 'package:my_football_career/club/view/create_offer_screens/ccreate_offer_screen2.dart';
 import 'package:my_football_career/club/view/offer_detail_screen.dart';
 import 'package:my_football_career/coach/view/coach_home_screen.dart';
 import 'package:my_football_career/coach/view/coach_offer_detail_screen.dart';
-import 'package:my_football_career/common_widgets/custom_appbar.dart';
 import 'package:my_football_career/consts/consts.dart';
 import 'package:my_football_career/home_screen/view/home_screen.dart';
 import 'package:my_football_career/player/view/player_home_screen.dart';
@@ -44,7 +43,6 @@ import 'club/view/create_offer_screens/ccreate_offer_screen4.dart';
 import 'club/view/create_offer_screens/ccreate_offer_screen5.dart';
 import 'club/view/create_offer_screens/ccreate_offer_screen6.dart';
 import 'club/view/create_offer_screens/ccreate_offer_screen7.dart';
-import 'common_widgets/testScafold.dart';
 
 void main() {
   runApp(const MyApp());
@@ -112,7 +110,6 @@ class MyApp extends StatelessWidget {
                   const PlayerDetailOfferScreen(),
               '/coachdetailofferscreen': (context) =>
                   const CoachDetailOfferScreen(),
-              '/customappbar': (context) => const TextScaffold(),
             },
           );
         });

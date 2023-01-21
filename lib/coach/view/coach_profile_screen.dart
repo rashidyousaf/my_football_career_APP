@@ -1,9 +1,8 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:my_football_career/common_widgets/bgwidget.dart';
-import 'package:my_football_career/common_widgets/login_container.dart';
+import 'package:my_football_career/common_widgets/custom_appbar.dart';
+import 'package:my_football_career/common_widgets/custom_container.dart';
 import 'package:my_football_career/common_widgets/profile_widget1.dart';
-import 'package:my_football_career/common_widgets/profile_widget2.dart';
 import 'package:my_football_career/consts/consts.dart';
 
 class CoachProfileScreen extends StatefulWidget {
@@ -19,189 +18,187 @@ class _CoachProfileScreenState extends State<CoachProfileScreen>
   Widget build(BuildContext context) {
     TabController tabController = TabController(length: 2, vsync: this);
     return Scaffold(
-      body: bgWidget(
-        title: '',
-        context: context,
-        subtitle: '',
-        icon: Icons.notifications,
+      appBar: const CustomAppbar(
+        icon: icBell,
+      ),
+      body: Padding(
+        padding: EdgeInsets.symmetric(horizontal: 30.w),
         child: Column(children: [
           SizedBox(
-            height: 10.h,
+            height: 5.h,
           ),
-          loginContainer(
-              backgroudColor: whiteColor,
-              borderColor: whiteColor,
+          CustomContainer(
               child: Column(children: [
-                profileWidget(
-                    iconShare: Icons.share,
-                    imgProfile: icCPImage,
-                    imgFlag: icCPFlag,
-                    name: thomasTuchel,
-                    child: Column(
-                      children: [
-                        SizedBox(
-                          height: 6.2.h,
-                        ),
-                        // this section profile section below
-                        Column(children: [
-                          Row(
-                            children: [
-                              SizedBox(
-                                width: 10.w,
-                              ),
-                              // this section for shirt
-                              SizedBox(
-                                width: 130.w,
-                                height: 60.h,
-                                child: Column(children: [
-                                  Image.asset(
-                                    icCPBatch,
-                                    width: 30.w,
-                                    height: 30.h,
-                                  ),
-                                  SizedBox(
-                                    height: 1.h,
-                                  ),
-                                  Text(
-                                    uefaPro,
-                                    style: TextStyle(
-                                      fontSize: 15.sp,
-                                      fontFamily: regular,
-                                      color: blackTitle,
-                                    ),
-                                  ),
-                                ]),
-                              ),
-                              SizedBox(
-                                width: 10.w,
-                              ),
-                              Container(
-                                color: greyColor,
-                                height: 56.h,
-                                width: 1.w,
-                              ),
-                              SizedBox(
-                                width: 10.w,
-                              ),
-// this section for age
-                              SizedBox(
-                                width: 130.w,
-                                child: Column(children: [
-                                  Image.asset(
-                                    icPPAge,
-                                    width: 25.w,
-                                    height: 25.h,
-                                  ),
-                                  SizedBox(
-                                    height: 9.h,
-                                  ),
-                                  Text(
-                                    "49",
-                                    style: TextStyle(
-                                      fontSize: 17.sp,
-                                      color: blackTitle,
-                                    ),
-                                  ),
-                                ]),
-                              ),
-                            ],
-                          ),
-                          // this section for horizintal lines
+            profileWidget(
+                iconShare: Icons.share,
+                imgProfile: icCPImage,
+                imgFlag: icCPFlag,
+                name: thomasTuchel,
+                child: Column(
+                  children: [
+                    SizedBox(
+                      height: 6.2.h,
+                    ),
+                    // this section profile section below
+                    Column(children: [
+                      Row(
+                        children: [
                           SizedBox(
-                            height: 5.h,
+                            width: 10.w,
                           ),
-                          Row(
-                            children: [
-                              SizedBox(
-                                width: 15.w,
-                              ),
-                              Container(
-                                color: greyColor,
-                                width: 118.w,
-                                height: 1.h,
-                              ),
-                              SizedBox(
+                          // this section for shirt
+                          SizedBox(
+                            width: 130.w,
+                            height: 60.h,
+                            child: Column(children: [
+                              Image.asset(
+                                icCPBatch,
                                 width: 30.w,
+                                height: 30.h,
                               ),
-                              Container(
-                                color: greyColor,
-                                width: 118.w,
+                              SizedBox(
                                 height: 1.h,
                               ),
-                            ],
+                              Text(
+                                uefaPro,
+                                style: TextStyle(
+                                  fontSize: 15.sp,
+                                  fontFamily: regular,
+                                  color: blackTitle,
+                                ),
+                              ),
+                            ]),
                           ),
                           SizedBox(
-                            height: 13.h,
+                            width: 10.w,
                           ),
-                          Row(
-                            children: [
-                              SizedBox(
-                                width: 10.w,
-                              ),
-                              // this section for for location
-                              SizedBox(
-                                width: 130.w,
-                                child: Column(children: [
-                                  Image.asset(
-                                    icPPLocation,
-                                    width: 20.w,
-                                    height: 22.h,
-                                  ),
-                                  SizedBox(
-                                    height: 9.h,
-                                  ),
-                                  Text(
-                                    paris,
-                                    style: TextStyle(
-                                      fontSize: 17.sp,
-                                      fontFamily: regular,
-                                      color: blackTitle,
-                                    ),
-                                  ),
-                                ]),
-                              ),
-                              SizedBox(
-                                width: 10.w,
-                              ),
-                              Container(
-                                color: greyColor,
-                                height: 56.h,
-                                width: 1.w,
-                              ),
-                              SizedBox(
-                                width: 10.w,
-                              ),
-                              // this section for last
-                              SizedBox(
-                                width: 130.w,
-                                child: Column(children: [
-                                  Image.asset(
-                                    icCPBall,
-                                    width: 25.w,
-                                    height: 25.h,
-                                  ),
-                                  SizedBox(
-                                    height: 9.h,
-                                  ),
-                                  Text(
-                                    "-",
-                                    style: TextStyle(
-                                      fontSize: 17.sp,
-                                      fontFamily: semibold,
-                                      color: blackTitle,
-                                    ),
-                                  ),
-                                ]),
-                              ),
-                            ],
+                          Container(
+                            color: greyColor,
+                            height: 56.h,
+                            width: 1.w,
                           ),
-                        ]),
-                      ],
-                    )),
-                SizedBox(
-                  height: 12.h,
-                ),
-              ])),
+                          SizedBox(
+                            width: 10.w,
+                          ),
+// this section for age
+                          SizedBox(
+                            width: 130.w,
+                            child: Column(children: [
+                              Image.asset(
+                                icPPAge,
+                                width: 25.w,
+                                height: 25.h,
+                              ),
+                              SizedBox(
+                                height: 9.h,
+                              ),
+                              Text(
+                                "49",
+                                style: TextStyle(
+                                  fontSize: 17.sp,
+                                  color: blackTitle,
+                                ),
+                              ),
+                            ]),
+                          ),
+                        ],
+                      ),
+                      // this section for horizintal lines
+                      SizedBox(
+                        height: 5.h,
+                      ),
+                      Row(
+                        children: [
+                          SizedBox(
+                            width: 15.w,
+                          ),
+                          Container(
+                            color: greyColor,
+                            width: 118.w,
+                            height: 1.h,
+                          ),
+                          SizedBox(
+                            width: 30.w,
+                          ),
+                          Container(
+                            color: greyColor,
+                            width: 118.w,
+                            height: 1.h,
+                          ),
+                        ],
+                      ),
+                      SizedBox(
+                        height: 13.h,
+                      ),
+                      Row(
+                        children: [
+                          SizedBox(
+                            width: 10.w,
+                          ),
+                          // this section for for location
+                          SizedBox(
+                            width: 130.w,
+                            child: Column(children: [
+                              Image.asset(
+                                icPPLocation,
+                                width: 20.w,
+                                height: 22.h,
+                              ),
+                              SizedBox(
+                                height: 9.h,
+                              ),
+                              Text(
+                                paris,
+                                style: TextStyle(
+                                  fontSize: 17.sp,
+                                  fontFamily: regular,
+                                  color: blackTitle,
+                                ),
+                              ),
+                            ]),
+                          ),
+                          SizedBox(
+                            width: 10.w,
+                          ),
+                          Container(
+                            color: greyColor,
+                            height: 56.h,
+                            width: 1.w,
+                          ),
+                          SizedBox(
+                            width: 10.w,
+                          ),
+                          // this section for last
+                          SizedBox(
+                            width: 130.w,
+                            child: Column(children: [
+                              Image.asset(
+                                icCPBall,
+                                width: 25.w,
+                                height: 25.h,
+                              ),
+                              SizedBox(
+                                height: 9.h,
+                              ),
+                              Text(
+                                "-",
+                                style: TextStyle(
+                                  fontSize: 17.sp,
+                                  fontFamily: semibold,
+                                  color: blackTitle,
+                                ),
+                              ),
+                            ]),
+                          ),
+                        ],
+                      ),
+                    ]),
+                  ],
+                )),
+            SizedBox(
+              height: 12.h,
+            ),
+          ])),
           SizedBox(
             height: 15.h,
           ),
@@ -431,71 +428,69 @@ class _CoachProfileScreenState extends State<CoachProfileScreen>
               ),
               // contact container
               Column(children: [
-                loginContainer(
-                    backgroudColor: whiteColor,
-                    borderColor: whiteColor,
+                CustomContainer(
                     child: Column(
+                  children: [
+                    SizedBox(
+                      height: 5.h,
+                    ),
+                    Row(
                       children: [
                         SizedBox(
-                          height: 5.h,
+                          width: 21.w,
                         ),
-                        Row(
-                          children: [
-                            SizedBox(
-                              width: 21.w,
-                            ),
-                            Image.asset(
-                              icPPEmail,
-                              width: 28.w,
-                              height: 19.50.h,
-                            ),
-                            SizedBox(
-                              width: 13.w,
-                            ),
-                            Text(
-                              thomasMail,
-                              style: TextStyle(
-                                  fontSize: 13.sp, fontFamily: regular),
-                            )
-                          ],
+                        Image.asset(
+                          icPPEmail,
+                          width: 28.w,
+                          height: 19.50.h,
                         ),
                         SizedBox(
-                          height: 15.h,
+                          width: 13.w,
                         ),
-                        Divider(
-                          thickness: 1,
-                          indent: 30,
-                          endIndent: 30,
-                          color: greyColor,
-                        ),
-                        SizedBox(
-                          height: 15.h,
-                        ),
-                        Row(
-                          children: [
-                            SizedBox(
-                              width: 21.w,
-                            ),
-                            Image.asset(
-                              icPPPhone,
-                              width: 28.w,
-                              height: 19.50.h,
-                            ),
-                            SizedBox(
-                              width: 13.w,
-                            ),
-                            Text(
-                              thomasNumber,
-                              style: TextStyle(
-                                  fontSize: 13.sp, fontFamily: regular),
-                            )
-                          ],
-                        ),
-                        SizedBox(
-                          height: 14.h,
-                        ),
+                        Text(
+                          thomasMail,
+                          style:
+                              TextStyle(fontSize: 13.sp, fontFamily: regular),
+                        )
                       ],
-                    )),
+                    ),
+                    SizedBox(
+                      height: 15.h,
+                    ),
+                    Divider(
+                      thickness: 1,
+                      indent: 30,
+                      endIndent: 30,
+                      color: greyColor,
+                    ),
+                    SizedBox(
+                      height: 15.h,
+                    ),
+                    Row(
+                      children: [
+                        SizedBox(
+                          width: 21.w,
+                        ),
+                        Image.asset(
+                          icPPPhone,
+                          width: 28.w,
+                          height: 19.50.h,
+                        ),
+                        SizedBox(
+                          width: 13.w,
+                        ),
+                        Text(
+                          thomasNumber,
+                          style:
+                              TextStyle(fontSize: 13.sp, fontFamily: regular),
+                        )
+                      ],
+                    ),
+                    SizedBox(
+                      height: 14.h,
+                    ),
+                  ],
+                )),
               ])
             ]),
           )

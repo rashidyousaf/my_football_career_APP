@@ -1,9 +1,9 @@
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:my_football_career/common_widgets/applogo_widget.dart';
 import 'package:my_football_career/common_widgets/bglogin/bg_login.dart';
+import 'package:my_football_career/common_widgets/custom_button.dart';
+import 'package:my_football_career/common_widgets/custom_container.dart';
 import 'package:my_football_career/common_widgets/google_button.dart';
-import 'package:my_football_career/common_widgets/login_container.dart';
-import 'package:my_football_career/common_widgets/our_button.dart';
 import 'package:my_football_career/consts/consts.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -33,9 +33,7 @@ class _LoginScreenState extends State<LoginScreen> {
             ),
             Container(
               padding: const EdgeInsets.only(left: 30, right: 30),
-              child: loginContainer(
-                borderColor: greenColor,
-                backgroudColor: loginButtonColor,
+              child: CustomContainer(
                 child: Container(
                   padding: const EdgeInsets.only(left: 30, right: 30),
                   child: Center(
@@ -148,10 +146,8 @@ class _LoginScreenState extends State<LoginScreen> {
                         SizedBox(
                           height: 10.h,
                         ),
-                        ourButton(
-                          color: greenColor,
+                        CustomButton(
                           title: login,
-                          textColor: whiteColor,
                           onPress: () {
                             Navigator.pushNamed(context, '/typescreen');
                           },

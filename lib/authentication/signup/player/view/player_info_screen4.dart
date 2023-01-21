@@ -1,8 +1,8 @@
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:my_football_career/common_widgets/bgwidget.dart';
+import 'package:my_football_career/common_widgets/custom_appbar.dart';
+import 'package:my_football_career/common_widgets/custom_button.dart';
+import 'package:my_football_career/common_widgets/custom_container.dart';
 import 'package:my_football_career/common_widgets/custom_textfield.dart';
-import 'package:my_football_career/common_widgets/login_container.dart';
-import 'package:my_football_career/common_widgets/our_button.dart';
 import 'package:my_football_career/consts/consts.dart';
 
 class PlayerInfoScreen4 extends StatelessWidget {
@@ -12,17 +12,18 @@ class PlayerInfoScreen4 extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomInset: false,
-      backgroundColor: backgroudColor,
-      body: bgWidget(
-        context: context,
+      appBar: const CustomAppbar(
         title: "Refrences",
-        subtitle: '',
+      ),
+      body: Padding(
+        padding: EdgeInsets.symmetric(horizontal: 30.w),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             SizedBox(
-              height: 10.h,
+              height: 26.h,
             ),
+
             RichText(
               text: TextSpan(
                 text: '4',
@@ -54,90 +55,55 @@ class PlayerInfoScreen4 extends StatelessWidget {
             SizedBox(
               height: 55.h,
             ),
-            loginContainer(
-                borderColor: whiteColor,
-                backgroudColor: whiteColor,
+            CustomContainer(
                 child: Container(
-                  padding: const EdgeInsets.all(19),
-                  child: Column(
-                    children: [
-                      customTextfield(
-                        title: yourTransfermarktURL,
-                        hint: yourTransfermarktURLHint,
-                        isPass: false,
-                        titleColor: titlegreyColor,
-                        bgColor: greyColor,
-                        borderColor: greyColor,
-                        hintColor: hintgreyColor,
-                      ),
-                      SizedBox(
-                        height: 16.h,
-                      ),
-                      customTextfield(
-                        title: "Your Fupa Url",
-                        hint: "www.fupa.com/profile",
-                        isPass: false,
-                        titleColor: titlegreyColor,
-                        bgColor: greyColor,
-                        borderColor: greyColor,
-                        hintColor: hintgreyColor,
-                      ),
-                      SizedBox(
-                        height: 16.h,
-                      ),
-                      customTextfield(
-                        title: cvResume,
-                        hint: cvResumeHint,
-                        isPass: false,
-                        titleColor: titlegreyColor,
-                        bgColor: greyColor,
-                        borderColor: greyColor,
-                        hintColor: hintgreyColor,
-                      ),
-                      SizedBox(
-                        height: 27.h,
-                      ),
-                      customTextfield(
-                        title: yourVideosURL,
-                        hint: yourVideosURLHint,
-                        isPass: false,
-                        titleColor: titlegreyColor,
-                        bgColor: greyColor,
-                        borderColor: greyColor,
-                        hintColor: hintgreyColor,
-                      ),
-                      customTextfield(
-                        title: '',
-                        hint: yourVideosURLHint,
-                        isPass: false,
-                        titleColor: titlegreyColor,
-                        bgColor: greyColor,
-                        borderColor: greyColor,
-                        hintColor: hintgreyColor,
-                      ),
-                      customTextfield(
-                        title: '',
-                        hint: yourVideosURLHint,
-                        isPass: false,
-                        titleColor: titlegreyColor,
-                        bgColor: greyColor,
-                        borderColor: greyColor,
-                        hintColor: hintgreyColor,
-                      ),
-                      SizedBox(
-                        height: 20.h,
-                      ),
-                      ourButton(
-                        color: greenColor,
-                        title: next,
-                        textColor: whiteColor,
-                        onPress: () {
-                          Navigator.pushNamed(context, '/playerinfoscreen5');
-                        },
-                      ),
-                    ],
+              padding: EdgeInsets.all(19.h),
+              child: Column(
+                children: [
+                  const CustomTextfield(
+                    title: yourTransfermarktURL,
+                    hint: yourTransfermarktURLHint,
                   ),
-                ))
+                  SizedBox(
+                    height: 16.h,
+                  ),
+                  const CustomTextfield(
+                    title: 'Your Fupa Url',
+                    hint: 'www.fupa.com/profile',
+                  ),
+                  SizedBox(
+                    height: 16.h,
+                  ),
+                  const CustomTextfield(
+                    title: cvResume,
+                    hint: cvResumeHint,
+                  ),
+                  SizedBox(
+                    height: 27.h,
+                  ),
+                  const CustomTextfield(
+                    title: yourVideosURL,
+                    hint: yourVideosURLHint,
+                  ),
+                  const CustomTextfield(
+                    title: '',
+                    hint: yourVideosURLHint,
+                  ),
+                  const CustomTextfield(
+                    title: '',
+                    hint: yourVideosURLHint,
+                  ),
+                  SizedBox(
+                    height: 20.h,
+                  ),
+                  CustomButton(
+                    onPress: () {
+                      Navigator.pushNamed(context, '/playerinfoscreen5');
+                    },
+                  ),
+                ],
+              ),
+            ))
           ],
         ),
       ),
