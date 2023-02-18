@@ -1,10 +1,16 @@
 import 'package:fl_country_code_picker/fl_country_code_picker.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:my_football_career/authentication/signup/player/controller/player_auth_controller.dart';
 import 'package:my_football_career/common_widgets/custom_appbar.dart';
 import 'package:my_football_career/common_widgets/custom_button.dart';
 import 'package:my_football_career/common_widgets/custom_container.dart';
+import 'package:my_football_career/common_widgets/custom_datepicker.dart';
+import 'package:my_football_career/common_widgets/custom_imagePicker.dart';
 import 'package:my_football_career/common_widgets/custom_textfield.dart';
 import 'package:my_football_career/consts/consts.dart';
+import 'package:provider/provider.dart';
+
+import '../../../../utils/utils.dart';
 
 class PlayerInfoScreen5 extends StatefulWidget {
   const PlayerInfoScreen5({super.key});
@@ -19,12 +25,13 @@ class _PlayerInfoScreen5State extends State<PlayerInfoScreen5> {
   CountryCode? countryCode;
   @override
   Widget build(BuildContext context) {
+    final playerController = Provider.of<PlayerAuthController>(context);
+
     return Scaffold(
-      resizeToAvoidBottomInset: false,
       appBar: const CustomAppbar(
         title: 'Contact',
       ),
-      body: Padding(
+      body: SingleChildScrollView(
         padding: EdgeInsets.symmetric(horizontal: 30.w),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -58,9 +65,11 @@ class _PlayerInfoScreen5State extends State<PlayerInfoScreen5> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const CustomTextfield(
+                  CustomTextfield(
                     title: yourActualCityLocation,
                     hint: '',
+                    controller:
+                        playerController.youractualCityLocationController,
                   ),
                   SizedBox(
                     height: 19.h,
@@ -79,6 +88,7 @@ class _PlayerInfoScreen5State extends State<PlayerInfoScreen5> {
                   SizedBox(
                     height: 45.h,
                     child: TextFormField(
+                      controller: playerController.yourPhoneNumberController,
                       textAlignVertical: TextAlignVertical.top,
                       keyboardType: TextInputType.number,
                       textInputAction: TextInputAction.none,
@@ -119,6 +129,8 @@ class _PlayerInfoScreen5State extends State<PlayerInfoScreen5> {
                                       context: context);
                                   setState(() {
                                     countryCode = code;
+                                    playerController.phoneCodeController.text =
+                                        countryCode!.dialCode.toString();
                                   });
                                 },
                                 child: Padding(
@@ -149,28 +161,20 @@ class _PlayerInfoScreen5State extends State<PlayerInfoScreen5> {
                     ),
                   ),
 
-                  // customTextfield(
-                  //   title: yourPhoneNumber,
-                  //   hint: '+33',
-                  //   isPass: false,
-                  //   titleColor: titlegreyColor,
-                  //   bgColor: greyColor,
-                  //   hintColor: titlegreyColor,
-                  //   borderColor: greyColor,
-                  // ),
                   SizedBox(
                     height: 40.h,
                   ),
-                  const CustomTextfield(
+                  CustomImagePicker(
                     title: validYourIdendity,
                     hint: validYourIdendityHint,
+                    controller: playerController.validYourIdendityController,
                   ),
                   SizedBox(
                     height: 40.h,
                   ),
-                  const CustomTextfield(
+                  CustomImagePicker(
                     title: validYourIdendity,
-                    hint: validYourIdendityHint1,
+                    controller: playerController.validYourIdendityController1,
                   ),
                   SizedBox(
                     height: 19.h,
@@ -182,8 +186,21 @@ class _PlayerInfoScreen5State extends State<PlayerInfoScreen5> {
                     alignment: Alignment.center,
                     child: CustomButton(
                       title: createProfile,
-                      onPress: () {
-                        Navigator.pushNamed(context, '/playerhomescreen');
+                      onPress: () async {
+                        try {
+                          if (playerController.validYourIdendityController.text
+                                  .isNotEmpty &&
+                              playerController.validYourIdendityController1.text
+                                  .isNotEmpty) {
+                            await playerController.savePlyarAccount();
+                            Navigator.pushNamedAndRemoveUntil(
+                                context, '/loginscreen', (route) => false);
+                          } else {
+                            Utils().toastMessage('Image is uploading...');
+                          }
+                        } catch (e) {
+                          Utils().toastMessage(e.toString());
+                        }
                       },
                     ),
                   ),

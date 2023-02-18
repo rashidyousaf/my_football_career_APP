@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1031727877563",
+    "project_id": "my-footbal-career",
+    "storage_bucket": "my-footbal-career.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1031727877563:android:753c6e31fe6dd77c2fc89e",
+        "android_client_info": {
+          "package_name": "com.flutterlads.my_football_career"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1031727877563-o37tpli5126urelsl0coa4mv07kosopr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCSJI-aCsnjxGpuawPSSQb_vS5GfkVfg_0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1031727877563-o37tpli5126urelsl0coa4mv07kosopr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

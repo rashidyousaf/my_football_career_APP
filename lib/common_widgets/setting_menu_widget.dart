@@ -7,7 +7,7 @@ Widget settingmenuWidget(
     required Function onTap,
     bool show = true,
     Color textColor = Colors.black}) {
-  return GestureDetector(
+  return InkWell(
     onTap: onTap(),
     child: SizedBox(
       height: 55.h,

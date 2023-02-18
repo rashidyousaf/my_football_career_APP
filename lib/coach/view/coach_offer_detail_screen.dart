@@ -13,8 +13,8 @@ class CoachDetailOfferScreen extends StatelessWidget {
     return Scaffold(
       resizeToAvoidBottomInset: false,
       appBar: const CustomAppbar(
-        icon: icBell,
-      ),
+          // icon: icBell,
+          ),
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: 30.w),
         child: Column(

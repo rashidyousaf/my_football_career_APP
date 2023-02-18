@@ -3,9 +3,13 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:my_football_career/common_widgets/custom_appbar.dart';
 import 'package:my_football_career/common_widgets/custom_button.dart';
 import 'package:my_football_career/common_widgets/custom_container.dart';
+import 'package:my_football_career/common_widgets/custom_imagePicker.dart';
 import 'package:my_football_career/consts/consts.dart';
+import 'package:provider/provider.dart';
 
 import '../../../../common_widgets/custom_textfield.dart';
+import '../../../../utils/utils.dart';
+import '../controller/agency_controller.dart';
 
 class AgencyInfoScreen3 extends StatefulWidget {
   const AgencyInfoScreen3({super.key});
@@ -19,12 +23,12 @@ class _AgencyInfoScreen3State extends State<AgencyInfoScreen3> {
   CountryCode? countryCode;
   @override
   Widget build(BuildContext context) {
+    final agencyController = Provider.of<AgencyController>(context);
     return Scaffold(
-      resizeToAvoidBottomInset: false,
       appBar: const CustomAppbar(
         title: 'Contact',
       ),
-      body: Padding(
+      body: SingleChildScrollView(
         padding: EdgeInsets.symmetric(horizontal: 30.w),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -58,7 +62,8 @@ class _AgencyInfoScreen3State extends State<AgencyInfoScreen3> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const CustomTextfield(
+                  CustomTextfield(
+                    controller: agencyController.youActualLocationController,
                     title: yourActualCityLocation,
                   ),
                   SizedBox(
@@ -80,6 +85,7 @@ class _AgencyInfoScreen3State extends State<AgencyInfoScreen3> {
                   SizedBox(
                     height: 45.h,
                     child: TextFormField(
+                      controller: agencyController.yourPhoneNumberController,
                       textAlignVertical: TextAlignVertical.top,
                       keyboardType: TextInputType.number,
                       textInputAction: TextInputAction.none,
@@ -120,6 +126,8 @@ class _AgencyInfoScreen3State extends State<AgencyInfoScreen3> {
                                       context: context);
                                   setState(() {
                                     countryCode = code;
+                                    agencyController.phoneCodeController.text =
+                                        countryCode!.dialCode.toString();
                                   });
                                 },
                                 child: Padding(
@@ -152,14 +160,16 @@ class _AgencyInfoScreen3State extends State<AgencyInfoScreen3> {
                   SizedBox(
                     height: 40.h,
                   ),
-                  const CustomTextfield(
+                  CustomImagePicker(
+                    controller: agencyController.validYourIdendityController,
                     title: validYourIdendity,
                     hint: validYourIdendityHint,
                   ),
                   SizedBox(
                     height: 40.h,
                   ),
-                  const CustomTextfield(
+                  CustomImagePicker(
+                    controller: agencyController.validYourIdendity1Controller,
                     title: validYourIdendity,
                     hint: validYourIdendityHint1,
                   ),
@@ -171,8 +181,21 @@ class _AgencyInfoScreen3State extends State<AgencyInfoScreen3> {
                     alignment: Alignment.center,
                     child: CustomButton(
                       title: createProfile,
-                      onPress: () {
-                        Navigator.pushNamed(context, '/agencyhomescreen');
+                      onPress: () async {
+                        try {
+                          if (agencyController.validYourIdendityController.text
+                                  .isNotEmpty &&
+                              agencyController.validYourIdendity1Controller.text
+                                  .isNotEmpty) {
+                            await agencyController.saveAgencyAccount();
+                            Navigator.pushNamedAndRemoveUntil(
+                                context, '/loginscreen', (route) => false);
+                          } else {
+                            Utils().toastMessage("Please Upload Images");
+                          }
+                        } catch (e) {
+                          Utils().toastMessage(e.toString());
+                        }
                       },
                     ),
                   ),

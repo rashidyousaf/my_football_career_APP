@@ -1,15 +1,20 @@
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:my_football_career/common_widgets/custom_appbar.dart';
 import 'package:my_football_career/common_widgets/custom_button.dart';
+import 'package:my_football_career/common_widgets/custom_club_search.dart';
 import 'package:my_football_career/common_widgets/custom_container.dart';
+import 'package:my_football_career/common_widgets/custom_country_picker.dart';
+import 'package:provider/provider.dart';
 import '../../../../common_widgets/custom_textfield.dart';
 import '../../../../consts/consts.dart';
+import '../controller/club_controller.dart';
 
 class ClubInfoScreen1 extends StatelessWidget {
   const ClubInfoScreen1({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final clubController = Provider.of<ClubController>(context);
     return Scaffold(
       resizeToAvoidBottomInset: false,
       appBar: const CustomAppbar(
@@ -59,14 +64,24 @@ class ClubInfoScreen1 extends StatelessWidget {
               padding: EdgeInsets.all(19.h),
               child: Column(
                 children: [
-                  const CustomTextfield(
+                  CustomClubSearch(
+                    nameController: clubController.nameYourClubController,
+                    flagController: clubController.clubFlagController,
                     title: nameYourClub,
-                    hint: '',
                   ),
                   SizedBox(
                     height: 21.h,
                   ),
-                  const CustomTextfield(
+                  // this section for country picker
+
+                  CustomCountryPicker(
+                      title: "Country",
+                      countryFlagController: clubController.clubFlagController),
+                  SizedBox(
+                    height: 21.h,
+                  ),
+                  CustomTextfield(
+                    controller: clubController.adressYourClubController,
                     title: adressYourClub,
                   ),
                   SizedBox(

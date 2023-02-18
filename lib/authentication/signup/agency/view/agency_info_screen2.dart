@@ -2,9 +2,12 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:my_football_career/common_widgets/custom_appbar.dart';
 import 'package:my_football_career/common_widgets/custom_button.dart';
 import 'package:my_football_career/common_widgets/custom_container.dart';
+import 'package:my_football_career/common_widgets/custom_datepicker.dart';
+import 'package:provider/provider.dart';
 import '../../../../common_widgets/custom_textfield.dart';
 import '../../../../common_widgets/dropdown_widget.dart';
 import '../../../../consts/consts.dart';
+import '../controller/agency_controller.dart';
 
 class AgencyInfoScreen2 extends StatelessWidget {
   const AgencyInfoScreen2({super.key});
@@ -13,12 +16,12 @@ class AgencyInfoScreen2 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final agencyController = Provider.of<AgencyController>(context);
     return Scaffold(
-      resizeToAvoidBottomInset: false,
       appBar: const CustomAppbar(
         title: personalInfo,
       ),
-      body: Padding(
+      body: SingleChildScrollView(
         padding: EdgeInsets.symmetric(horizontal: 30.w),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -50,7 +53,7 @@ class AgencyInfoScreen2 extends StatelessWidget {
             ),
             SizedBox(
               child: Image.asset(
-                icProgress1,
+                icProgress2,
                 fit: BoxFit.fill,
               ),
             ),
@@ -63,6 +66,7 @@ class AgencyInfoScreen2 extends StatelessWidget {
               child: Column(
                 children: [
                   dropdownWidget(
+                    controller: agencyController.yourRoleinAgencyController,
                     title: yourRoleAgency,
                     itemList: yourroleinagencyList,
                     hintvalue: 'Select',
@@ -70,20 +74,24 @@ class AgencyInfoScreen2 extends StatelessWidget {
                   SizedBox(
                     height: 21.h,
                   ),
-                  const CustomTextfield(
+                  CustomTextfield(
+                    controller: agencyController.firstNameController,
                     title: firstName,
                   ),
                   SizedBox(
                     height: 21.h,
                   ),
-                  const CustomTextfield(
+                  CustomTextfield(
+                    controller: agencyController.lastNameController,
                     title: lastName,
                   ),
                   SizedBox(
                     height: 21.h,
                   ),
-                  const CustomTextfield(
-                      title: dateofBirth, icon: Icons.date_range),
+                  CustomDatepicker(
+                    contrler: agencyController.dateOfBirthController,
+                    title: dateofBirth,
+                  ),
                   SizedBox(
                     height: 20.h,
                   ),

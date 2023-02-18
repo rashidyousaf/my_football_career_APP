@@ -12,7 +12,7 @@ class CoachMessagesScreen extends StatelessWidget {
     return Scaffold(
       appBar: const CustomAppbar(
         title: messages,
-        icon: icBell,
+        // icon: icBell,
       ),
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: 30.w),

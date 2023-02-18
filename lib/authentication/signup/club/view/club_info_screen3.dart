@@ -3,9 +3,13 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:my_football_career/common_widgets/custom_appbar.dart';
 import 'package:my_football_career/common_widgets/custom_button.dart';
 import 'package:my_football_career/common_widgets/custom_container.dart';
+import 'package:my_football_career/common_widgets/custom_imagePicker.dart';
 import 'package:my_football_career/consts/consts.dart';
+import 'package:provider/provider.dart';
 
 import '../../../../common_widgets/custom_textfield.dart';
+import '../../../../utils/utils.dart';
+import '../controller/club_controller.dart';
 
 class ClubInfoScreen3 extends StatefulWidget {
   const ClubInfoScreen3({super.key});
@@ -19,12 +23,12 @@ class _ClubInfoScreen3State extends State<ClubInfoScreen3> {
   CountryCode? countryCode;
   @override
   Widget build(BuildContext context) {
+    final clubController = Provider.of<ClubController>(context);
     return Scaffold(
-      resizeToAvoidBottomInset: false,
       appBar: const CustomAppbar(
         title: "Contact",
       ),
-      body: Padding(
+      body: SingleChildScrollView(
         padding: EdgeInsets.symmetric(horizontal: 30.w),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -58,7 +62,8 @@ class _ClubInfoScreen3State extends State<ClubInfoScreen3> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const CustomTextfield(
+                  CustomTextfield(
+                    controller: clubController.yourActualLocationController,
                     title: yourActualCityLocation,
                   ),
                   SizedBox(
@@ -79,6 +84,7 @@ class _ClubInfoScreen3State extends State<ClubInfoScreen3> {
                   SizedBox(
                     height: 45.h,
                     child: TextFormField(
+                      controller: clubController.yourPhoneNumberController,
                       textAlignVertical: TextAlignVertical.top,
                       keyboardType: TextInputType.number,
                       textInputAction: TextInputAction.none,
@@ -119,6 +125,8 @@ class _ClubInfoScreen3State extends State<ClubInfoScreen3> {
                                       context: context);
                                   setState(() {
                                     countryCode = code;
+                                    clubController.phoneCodeController.text =
+                                        countryCode!.dialCode.toString();
                                   });
                                 },
                                 child: Padding(
@@ -151,14 +159,16 @@ class _ClubInfoScreen3State extends State<ClubInfoScreen3> {
                   SizedBox(
                     height: 40.h,
                   ),
-                  const CustomTextfield(
+                  CustomImagePicker(
+                    controller: clubController.validYourIdendityController,
                     title: validYourIdendity,
                     hint: validYourIdendityHint,
                   ),
                   SizedBox(
                     height: 40.h,
                   ),
-                  const CustomTextfield(
+                  CustomImagePicker(
+                    controller: clubController.validYourIdendity1Controller,
                     title: validYourIdendity,
                     hint: validYourIdendityHint1,
                   ),
@@ -170,8 +180,22 @@ class _ClubInfoScreen3State extends State<ClubInfoScreen3> {
                     alignment: Alignment.center,
                     child: CustomButton(
                       title: createProfile,
-                      onPress: () {
-                        Navigator.pushNamed(context, '/clubhomescreen');
+                      onPress: () async {
+                        try {
+                          if (clubController.validYourIdendityController.text
+                                  .isNotEmpty &&
+                              clubController.validYourIdendity1Controller.text
+                                  .isNotEmpty) {
+                            await clubController.saveClubAccount();
+                            Navigator.pushNamedAndRemoveUntil(
+                                context, '/loginscreen', (route) => false);
+                          } else {
+                            Utils().toastMessage(
+                                "Pleas wait image is uploading...");
+                          }
+                        } catch (e) {
+                          Utils().toastMessage(e.toString());
+                        }
                       },
                     ),
                   ),

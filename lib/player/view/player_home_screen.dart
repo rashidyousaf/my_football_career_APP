@@ -1,22 +1,28 @@
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:get/get.dart';
+
 import 'package:my_football_career/consts/consts.dart';
+import 'package:my_football_career/player/controller/home_controller.dart';
 import 'package:my_football_career/player/view/player_messages_screen.dart';
 import 'package:my_football_career/player/view/player_offers_screen.dart';
 import 'package:my_football_career/player/view/player_profile_screen.dart';
 import 'package:my_football_career/player/view/player_settings_screen.dart';
+import 'package:provider/provider.dart';
 
-import '../controller/home_controller.dart';
+import '../../authentication/signup/player/controller/player_auth_controller.dart';
 
 class PlayerHomeScreen extends StatelessWidget {
   const PlayerHomeScreen({super.key});
 
+  // int _selectedIndex = 0;
   @override
   Widget build(
     BuildContext context,
   ) {
+    final playerController = Provider.of<PlayerAuthController>(context);
+
     //init home controller
-    var controller = Get.put(HomeController());
+    final mp = Provider.of<NavbarProvider>(context, listen: false);
+
     //navbar items list
     var navbarItem = [
       BottomNavigationBarItem(
@@ -56,25 +62,29 @@ class PlayerHomeScreen extends StatelessWidget {
       const PlayerSettingsScreen(),
     ];
     return Scaffold(
-      body: Column(
-        children: [
-          Obx(
-            () => Expanded(
-              child: navBody.elementAt(controller.currentNavIndex.value),
-            ),
-          ),
-        ],
-      ),
-      bottomNavigationBar: Obx(() => (BottomNavigationBar(
-          currentIndex: controller.currentNavIndex.value,
-          type: BottomNavigationBarType.fixed,
-          backgroundColor: whiteColor,
-          selectedItemColor: greenColor,
-          selectedLabelStyle: const TextStyle(fontFamily: semibold),
-          items: navbarItem,
-          onTap: (value) {
-            controller.currentNavIndex.value = value;
-          }))),
-    );
+        body: Column(
+          children: [
+            Consumer<NavbarProvider>(builder: ((context, value, child) {
+              return Expanded(
+                child: navBody.elementAt(value.index),
+              );
+            }))
+          ],
+        ),
+        bottomNavigationBar: Consumer<NavbarProvider>(
+          builder: (context, value, child) {
+            return BottomNavigationBar(
+              currentIndex: mp.index,
+              type: BottomNavigationBarType.fixed,
+              backgroundColor: whiteColor,
+              selectedItemColor: greenColor,
+              selectedLabelStyle: const TextStyle(fontFamily: semibold),
+              items: navbarItem,
+              onTap: (value1) {
+                value.updateIndex(value1);
+              },
+            );
+          },
+        ));
   }
 }

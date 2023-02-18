@@ -135,7 +135,7 @@ class TypeScreen extends StatelessWidget {
                   ),
                   InkWell(
                     onTap: () {
-                      Navigator.pushNamed(context, '/loginscreen');
+                      Navigator.pushNamed(context, '/wrapper');
                     },
                     child: Text(
                       login,

@@ -1,7 +1,13 @@
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:my_football_career/consts/consts.dart';
 
-Widget playerdataWidget() {
+Widget playerdataWidget(
+    {String? postion,
+    String? attackingMidfielder,
+    String? weight,
+    String? height,
+    String? strongefeet,
+    String? underContract}) {
   return SizedBox(
     height: 226.h,
     child: Row(
@@ -59,7 +65,7 @@ Widget playerdataWidget() {
                   color: const Color.fromARGB(255, 54, 53, 53),
                   fontSize: 12.sp,
                 )),
-            Text(rightWinger,
+            Text(postion!,
                 style: TextStyle(
                   color: Colors.black,
                   fontSize: 14.sp,
@@ -69,7 +75,7 @@ Widget playerdataWidget() {
                   color: Colors.black,
                   fontSize: 12.sp,
                 )),
-            Text(attackingMidfielder,
+            Text(attackingMidfielder!,
                 style: TextStyle(
                   color: Colors.black,
                   fontSize: 14.sp,
@@ -99,6 +105,9 @@ Widget playerdataWidget() {
                   icPPFeet,
                   width: 17.w,
                   height: 26.h,
+                ),
+                SizedBox(
+                  width: 10.w,
                 )
               ],
             ),
@@ -107,25 +116,22 @@ Widget playerdataWidget() {
             ),
             Row(
               children: [
+                Text(
+                  weight!,
+                  style: TextStyle(fontSize: 14.sp, fontFamily: regular),
+                ),
+                SizedBox(
+                  width: 10.w,
+                ),
+                Text(
+                  height!,
+                  style: TextStyle(fontSize: 14.sp, fontFamily: regular),
+                ),
                 SizedBox(
                   width: 15.w,
                 ),
                 Text(
-                  "70",
-                  style: TextStyle(fontSize: 14.sp, fontFamily: regular),
-                ),
-                SizedBox(
-                  width: 34.w,
-                ),
-                Text(
-                  "174",
-                  style: TextStyle(fontSize: 14.sp, fontFamily: regular),
-                ),
-                SizedBox(
-                  width: 30.w,
-                ),
-                Text(
-                  left,
+                  strongefeet!,
                   style: TextStyle(fontSize: 14.sp, fontFamily: regular),
                 ),
               ],
@@ -138,7 +144,7 @@ Widget playerdataWidget() {
                   color: Colors.black,
                   fontSize: 12.sp,
                 )),
-            Text(underContractUntilBelow,
+            Text(underContract!,
                 style: TextStyle(
                   color: Colors.black,
                   fontSize: 14.sp,

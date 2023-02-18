@@ -4,8 +4,12 @@ import 'package:my_football_career/common_widgets/custom_appbar.dart';
 import 'package:my_football_career/common_widgets/custom_button.dart';
 import 'package:my_football_career/common_widgets/custom_container.dart';
 import 'package:my_football_career/consts/consts.dart';
+import 'package:my_football_career/utils/utils.dart';
+import 'package:provider/provider.dart';
 
+import '../../../../common_widgets/custom_imagePicker.dart';
 import '../../../../common_widgets/custom_textfield.dart';
+import '../controller/coach_controller.dart';
 
 class CoachInfoScreen5 extends StatefulWidget {
   const CoachInfoScreen5({super.key});
@@ -19,12 +23,12 @@ class _CoachInfoScreen5State extends State<CoachInfoScreen5> {
   CountryCode? countryCode;
   @override
   Widget build(BuildContext context) {
+    final coachController = Provider.of<CoachController>(context);
     return Scaffold(
-      resizeToAvoidBottomInset: false,
       appBar: const CustomAppbar(
         title: 'Contact',
       ),
-      body: Padding(
+      body: SingleChildScrollView(
         padding: EdgeInsets.symmetric(horizontal: 30.w),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -58,7 +62,9 @@ class _CoachInfoScreen5State extends State<CoachInfoScreen5> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const CustomTextfield(
+                  CustomTextfield(
+                    controller:
+                        coachController.youractualCityLocationController,
                     title: yourActualCityLocation,
                   ),
                   SizedBox(
@@ -79,6 +85,7 @@ class _CoachInfoScreen5State extends State<CoachInfoScreen5> {
                   SizedBox(
                     height: 45.h,
                     child: TextFormField(
+                      controller: coachController.yourPhoneNumberController,
                       textAlignVertical: TextAlignVertical.top,
                       keyboardType: TextInputType.number,
                       textInputAction: TextInputAction.none,
@@ -119,6 +126,8 @@ class _CoachInfoScreen5State extends State<CoachInfoScreen5> {
                                       context: context);
                                   setState(() {
                                     countryCode = code;
+                                    coachController.phoneCodeController.text =
+                                        countryCode!.dialCode.toString();
                                   });
                                 },
                                 child: Padding(
@@ -151,14 +160,17 @@ class _CoachInfoScreen5State extends State<CoachInfoScreen5> {
                   SizedBox(
                     height: 40.h,
                   ),
-                  const CustomTextfield(
+                  CustomImagePicker(
+                    controller: coachController.validYourIdendityController,
                     title: validYourIdendity,
                     hint: validYourIdendityHint,
                   ),
                   SizedBox(
                     height: 40.h,
                   ),
-                  const CustomTextfield(
+
+                  CustomImagePicker(
+                    controller: coachController.validYourIdendity1Controller,
                     title: validYourIdendity,
                     hint: validYourIdendityHint1,
                   ),
@@ -170,8 +182,21 @@ class _CoachInfoScreen5State extends State<CoachInfoScreen5> {
                     alignment: Alignment.center,
                     child: CustomButton(
                       title: createProfile,
-                      onPress: () {
-                        Navigator.pushNamed(context, '/coachhomescreen');
+                      onPress: () async {
+                        try {
+                          if (coachController.validYourIdendityController.text
+                                  .isNotEmpty &&
+                              coachController.validYourIdendityController.text
+                                  .isNotEmpty) {
+                            await coachController.saveCoachAccount();
+                          } else {
+                            Utils().toastMessage("Images are uploading...");
+                          }
+                        } catch (e) {
+                          Utils().toastMessage(e.toString());
+                        }
+                        Navigator.pushNamedAndRemoveUntil(
+                            context, '/loginscreen', (route) => false);
                       },
                     ),
                   ),

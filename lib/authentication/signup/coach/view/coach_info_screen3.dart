@@ -1,16 +1,21 @@
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:my_football_career/common_widgets/custom_appbar.dart';
 import 'package:my_football_career/common_widgets/custom_button.dart';
+import 'package:my_football_career/common_widgets/custom_club_search.dart';
 import 'package:my_football_career/common_widgets/custom_container.dart';
 import 'package:my_football_career/common_widgets/custom_textfield.dart';
 import 'package:my_football_career/common_widgets/dropdown_widget.dart';
 import 'package:my_football_career/consts/consts.dart';
+import 'package:provider/provider.dart';
+
+import '../controller/coach_controller.dart';
 
 class CoachInfoScreen3 extends StatelessWidget {
   const CoachInfoScreen3({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final coachController = Provider.of<CoachController>(context);
     return Scaffold(
       resizeToAvoidBottomInset: false,
       appBar: const CustomAppbar(
@@ -60,20 +65,24 @@ class CoachInfoScreen3 extends StatelessWidget {
               padding: EdgeInsets.all(19.h),
               child: Column(
                 children: [
-                  const CustomTextfield(
+                  CustomClubSearch(
+                    nameController: coachController.actualClubController,
+                    flagController: coachController.clubFlagController,
                     title: actualClub,
                   ),
                   SizedBox(
                     height: 19.h,
                   ),
                   dropdownWidget(
+                      controller: coachController.availableTransferController,
                       title: availableTransfer,
                       itemList: availabletransferList,
                       hintvalue: 'Select'),
                   SizedBox(
                     height: 19.h,
                   ),
-                  const CustomTextfield(
+                  CustomTextfield(
+                    controller: coachController.transferCoastsController,
                     title: transferCoasts,
                   ),
                   SizedBox(

@@ -1,9 +1,11 @@
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:my_football_career/authentication/signup/player/controller/player_auth_controller.dart';
 import 'package:my_football_career/common_widgets/custom_appbar.dart';
 import 'package:my_football_career/common_widgets/custom_button.dart';
 import 'package:my_football_career/common_widgets/custom_container.dart';
 import 'package:my_football_career/common_widgets/dropdown_widget.dart';
 import 'package:my_football_career/consts/consts.dart';
+import 'package:provider/provider.dart';
 
 class PlayerInfoScreen2 extends StatefulWidget {
   const PlayerInfoScreen2({super.key});
@@ -15,6 +17,7 @@ class PlayerInfoScreen2 extends StatefulWidget {
 class _PlayerInfoScreen2State extends State<PlayerInfoScreen2> {
   @override
   Widget build(BuildContext context) {
+    final playerContrller = Provider.of<PlayerAuthController>(context);
     return Scaffold(
       appBar: const CustomAppbar(
         title: playerCharacteristics,
@@ -65,9 +68,11 @@ class _PlayerInfoScreen2State extends State<PlayerInfoScreen2> {
               child: Column(
                 children: [
                   dropdownWidget(
-                      title: youMainPosition,
-                      itemList: postionList,
-                      hintvalue: 'Select'),
+                    title: youMainPosition,
+                    itemList: postionList,
+                    hintvalue: 'Select',
+                    controller: playerContrller.yourMainPositionController,
+                  ),
                   SizedBox(
                     height: 15.h,
                   ),
@@ -75,6 +80,7 @@ class _PlayerInfoScreen2State extends State<PlayerInfoScreen2> {
                     title: yourSecondPosition,
                     itemList: postionList,
                     hintvalue: "Select",
+                    controller: playerContrller.yourSecondPositionController,
                   ),
                   SizedBox(
                     height: 15.h,
@@ -83,6 +89,7 @@ class _PlayerInfoScreen2State extends State<PlayerInfoScreen2> {
                     title: height,
                     itemList: heightList,
                     hintvalue: "Select",
+                    controller: playerContrller.heightController,
                   ),
                   SizedBox(
                     height: 15.h,
@@ -91,6 +98,7 @@ class _PlayerInfoScreen2State extends State<PlayerInfoScreen2> {
                     title: weight,
                     itemList: weightList,
                     hintvalue: "Select",
+                    controller: playerContrller.weightController,
                   ),
                   SizedBox(
                     height: 15.h,
@@ -99,6 +107,7 @@ class _PlayerInfoScreen2State extends State<PlayerInfoScreen2> {
                     title: yourStrongFoot,
                     itemList: strongfootList,
                     hintvalue: "Select",
+                    controller: playerContrller.yourStrongFootController,
                   ),
                   SizedBox(
                     height: 20.h,

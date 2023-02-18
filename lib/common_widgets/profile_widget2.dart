@@ -20,14 +20,33 @@ Widget profileWidget2(
         SizedBox(
           width: 130.w,
           height: 75.h,
-          child: Column(children: [
+          child: Stack(children: [
             SizedBox(
               height: 10.h,
             ),
-            Image.asset(
-              firstIcon,
-              width: 44.w,
-              height: 45.h,
+            Positioned(
+              left: 42.w,
+              top: 10.h,
+              child: Image.asset(
+                firstIcon,
+                width: 44.w,
+                height: 45.h,
+              ),
+            ),
+            Positioned(
+              left: 49.w,
+              top: 25.h,
+              child: SizedBox(
+                width: 30.w,
+                child: Text(
+                  firstName!,
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    fontSize: 17.sp,
+                    fontFamily: semibold,
+                  ),
+                ),
+              ),
             ),
           ]),
         ),
@@ -133,19 +152,23 @@ Widget profileWidget2(
         SizedBox(
           width: 130.w,
           child: Column(children: [
-            Image.asset(
+            Image.network(
               fourthIcon,
-              width: 25.w,
-              height: 25.h,
+              width: 30.w,
+              height: 30.h,
             ),
             SizedBox(
-              height: 9.h,
+              height: 8.h,
             ),
-            Text(
-              fourthName!,
-              style: TextStyle(
-                fontSize: 17.sp,
-                fontFamily: semibold,
+            SizedBox(
+              width: 130.w,
+              child: Text(
+                fourthName!,
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontSize: 17.sp,
+                  fontFamily: semibold,
+                ),
               ),
             ),
           ]),

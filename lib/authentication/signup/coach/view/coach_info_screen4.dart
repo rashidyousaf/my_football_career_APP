@@ -2,21 +2,25 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:my_football_career/common_widgets/custom_appbar.dart';
 import 'package:my_football_career/common_widgets/custom_button.dart';
 import 'package:my_football_career/common_widgets/custom_container.dart';
+import 'package:my_football_career/common_widgets/custom_imagePicker.dart';
 import 'package:my_football_career/consts/consts.dart';
+import 'package:my_football_career/utils/utils.dart';
+import 'package:provider/provider.dart';
 
 import '../../../../common_widgets/custom_textfield.dart';
+import '../controller/coach_controller.dart';
 
 class CoachInfoScreen4 extends StatelessWidget {
   const CoachInfoScreen4({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final coachController = Provider.of<CoachController>(context);
     return Scaffold(
-      resizeToAvoidBottomInset: false,
       appBar: const CustomAppbar(
         title: 'Refrences',
       ),
-      body: Padding(
+      body: SingleChildScrollView(
         padding: EdgeInsets.symmetric(horizontal: 30.w),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -60,28 +64,32 @@ class CoachInfoScreen4 extends StatelessWidget {
               padding: EdgeInsets.all(19.h),
               child: Column(
                 children: [
-                  const CustomTextfield(
+                  CustomTextfield(
+                    controller: coachController.yourTransfermarktUrlController,
                     title: yourTransfermarktURL,
                     hint: yourTransfermarktURLHint,
                   ),
                   SizedBox(
                     height: 16.h,
                   ),
-                  const CustomTextfield(
+                  CustomImagePicker(
+                    controller: coachController.changeYourcvController,
                     title: chargeYourCV,
                     hint: 'JPEG,PDF..',
                   ),
                   SizedBox(
                     height: 16.h,
                   ),
-                  const CustomTextfield(
+                  CustomImagePicker(
+                    controller: coachController.chanrgeSomePhotosController,
                     title: chargeSomePhotos,
                     hint: 'upload',
                   ),
                   SizedBox(
                     height: 16.h,
                   ),
-                  const CustomTextfield(
+                  CustomImagePicker(
+                    controller: coachController.chargeSomePhotos2Controller,
                     title: chargeSomePhotos,
                     hint: 'upload',
                   ),
@@ -90,7 +98,16 @@ class CoachInfoScreen4 extends StatelessWidget {
                   ),
                   CustomButton(
                     onPress: () {
-                      Navigator.pushNamed(context, '/coachinfoscreen5');
+                      if (coachController
+                              .changeYourcvController.text.isNotEmpty &&
+                          coachController
+                              .chanrgeSomePhotosController.text.isNotEmpty &&
+                          coachController
+                              .chargeSomePhotos2Controller.text.isNotEmpty) {
+                        Navigator.pushNamed(context, '/coachinfoscreen5');
+                      } else {
+                        Utils().toastMessage("Please waite Image is uploading");
+                      }
                     },
                   ),
                 ],

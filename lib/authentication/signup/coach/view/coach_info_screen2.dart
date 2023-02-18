@@ -1,15 +1,18 @@
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:my_football_career/authentication/signup/coach/controller/coach_controller.dart';
 import 'package:my_football_career/common_widgets/custom_appbar.dart';
 import 'package:my_football_career/common_widgets/custom_button.dart';
 import 'package:my_football_career/common_widgets/custom_container.dart';
 import 'package:my_football_career/common_widgets/dropdown_widget.dart';
 import 'package:my_football_career/consts/consts.dart';
+import 'package:provider/provider.dart';
 
 class CoachInfoScreen2 extends StatelessWidget {
   const CoachInfoScreen2({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final coachController = Provider.of<CoachController>(context);
     return Scaffold(
       resizeToAvoidBottomInset: false,
       appBar: const CustomAppbar(
@@ -60,9 +63,11 @@ class CoachInfoScreen2 extends StatelessWidget {
               child: Column(
                 children: [
                   dropdownWidget(
-                      title: yourRole,
-                      itemList: yourrolList,
-                      hintvalue: 'Select'),
+                    title: yourRole,
+                    itemList: yourrolList,
+                    hintvalue: 'Select',
+                    controller: coachController.yourRoleController,
+                  ),
                   SizedBox(
                     height: 19.h,
                   ),
@@ -70,6 +75,7 @@ class CoachInfoScreen2 extends StatelessWidget {
                     title: yourLicence,
                     itemList: yourlicenceList,
                     hintvalue: "Select",
+                    controller: coachController.yourLicenceController,
                   ),
                   SizedBox(
                     height: 20.h,

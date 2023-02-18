@@ -1,7 +1,10 @@
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:my_football_career/authentication/signup/agency/controller/agency_controller.dart';
 import 'package:my_football_career/common_widgets/custom_appbar.dart';
 import 'package:my_football_career/common_widgets/custom_button.dart';
 import 'package:my_football_career/common_widgets/custom_container.dart';
+import 'package:my_football_career/common_widgets/custom_country_picker.dart';
+import 'package:provider/provider.dart';
 import '../../../../common_widgets/custom_textfield.dart';
 import '../../../../consts/consts.dart';
 
@@ -10,6 +13,7 @@ class AgencyInfoScreen1 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final agencyController = Provider.of<AgencyController>(context);
     return Scaffold(
       resizeToAvoidBottomInset: false,
       appBar: const CustomAppbar(
@@ -59,13 +63,23 @@ class AgencyInfoScreen1 extends StatelessWidget {
               padding: EdgeInsets.all(19.h),
               child: Column(
                 children: [
-                  const CustomTextfield(
+                  CustomTextfield(
+                    controller: agencyController.nameYourAgencyController,
                     title: nameYourAgency,
                   ),
                   SizedBox(
                     height: 21.h,
                   ),
-                  const CustomTextfield(
+                  // this section for country picker
+                  CustomCountryPicker(
+                      title: "Country",
+                      countryFlagController:
+                          agencyController.countryFlagController),
+                  SizedBox(
+                    height: 21.h,
+                  ),
+                  CustomTextfield(
+                    controller: agencyController.adressYourAgencyController,
                     title: adressYourAgency,
                   ),
                   SizedBox(

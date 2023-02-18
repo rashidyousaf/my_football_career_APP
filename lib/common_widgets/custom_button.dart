@@ -4,10 +4,10 @@ import 'package:my_football_career/consts/consts.dart';
 class CustomButton extends StatelessWidget {
   final Color? bgColor;
   final Color? textColor;
-  String? title;
+  final String? title;
   final VoidCallback? onPress;
 
-  CustomButton(
+  const CustomButton(
       {super.key,
       this.title = "Next",
       this.onPress,

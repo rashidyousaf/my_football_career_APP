@@ -1,6 +1,9 @@
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:my_football_career/consts/consts.dart';
+import 'package:provider/provider.dart';
+
+import '../player/controller/home_controller.dart';
 
 class CustomAppbar extends StatelessWidget implements PreferredSizeWidget {
   const CustomAppbar({
@@ -27,7 +30,9 @@ class CustomAppbar extends StatelessWidget implements PreferredSizeWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           InkWell(
-            onTap: () => Navigator.pop(context),
+            onTap: () {
+              Navigator.pop(context);
+            },
             child: Image.asset(
               icBAck,
               width: 29.w,

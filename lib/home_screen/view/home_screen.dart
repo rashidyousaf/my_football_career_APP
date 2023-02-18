@@ -4,12 +4,15 @@ import 'package:my_football_career/common_widgets/bglogin/bg_login.dart';
 import 'package:my_football_career/common_widgets/custom_button.dart';
 import 'package:my_football_career/common_widgets/custom_container.dart';
 import 'package:my_football_career/consts/consts.dart';
+import 'package:my_football_career/services/firestore_service.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
+    FirestoreService firestoreService = FirestoreService();
+
     return Scaffold(
       body: bgLogin(
         child: Center(

@@ -34,7 +34,7 @@ Widget profileWidget({iconShare, child, imgProfile, imgFlag, String? name}) {
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(50),
               ),
-              child: Image.asset(
+              child: Image.network(
                 imgProfile,
                 fit: BoxFit.fill,
               ),
@@ -59,10 +59,17 @@ Widget profileWidget({iconShare, child, imgProfile, imgFlag, String? name}) {
           SizedBox(
             height: 35.h,
             width: 52.w,
-            child: Image.asset(
-              imgFlag,
-              fit: BoxFit.fill,
+            child: FittedBox(
+              fit: BoxFit.cover,
+              child: Text(
+                imgFlag,
+                // style: TextStyle(fontSize: 0.sp),
+              ),
             ),
+            // child: Image.asset(
+            //   imgFlag,
+            //   fit: BoxFit.fill,
+            // ),
           ),
         ],
       ),

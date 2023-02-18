@@ -6,11 +6,13 @@ Widget dropdownWidget({
   String? title,
   String? hintvalue,
   List? itemList,
+  TextEditingController? controller,
 }) {
   // final List<String> genderItems = [
   //   'Male',
   //   'Female',
   // ];
+  String? selectedValue;
 
   return Column(
     crossAxisAlignment: CrossAxisAlignment.start,
@@ -23,6 +25,7 @@ Widget dropdownWidget({
         height: 7.h,
       ),
       DropdownButtonFormField2(
+        value: selectedValue,
         decoration: InputDecoration(
           isDense: true,
           contentPadding: EdgeInsets.zero,
@@ -71,12 +74,15 @@ Widget dropdownWidget({
             .toList(),
         validator: (value) {
           if (value == null) {
-            return 'Please select gender.';
+            return 'Please select value.';
           }
           return null;
         },
         onChanged: (value) {
           //Do something when changing the item if you want.
+          selectedValue = value;
+          controller!.text = selectedValue.toString();
+          print(controller);
         },
         onSaved: (value) {},
       ),

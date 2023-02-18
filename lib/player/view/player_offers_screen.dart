@@ -14,7 +14,7 @@ class PlayerOffersScreen extends StatelessWidget {
         resizeToAvoidBottomInset: false,
         appBar: const CustomAppbar(
           title: offers,
-          icon: icBell,
+          // icon: icBell,
         ),
         body: Padding(
             padding: EdgeInsets.symmetric(horizontal: 30.w),

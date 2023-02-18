@@ -1,23 +1,29 @@
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:my_football_career/authentication/login/controller/login_controller.dart';
 import 'package:my_football_career/common_widgets/applogo_widget.dart';
 import 'package:my_football_career/common_widgets/bglogin/bg_login.dart';
 import 'package:my_football_career/common_widgets/custom_button.dart';
 import 'package:my_football_career/common_widgets/custom_container.dart';
 import 'package:my_football_career/common_widgets/google_button.dart';
 import 'package:my_football_career/consts/consts.dart';
+import 'package:my_football_career/player/controller/player_controller.dart';
+import 'package:my_football_career/services/auth_service.dart';
+import 'package:my_football_career/services/firestore_service.dart';
+import 'package:my_football_career/utils/utils.dart';
+import 'package:provider/provider.dart';
 
-class LoginScreen extends StatefulWidget {
+import '../../../common_widgets/auth_textfield.dart';
+
+class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
 
   @override
-  State<LoginScreen> createState() => _LoginScreenState();
-}
-
-bool? isCheck = false;
-
-class _LoginScreenState extends State<LoginScreen> {
-  @override
   Widget build(BuildContext context) {
+    final TextEditingController emailController = TextEditingController();
+    final TextEditingController passwordController = TextEditingController();
+
+    final authService = Provider.of<AuthService>(context);
+
     return Scaffold(
       resizeToAvoidBottomInset: false,
       body: bgLogin(
@@ -31,132 +37,121 @@ class _LoginScreenState extends State<LoginScreen> {
             SizedBox(
               height: 75.h,
             ),
-            Container(
-              padding: const EdgeInsets.only(left: 30, right: 30),
+            Padding(
+              padding: EdgeInsets.only(left: 30.w, right: 30.w),
               child: CustomContainer(
-                child: Container(
-                  padding: const EdgeInsets.only(left: 30, right: 30),
-                  child: Center(
-                    child: Column(
-                      children: [
-                        SizedBox(
-                          height: 42.h,
-                        ),
-                        Container(
-                          padding: EdgeInsets.only(left: 10.w, right: 10.w),
-                          height: 45.h,
-                          decoration: BoxDecoration(
-                            color: whiteColor,
-                            border: Border.all(color: greenColor, width: 1.5.w),
-                            borderRadius: BorderRadius.circular(10.r),
-                          ),
-                          child: TextField(
-                            style: TextStyle(
-                                fontSize: 14.sp, color: titlegreyColor),
-                            cursorColor: greenColor,
-                            decoration: InputDecoration(
-                                border: InputBorder.none,
-                                hintText: email,
-                                hintStyle: TextStyle(
-                                  fontFamily: regular,
-                                  fontSize: 14.sp,
-                                  color: greenColor,
-                                )),
-                          ),
-                        ),
-                        SizedBox(
-                          height: 30.h,
-                        ),
-                        Container(
-                          padding: EdgeInsets.only(left: 10.w, right: 10.w),
-                          height: 45.h,
-                          decoration: BoxDecoration(
-                            color: whiteColor,
-                            border: Border.all(color: greenColor, width: 1.5.w),
-                            borderRadius: BorderRadius.circular(10.r),
-                          ),
-                          child: TextField(
-                            obscureText: true,
-                            style: TextStyle(
-                                fontSize: 14.sp, color: titlegreyColor),
-                            cursorColor: greenColor,
-                            decoration: InputDecoration(
-                                suffixIcon: Icon(
-                                  Icons.visibility_outlined,
-                                  color: greenColor,
-                                  size: 25.sp,
-                                ),
-                                border: InputBorder.none,
-                                hintText: password,
-                                hintStyle: TextStyle(
-                                  fontFamily: regular,
-                                  fontSize: 14.sp,
-                                  color: greenColor,
-                                )),
-                          ),
-                        ),
-                        SizedBox(
-                          height: 14.h,
-                        ),
-                        Row(
+                borderColor: greenColor,
+                backgroudColor: loginButtonColor,
+                child: Padding(
+                  padding: EdgeInsets.only(left: 30.w, right: 30.w),
+                  child: Column(
+                    children: [
+                      SizedBox(
+                        height: 42.h,
+                      ),
+                      Form(
+                        // key: _formKey,
+                        child: Column(
                           children: [
-                            SizedBox(
-                              width: 6.w,
+                            AuthTextfield(
+                              controller: emailController,
+                              hintText: email,
                             ),
                             SizedBox(
-                              width: 12.w,
-                              height: 12.h,
-                              child: Checkbox(
+                              height: 30.h,
+                            ),
+                            AuthTextfield(
+                              controller: passwordController,
+                              hintText: password,
+                              icon: Icon(
+                                Icons.visibility_outlined,
+                                color: greenColor,
+                                size: 25.sp,
+                              ),
+                              obs: true,
+                            ),
+                          ],
+                        ),
+                      ),
+                      SizedBox(
+                        height: 14.h,
+                      ),
+                      Row(
+                        children: [
+                          SizedBox(
+                            width: 6.w,
+                          ),
+                          SizedBox(
+                            width: 12.w,
+                            height: 12.h,
+                            child: Consumer<LoginController>(
+                                builder: (context, state, _) {
+                              return Checkbox(
                                   shape: RoundedRectangleBorder(
                                       borderRadius: BorderRadius.circular(3.r)),
                                   splashRadius: 10.r,
                                   checkColor: greenColor,
                                   activeColor: whiteColor,
-                                  value: isCheck,
+                                  value: state.isChecked,
                                   side:
                                       BorderSide(color: whiteColor, width: 2.w),
-                                  onChanged: (bool? newValue) {
-                                    setState(() {
-                                      isCheck = newValue;
-                                    });
-                                  }),
+                                  onChanged: (bool? value) {
+                                    state.isChecked = value!;
+                                  });
+                            }),
+                          ),
+                          SizedBox(
+                            width: 7.w,
+                          ),
+                          Text(
+                            rememberMe,
+                            style: TextStyle(
+                              fontSize: 10.sp,
+                              color: whiteColor,
+                              fontFamily: bold,
                             ),
-                            SizedBox(
-                              width: 7.w,
-                            ),
-                            Text(
-                              rememberMe,
-                              style: TextStyle(
+                          ),
+                          const Spacer(),
+                          Text(
+                            forgetPass,
+                            style: TextStyle(
                                 fontSize: 10.sp,
-                                color: whiteColor,
                                 fontFamily: bold,
-                              ),
-                            ),
-                            const Spacer(),
-                            Text(
-                              forgetPass,
-                              style: TextStyle(
-                                  fontSize: 10.sp,
-                                  fontFamily: bold,
-                                  color: whiteColor,
-                                  fontStyle: FontStyle.italic),
-                            ),
-                          ],
-                        ),
-                        SizedBox(
-                          height: 10.h,
-                        ),
-                        CustomButton(
-                          title: login,
-                          onPress: () {
-                            Navigator.pushNamed(context, '/typescreen');
-                          },
-                        ),
-                        SizedBox(
-                          height: 28.h,
-                        ),
-                      ],
-                    ),
+                                color: whiteColor,
+                                fontStyle: FontStyle.italic),
+                          ),
+                        ],
+                      ),
+                      SizedBox(
+                        height: 10.h,
+                      ),
+                      CustomButton(
+                        title: login,
+                        onPress: () async {
+                          // if (_formKey.currentState!.validate()) {}
+                          // pC.getPlayer();
+                          if (emailController.text.isNotEmpty &&
+                              passwordController.text.isNotEmpty) {
+                            try {
+                              await authService.signInWithEmailAndPassword(
+                                emailController.text,
+                                passwordController.text,
+                                context,
+                              );
+                            } catch (e) {
+                              Utils().toastMessage(e.toString());
+                            }
+                          } else {
+                            Utils().toastMessage("Email and password required");
+                          }
+
+                          // playerController.getPlayer();
+                        },
+                      ),
+                      SizedBox(
+                        height: 28.h,
+                      ),
+                    ],
                   ),
                 ),
               ),

@@ -1,5 +1,12 @@
-import 'package:get/get.dart';
+import 'package:my_football_career/consts/consts.dart';
 
-class HomeController extends GetxController {
-  var currentNavIndex = 0.obs;
+class NavbarProvider with ChangeNotifier {
+  int _index = 0;
+
+  int get index => _index;
+
+  void updateIndex(int index) {
+    _index = index;
+    notifyListeners();
+  }
 }
