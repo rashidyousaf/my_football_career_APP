@@ -1,9 +1,5 @@
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
 import 'package:my_football_career/consts/consts.dart';
-import 'package:provider/provider.dart';
-
-import '../player/controller/home_controller.dart';
 
 class CustomAppbar extends StatelessWidget implements PreferredSizeWidget {
   const CustomAppbar({
@@ -12,13 +8,14 @@ class CustomAppbar extends StatelessWidget implements PreferredSizeWidget {
     this.subtitle = "",
     this.icon,
     this.color,
+    this.show = true,
   });
 
   final String? title;
   final String? subtitle;
 
   final String? icon;
-
+  final bool show;
   final Color? color;
 
   @override
@@ -33,11 +30,13 @@ class CustomAppbar extends StatelessWidget implements PreferredSizeWidget {
             onTap: () {
               Navigator.pop(context);
             },
-            child: Image.asset(
-              icBAck,
-              width: 29.w,
-              height: 29.h,
-            ),
+            child: show
+                ? Image.asset(
+                    icBAck,
+                    width: 29.w,
+                    height: 29.h,
+                  )
+                : const SizedBox(),
           ),
           SizedBox(
             width: 16.w,

@@ -4,6 +4,7 @@ class CoachModel {
   String? firstName;
   String? lastName;
   String? dateOfBirth;
+  String? date;
   String? nationality;
   String? gender;
   String? yourRole;
@@ -28,6 +29,7 @@ class CoachModel {
       this.firstName,
       this.lastName,
       this.dateOfBirth,
+      this.date,
       this.nationality,
       this.gender,
       this.yourRole,
@@ -52,6 +54,7 @@ class CoachModel {
     firstName = json['firstName'];
     lastName = json['lastName'];
     dateOfBirth = json['dateOfBirth'];
+    date = json['date'];
     nationality = json['nationality'];
     gender = json['gender'];
     yourRole = json['yourRole'];
@@ -78,6 +81,7 @@ class CoachModel {
     data['firstName'] = firstName;
     data['lastName'] = lastName;
     data['dateOfBirth'] = dateOfBirth;
+    data['date'] = date;
     data['nationality'] = nationality;
     data['gender'] = gender;
     data['yourRole'] = yourRole;

@@ -23,6 +23,7 @@ class AgencySettingsScreen extends StatelessWidget {
     return Scaffold(
       appBar: const CustomAppbar(
         title: settings,
+        show: false,
         subtitle: manageYourApp,
         icon: icBell,
       ),
@@ -42,8 +43,8 @@ class AgencySettingsScreen extends StatelessWidget {
                       CustomContainer(
                         child: profileWidget(
                           imgProfile: "${userdata.validYourIdendity}",
-                          imgFlag: "",
-                          name: "${userdata.firstName}${userdata.lastName}",
+                          imgFlag: "${userdata.countryFlag}",
+                          name: "${userdata.nameYourAgency}",
                           child: Container(),
                         ),
                       ),

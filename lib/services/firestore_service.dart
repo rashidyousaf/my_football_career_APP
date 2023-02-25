@@ -106,7 +106,7 @@ class FirestoreService {
 
   // get rolebase data
 
-  void route(context) {
+  route(context) {
     var kk = users
         .doc(_firebaseAuth.currentUser!.uid)
         .get()

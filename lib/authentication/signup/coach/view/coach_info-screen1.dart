@@ -91,8 +91,9 @@ class _CoachInfoScreen1State extends State<CoachInfoScreen1> {
                     height: 21.h,
                   ),
                   CustomDatepicker(
-                    contrler: coachController.dateOfBirthController,
+                    contrler: coachController.dateController,
                     title: dateofBirth,
+                    dateContrler: coachController.dateOfBirthController,
                   ),
                   SizedBox(
                     height: 19.h,

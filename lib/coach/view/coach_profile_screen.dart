@@ -28,6 +28,7 @@ class _CoachProfileScreenState extends State<CoachProfileScreen>
     return Scaffold(
       appBar: const CustomAppbar(
         icon: icBell,
+        show: false,
       ),
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: 30.w),
@@ -104,7 +105,7 @@ class _CoachProfileScreenState extends State<CoachProfileScreen>
                                             height: 9.h,
                                           ),
                                           Text(
-                                            "${userdata.transferCoasts}",
+                                            "${userdata.dateOfBirth}",
                                             style: TextStyle(
                                               fontSize: 17.sp,
                                               color: blackTitle,
@@ -161,7 +162,7 @@ class _CoachProfileScreenState extends State<CoachProfileScreen>
                                           Text(
                                             '${userdata.youractualCityLocation}',
                                             style: TextStyle(
-                                              fontSize: 17.sp,
+                                              fontSize: 15.sp,
                                               fontFamily: regular,
                                               color: blackTitle,
                                             ),
@@ -183,18 +184,19 @@ class _CoachProfileScreenState extends State<CoachProfileScreen>
                                       SizedBox(
                                         width: 130.w,
                                         child: Column(children: [
-                                          Image.asset(
-                                            icCPBall,
-                                            width: 25.w,
-                                            height: 25.h,
+                                          Image.network(
+                                            '${userdata.clubFlag}',
+                                            width: 30.w,
+                                            height: 30.h,
                                           ),
                                           SizedBox(
-                                            height: 9.h,
+                                            height: 7.h,
                                           ),
                                           Text(
-                                            "-",
+                                            "lahore",
+                                            textAlign: TextAlign.center,
                                             style: TextStyle(
-                                              fontSize: 17.sp,
+                                              fontSize: 15.sp,
                                               fontFamily: semibold,
                                               color: blackTitle,
                                             ),

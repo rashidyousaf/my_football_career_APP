@@ -1,18 +1,26 @@
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:my_football_career/authentication/login/controller/login_controller.dart';
+import 'package:provider/provider.dart';
 
 import '../consts/consts.dart';
 
 class AuthTextfield extends StatelessWidget {
   final String? hintText;
   final controller;
-  final Icon? icon;
+
   final bool obs;
 
-  const AuthTextfield(
-      {super.key, this.hintText, this.controller, this.icon, this.obs = false});
+  const AuthTextfield({
+    super.key,
+    this.hintText,
+    this.controller,
+    this.obs = false,
+  });
 
   @override
   Widget build(BuildContext context) {
+    final provider = Provider.of<LoginController>(context);
+
     return TextFormField(
       // validator: ((value) {
       //   if (value!.isEmpty) {
@@ -20,7 +28,8 @@ class AuthTextfield extends StatelessWidget {
       //     return null;
       //   }
       // }),
-      obscureText: obs,
+
+      obscureText: obs ? provider.obscureText : false,
       controller: controller,
       style: TextStyle(fontSize: 14.sp, color: titlegreyColor),
       cursorColor: greenColor,
@@ -47,7 +56,20 @@ class AuthTextfield extends StatelessWidget {
             borderSide: BorderSide(color: Colors.red, width: 1.5.w),
             borderRadius: BorderRadius.circular(10.r),
           ),
-          suffixIcon: icon,
+          suffixIcon: obs
+              ? GestureDetector(
+                  onTap: () {
+                    provider.togglePasswordVisibility();
+                  },
+                  child: Icon(
+                    provider.obscureText
+                        ? Icons.visibility
+                        : Icons.visibility_off,
+                    color: greenColor,
+                    size: 25.sp,
+                  ),
+                )
+              : null,
           hintText: hintText,
           hintStyle: TextStyle(
             fontFamily: regular,

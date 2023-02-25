@@ -1,6 +1,7 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:my_football_career/agency/view/agency_home_screen.dart';
+import 'package:my_football_career/authentication/login/view/forgot_password_screen.dart';
 import 'package:my_football_career/authentication/login/view/login_screen.dart';
 import 'package:my_football_career/authentication/signup/agency/controller/agency_controller.dart';
 import 'package:my_football_career/authentication/signup/agency/view/agency_info_screen1.dart';
@@ -57,6 +58,7 @@ import 'club/view/create_offer_screens/ccreate_offer_screen7.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
+
   runApp(const MyApp());
 }
 
@@ -98,6 +100,8 @@ class MyApp extends StatelessWidget {
                 '/': (context) => const HomeScreen(),
                 '/signupscreen': (context) => const SignupScreen(),
                 '/loginscreen': (context) => const LoginScreen(),
+                '/forgotpasswordscreen': (context) =>
+                    const ForgotPasswordScreen(),
                 '/typescreen': (context) => const TypeScreen(),
                 '/playerinfoscreen1': (context) => const PlayerInfoScreen1(),
                 '/playerinfoscreen2': (context) => const PlayerInfoScreen2(),

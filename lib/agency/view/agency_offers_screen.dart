@@ -11,6 +11,7 @@ class AgencyOffersScreen extends StatelessWidget {
     return Scaffold(
       appBar: const CustomAppbar(
         title: manageYourOffers,
+        show: false,
         icon: icBell,
       ),
       body: Padding(

@@ -11,6 +11,7 @@ class AgencyMessagesScreen extends StatelessWidget {
     return Scaffold(
       appBar: const CustomAppbar(
         title: messages,
+        show: false,
       ),
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: 30.w),

@@ -2,7 +2,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:my_football_career/authentication/signup/club/model/club_model.dart';
 import 'package:my_football_career/common_widgets/custom_appbar.dart';
 import 'package:my_football_career/common_widgets/custom_container.dart';
-import 'package:my_football_career/models/user_role_model.dart';
 
 import '../../common_widgets/profile_widget1.dart';
 import '../../consts/consts.dart';
@@ -16,8 +15,9 @@ class ClubProfileScreen extends StatelessWidget {
     FirestoreService fS = FirestoreService();
     return Scaffold(
       appBar: const CustomAppbar(
-          // icon: icBell,
-          ),
+        show: false,
+        icon: icBell,
+      ),
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: 30.w),
         child: FutureBuilder(
@@ -35,8 +35,8 @@ class ClubProfileScreen extends StatelessWidget {
                         child: Column(children: [
                           profileWidget(
                             iconShare: Icons.share,
-                            imgProfile: "${userdata.validYourIdendity}",
-                            imgFlag: "",
+                            imgProfile: "${userdata.clubFlag}",
+                            imgFlag: '${userdata.countryFlag}',
                             name: "${userdata.nameYourClub}",
                           ),
                           SizedBox(

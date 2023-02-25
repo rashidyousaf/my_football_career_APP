@@ -103,7 +103,8 @@ class _PlayerInfoScreen1State extends State<PlayerInfoScreen1> {
                     // ),
                     CustomDatepicker(
                       title: dateofBirth,
-                      contrler: playerController.dateOfBirthController,
+                      contrler: playerController.dateController,
+                      dateContrler: playerController.dateOfBirthController,
                     ),
                     SizedBox(
                       height: 19.h,

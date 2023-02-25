@@ -4,6 +4,7 @@ class PlayerModel {
   String? firstName;
   String? lastName;
   String? dateOfBirth;
+  String? date;
   String? nationality;
   String? gender;
   String? yourMainPosition;
@@ -36,6 +37,7 @@ class PlayerModel {
       this.firstName,
       this.lastName,
       this.dateOfBirth,
+      this.date,
       this.nationality,
       this.gender,
       this.yourMainPosition,
@@ -68,6 +70,7 @@ class PlayerModel {
     firstName = json['firstName'];
     lastName = json['lastName'];
     dateOfBirth = json['dateOfBirth'];
+    date = json['date'];
     nationality = json['nationality'];
     gender = json['gender'];
     yourMainPosition = json['yourMainPosition'];
@@ -102,6 +105,7 @@ class PlayerModel {
     data['firstName'] = firstName;
     data['lastName'] = lastName;
     data['dateOfBirth'] = dateOfBirth;
+    data['date'] = date;
     data['nationality'] = nationality;
     data['gender'] = gender;
     data['yourMainPosition'] = yourMainPosition;

@@ -18,6 +18,7 @@ class AgencyProfileScreen extends StatelessWidget {
     return Scaffold(
       appBar: const CustomAppbar(
         icon: icBell,
+        show: false,
       ),
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: 30.w),
@@ -37,8 +38,8 @@ class AgencyProfileScreen extends StatelessWidget {
                           profileWidget(
                             iconShare: Icons.share,
                             imgProfile: "${userdata.validYourIdendity}",
-                            imgFlag: '',
-                            name: '${userdata.firstName} ${userdata.lastName}',
+                            imgFlag: '${userdata.countryFlag}',
+                            name: '${userdata.nameYourAgency}',
                           ),
                           SizedBox(
                             height: 13.h,

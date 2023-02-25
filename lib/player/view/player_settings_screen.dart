@@ -24,7 +24,8 @@ class PlayerSettingsScreen extends StatelessWidget {
       appBar: const CustomAppbar(
         title: settings,
         subtitle: manageYourApp,
-        // icon: icBell,
+        icon: icBell,
+        show: false,
       ),
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: 30.w),

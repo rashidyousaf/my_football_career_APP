@@ -61,11 +61,6 @@ class SignupScreen extends StatelessWidget {
                             AuthTextfield(
                               controller: passwordController,
                               hintText: password,
-                              icon: Icon(
-                                Icons.visibility_outlined,
-                                color: greenColor,
-                                size: 25.sp,
-                              ),
                               obs: true,
                             ),
                           ],
@@ -82,7 +77,7 @@ class SignupScreen extends StatelessWidget {
                           ),
                           SizedBox(
                             width: 12.w,
-                            height: 12.h,
+                            height: 14.h,
                             child: Consumer<LoginController>(
                                 builder: (context, state, _) {
                               return Checkbox(

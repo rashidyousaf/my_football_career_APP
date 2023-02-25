@@ -5,6 +5,9 @@ import 'package:my_football_career/common_widgets/custom_button.dart';
 import 'package:my_football_career/common_widgets/custom_container.dart';
 import 'package:my_football_career/consts/consts.dart';
 import 'package:my_football_career/services/firestore_service.dart';
+import 'package:provider/provider.dart';
+
+import '../../authentication/login/controller/login_controller.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -12,7 +15,7 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     FirestoreService firestoreService = FirestoreService();
-
+    final provider = Provider.of<LoginController>(context);
     return Scaffold(
       body: bgLogin(
         child: Center(
@@ -70,6 +73,7 @@ class HomeScreen extends StatelessWidget {
                                     color: greenColor,
                                   )),
                               onPressed: () {
+                                provider.init();
                                 Navigator.pushNamed(context, '/loginscreen');
                               },
                               child: Text(

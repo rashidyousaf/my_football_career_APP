@@ -9,6 +9,7 @@ class PlayerAuthController extends ChangeNotifier {
   final TextEditingController lastNameController = TextEditingController();
   final TextEditingController emailController = TextEditingController();
   final TextEditingController dateOfBirthController = TextEditingController();
+  final TextEditingController dateController = TextEditingController();
   final TextEditingController nationalityController = TextEditingController();
   final TextEditingController genderController = TextEditingController();
   final TextEditingController yourMainPositionController =
@@ -63,6 +64,7 @@ class PlayerAuthController extends ChangeNotifier {
         firstName: firstNameController.text,
         lastName: lastNameController.text,
         dateOfBirth: dateOfBirthController.text,
+        date: dateController.text,
         nationality: nationalityController.text,
         gender: genderController.text,
         yourMainPosition: yourMainPositionController.text,

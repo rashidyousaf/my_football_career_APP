@@ -24,7 +24,8 @@ class ClubSettingsScreen extends StatelessWidget {
       appBar: const CustomAppbar(
         title: settings,
         subtitle: manageYourApp,
-        // icon: icBell,
+        icon: icBell,
+        show: false,
       ),
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: 30.w),
@@ -42,8 +43,8 @@ class ClubSettingsScreen extends StatelessWidget {
                         ),
                         CustomContainer(
                           child: profileWidget(
-                            imgProfile: "${userdata.validYourIdendity}",
-                            imgFlag: "",
+                            imgProfile: "${userdata.clubFlag}",
+                            imgFlag: "${userdata.countryFlag}",
                             name: "${userdata.nameYourClub}",
                             child: Container(),
                           ),

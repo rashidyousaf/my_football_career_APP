@@ -1,14 +1,14 @@
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:intl/intl.dart';
-import 'package:my_football_career/common_widgets/country_code_widget.dart';
 import 'package:my_football_career/consts/consts.dart';
 import 'package:my_football_career/utils/utils.dart';
 
 class CustomDatepicker extends StatelessWidget {
-  CustomDatepicker({super.key, this.contrler, this.title});
+  CustomDatepicker({super.key, this.contrler, this.dateContrler, this.title});
   final String? title;
 
   TextEditingController? contrler = TextEditingController();
+  TextEditingController? dateContrler = TextEditingController();
 
   // @override
   @override
@@ -59,11 +59,12 @@ class CustomDatepicker extends StatelessWidget {
               String formattedDate =
                   DateFormat('dd/MM/yyyy').format(pickedDate);
               contrler!.text = formattedDate;
-              // setState(() {
-              //   widget.contrler!.text = formattedDate;
-              //   print("print");
-              //   //set output date to TextField value.
-              // });
+
+              final DateTime currentDate = DateTime.now();
+              final Duration difference = currentDate.difference(pickedDate);
+              final int age = (difference.inDays / 365.25).floor();
+              dateContrler!.text = age.toString();
+              print('Age: $dateContrler years');
             } else {
               Utils().toastMessage("Date is not selected");
             }

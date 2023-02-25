@@ -76,7 +76,8 @@ class ClubInfoScreen1 extends StatelessWidget {
 
                   CustomCountryPicker(
                       title: "Country",
-                      countryFlagController: clubController.clubFlagController),
+                      countryFlagController:
+                          clubController.countryFlagController),
                   SizedBox(
                     height: 21.h,
                   ),

@@ -29,6 +29,7 @@ class _PlayerProfileScreenState extends State<PlayerProfileScreen>
     return Scaffold(
       appBar: const CustomAppbar(
         icon: icBell,
+        show: false,
       ),
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: 30.w),
@@ -56,7 +57,7 @@ class _PlayerProfileScreenState extends State<PlayerProfileScreen>
                         thirdIcon: icPPLocation,
                         fourthIcon: "${userdata.clubFlag}",
                         firstName: "${userdata.jerseyNumber}",
-                        secondName: "35",
+                        secondName: "${userdata.dateOfBirth}",
                         thirdName: '${userdata.youractualCityLocation}',
                         fourthName: '${userdata.actualClub}',
                       ),

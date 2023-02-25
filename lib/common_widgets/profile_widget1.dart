@@ -22,7 +22,7 @@ Widget profileWidget({iconShare, child, imgProfile, imgFlag, String? name}) {
             ),
           ),
           SizedBox(
-            width: 8.w,
+            width: 10.w,
           ),
           // profile widget
 
@@ -30,7 +30,7 @@ Widget profileWidget({iconShare, child, imgProfile, imgFlag, String? name}) {
             Container(
               clipBehavior: Clip.antiAlias,
               height: 110.h,
-              width: 110.w,
+              width: 100.w,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(50),
               ),
@@ -47,10 +47,11 @@ Widget profileWidget({iconShare, child, imgProfile, imgFlag, String? name}) {
               child: Center(
                 child: Text(
                   name!,
+                  textAlign: TextAlign.center,
                   style: TextStyle(
-                      fontSize: 21.sp,
-                      fontFamily: semibold,
-                      overflow: TextOverflow.ellipsis),
+                    fontSize: 21.sp,
+                    fontFamily: semibold,
+                  ),
                 ),
               ),
             ),
@@ -63,13 +64,8 @@ Widget profileWidget({iconShare, child, imgProfile, imgFlag, String? name}) {
               fit: BoxFit.cover,
               child: Text(
                 imgFlag,
-                // style: TextStyle(fontSize: 0.sp),
               ),
             ),
-            // child: Image.asset(
-            //   imgFlag,
-            //   fit: BoxFit.fill,
-            // ),
           ),
         ],
       ),

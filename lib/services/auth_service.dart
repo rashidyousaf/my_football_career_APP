@@ -1,14 +1,10 @@
 import 'package:firebase_auth/firebase_auth.dart' as auth;
+import 'package:google_sign_in/google_sign_in.dart';
 import 'package:my_football_career/authentication/login/view/login_screen.dart';
 import 'package:my_football_career/consts/consts.dart';
 import 'package:my_football_career/models/user_model.dart';
-import 'package:my_football_career/player/view/player_home_screen.dart';
 import 'package:my_football_career/services/firestore_service.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:my_football_career/utils/utils.dart';
-
-import '../club/view/club_home_screen.dart';
-// import 'package:firebase_auth/firebase_auth.dart';
 
 class AuthService {
   final auth.FirebaseAuth _firebaseAuth = auth.FirebaseAuth.instance;
@@ -72,13 +68,64 @@ class AuthService {
     }
   }
 
-  Future authRole(id) async {}
+  // this section for signin with google
+
+  signInWithGoogle(context) async {
+    GoogleSignInAccount? googleUser = await GoogleSignIn().signIn();
+    GoogleSignInAuthentication? googleAuth = await googleUser?.authentication;
+    auth.AuthCredential credential = auth.GoogleAuthProvider.credential(
+      accessToken: googleAuth?.accessToken,
+      idToken: googleAuth?.idToken,
+    );
+
+    auth.UserCredential userCredential =
+        await _firebaseAuth.signInWithCredential(credential);
+
+    if (userCredential.additionalUserInfo!.isNewUser) {
+      Navigator.pushNamed(context, '/typescreen');
+    } else {
+      firestoreService.route(context);
+    }
+  }
+
+  // userCheckfor() {
+  //   StreamBuilder(
+  //       stream: _firebaseAuth.authStateChanges(),
+  //       builder: (BuildContext context, AsyncSnapshot snapshot) {
+  //         if (snapshot.hasError) {
+  //           Utils().toastMessage(snapshot.error.toString());
+  //         }
+  //         if (snapshot.connectionState == ConnectionState.active) {
+  //           if (snapshot.data == null) {
+  //             Utils().toastMessage("user profile");
+  //           } else {
+  //             Utils().toastMessage("user profile");
+  //             // return firestoreService.route(context);
+  //           }
+  //         }
+  //         return Text("");
+  //       });
+  //   print('hi');
+  // }
+
+  // this section for recover password
+  recoverPassword(String email, context) {
+    final credential =
+        _firebaseAuth.sendPasswordResetEmail(email: email).then((value) {
+      Utils().toastMessage(
+          'We have send you email to recover passwordm please check email');
+
+      Navigator.pushNamed(context, '/loginscreen');
+    }).onError((error, stackTrace) {
+      Utils().toastMessage(error.toString());
+    });
+  }
 
   // this is for signout user
 
   Future<void> signOut(BuildContext context) async {
+    await GoogleSignIn().signOut();
     await _firebaseAuth.signOut().then((value) {
-      print("why its happen");
       Navigator.push(
         context,
         MaterialPageRoute(builder: (context) => const LoginScreen()),

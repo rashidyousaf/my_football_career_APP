@@ -9,6 +9,7 @@ class CoachController extends ChangeNotifier {
   final TextEditingController firstNameController = TextEditingController();
   final TextEditingController lastNameController = TextEditingController();
   final TextEditingController dateOfBirthController = TextEditingController();
+  final TextEditingController dateController = TextEditingController();
   final TextEditingController nationalityController = TextEditingController();
   final TextEditingController genderController = TextEditingController();
   final TextEditingController yourRoleController = TextEditingController();
@@ -50,6 +51,7 @@ class CoachController extends ChangeNotifier {
       firstName: firstNameController.text,
       lastName: lastNameController.text,
       dateOfBirth: dateOfBirthController.text,
+      date: dateController.text,
       nationality: nationalityController.text,
       gender: genderController.text,
       yourRole: yourRoleController.text,

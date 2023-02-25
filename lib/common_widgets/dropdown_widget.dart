@@ -25,6 +25,7 @@ Widget dropdownWidget({
         height: 7.h,
       ),
       DropdownButtonFormField2(
+        dropdownMaxHeight: 200.h,
         value: selectedValue,
         decoration: InputDecoration(
           isDense: true,

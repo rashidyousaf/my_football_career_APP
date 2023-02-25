@@ -131,7 +131,7 @@ Widget profileWidget2(
             Text(
               thirdName!,
               style: TextStyle(
-                fontSize: 17.sp,
+                fontSize: 15.sp,
                 fontFamily: semibold,
               ),
             ),
@@ -158,7 +158,7 @@ Widget profileWidget2(
               height: 30.h,
             ),
             SizedBox(
-              height: 8.h,
+              height: 3.h,
             ),
             SizedBox(
               width: 130.w,
@@ -166,7 +166,7 @@ Widget profileWidget2(
                 fourthName!,
                 textAlign: TextAlign.center,
                 style: TextStyle(
-                  fontSize: 17.sp,
+                  fontSize: 15.sp,
                   fontFamily: semibold,
                 ),
               ),

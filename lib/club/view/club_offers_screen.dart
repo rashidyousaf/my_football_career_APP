@@ -11,7 +11,8 @@ class ClubOffersScreen extends StatelessWidget {
     return Scaffold(
       appBar: const CustomAppbar(
         title: manageYourOffers,
-        // icon: icBell,
+        icon: icBell,
+        show: false,
       ),
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: 30.w),
